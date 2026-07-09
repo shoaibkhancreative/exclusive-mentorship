@@ -13,6 +13,7 @@ export default defineConfig({
     },
   },
   build: {
-    outDir: '../../dist/apps/web',
+    outDir: 'dist',
+    emptyOutDir: true,
   },
 });
