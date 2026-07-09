@@ -1,0 +1,15 @@
+{
+	"name": "exclusive-mentorship-root",
+	"version": "0.0.0",
+	"private": true,
+	"scripts": {
+		"setup": "npm install",
+		"dev": "npm run dev --prefix apps/web",
+		"build": "npm install --prefix apps && npm run build --prefix apps/web",
+		"start": "npm start --prefix apps/web",
+		"lint": "npm run lint --prefix apps/web"
+	},
+	"workspaces": [
+		"apps/*"
+	]
+}
