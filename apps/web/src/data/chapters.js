@@ -207,7 +207,7 @@ export const chapters = [
     slug: 'execution-mastery--sessions-confluence-and-precision-entries',
     title: 'Execution Mastery — Sessions, Confluence & Precision Entries',
     tagline: 'Knowing the setup is step one. Pulling the trigger perfectly is step two.',
-    price: 0,
+    price: 1100,
     overview:
       'Strategy knowledge without execution is just theory. This chapter turns everything you know into a repeatable, testable, tradeable process.',
     classes: [
@@ -227,7 +227,7 @@ export const chapters = [
     slug: 'prop-firm-mastery--get-funded-stay-funded-scale-fast',
     title: 'Prop Firm Mastery — Get Funded, Stay Funded, Scale Fast',
     tagline: 'Why risk your own capital when you can trade with theirs?',
-    price: 0,
+    price: 1300,
     overview:
       'This is the chapter that turns skill into capital. Learn exactly how funded trading works, how to pass on your first attempt, and how to scale a funded account into a genuine income stream.',
     classes: [
@@ -249,7 +249,7 @@ export const chapters = [
     slug: 'your-trading-business--personal-plan-and-graduation',
     title: 'Your Trading Business — Personal Plan & Graduation',
     tagline: "Everything you've learned becomes worthless without one final piece: your own plan.",
-    price: 0,
+    price: 1599,
     overview:
       'The capstone chapter. Every concept, every model, every psychological lesson gets distilled into a single, personalized trading plan — and you walk out the other side a professional trader, not just a course graduate.',
     classes: [
