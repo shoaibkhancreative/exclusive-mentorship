@@ -183,7 +183,7 @@ export default function HomePage() {
                             <Check size={16} className="mt-0.5 shrink-0 text-brand" />
                             <div>
                               <p className="font-medium text-foreground">{cls.title}</p>
-                              <p className="text-muted-foreground">{cls.tagline}</p>
+                              <p className="text-xs italic text-brand/80">{cls.tagline}</p>
                             </div>
                           </li>
                         ))}
