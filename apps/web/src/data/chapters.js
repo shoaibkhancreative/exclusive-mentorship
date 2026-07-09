@@ -266,3 +266,5 @@ export const chapters = [
     ],
   }
 ];
+
+export const totalClasses = chapters.reduce((sum, ch) => sum + ch.classes.length, 0);
