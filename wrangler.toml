@@ -1,29 +1,8 @@
 name = "exclusive-mentorship"
-type = "javascript"
-main = "src/index.js"
 
-[env.production]
-name = "exclusive-mentorship-prod"
-routes = [
-  { pattern = "exclusive-mentorship.pages.dev", zone_name = "exclusive-mentorship.pages.dev" }
-]
+[site]
+bucket = "./dist/apps/web"
 
 [build]
 command = "npm run build"
 cwd = "."
-watch_paths = ["apps/web/src/**/*.{jsx,js,css}"]
-
-[[build.upload.rules]]
-type = "CompiledContentType"
-globs = ["**/*.wasm"]
-fallthrough = true
-
-[[build.upload.rules]]
-type = "Text"
-globs = ["**/*.css", "**/*.html"]
-fallthrough = true
-
-[[build.upload.rules]]
-type = "Text"
-globs = ["**/*.svg", "**/*.xml"]
-fallthrough = true
