@@ -1,10 +1,13 @@
 {
   "name": "exclusive-mentorship",
   "private": true,
+  "workspaces": [
+    "apps/*"
+  ],
   "scripts": {
-    "build": "npm --prefix apps/web run build",
-    "dev": "npm --prefix apps/web run dev",
-    "start": "npm --prefix apps/web run start",
-    "lint": "npm --prefix apps/web run lint"
+    "build": "npm run build --workspace web",
+    "dev": "npm run dev --workspace web",
+    "start": "npm run start --workspace web",
+    "lint": "npm run lint --workspace web"
   }
 }
