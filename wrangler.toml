@@ -1,8 +1,0 @@
-name = "exclusive-mentorship"
-
-[site]
-bucket = "./dist/apps/web"
-
-[build]
-command = "npm run build"
-cwd = "."
