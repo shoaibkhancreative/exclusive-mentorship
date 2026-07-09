@@ -5,7 +5,7 @@
 	"scripts": {
 		"setup": "npm install",
 		"dev": "npm run dev --prefix apps/web",
-		"build": "npm install --prefix apps && npm run build --prefix apps/web",
+		"build": "npm install --prefix apps/web && npm run build --prefix apps/web",
 		"start": "npm start --prefix apps/web",
 		"lint": "npm run lint --prefix apps/web"
 	},
