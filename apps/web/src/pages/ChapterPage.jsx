@@ -5,7 +5,6 @@ import Header from '@/components/site/Header';
 import Footer from '@/components/site/Footer';
 import VideoEmbed from '@/components/site/VideoEmbed';
 import { getChapterBySlug, chapters } from '@/data/chapters';
-import { formatBDT } from '@/data/pricing';
 
 export default function ChapterPage() {
   const { slug } = useParams();
@@ -13,7 +12,7 @@ export default function ChapterPage() {
 
   if (!chapter) return <Navigate to="/" replace />;
 
-  const next = chapters.find((c) => c.id === chapter.id + 1);
+  const next = chapters.find((c) => c.id === chapter.id + 1 && c.slug !== chapter.slug);
 
   return (
     <div className="min-h-screen bg-background font-sans text-foreground">
@@ -35,20 +34,19 @@ export default function ChapterPage() {
               <p className="mt-3 text-lg italic text-muted-foreground">{chapter.tagline}</p>
               <p className="mt-5 max-w-xl text-muted-foreground">{chapter.overview}</p>
               <div className="mt-8 flex flex-wrap items-center gap-4">
-                <span className="font-display text-2xl font-bold text-foreground">{formatBDT(chapter.price)}</span>
                 <Link
-                  to={`/checkout?chapter=${chapter.id}`}
+                  to="/checkout"
                   className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/25 transition-transform active:scale-[0.98] hover:brightness-110"
                 >
-                  Enroll in This Chapter <ArrowRight size={16} />
+                  Enroll in the Mentorship <ArrowRight size={16} />
                 </Link>
-                <Link
-                  to="/checkout?package=bundle"
-                  className="text-sm font-semibold text-brand hover:underline"
-                >
-                  Or get the Full Bundle for ৳7,999
+                <Link to="/#offer" className="text-sm font-semibold text-brand hover:underline">
+                  Compare tiers &amp; pricing
                 </Link>
               </div>
+              <p className="mt-3 text-xs text-muted-foreground">
+                This chapter is part of the full curriculum — every tier includes the complete recorded course.
+              </p>
             </div>
             <VideoEmbed title={`${chapter.title} — Preview`} />
           </div>
@@ -80,11 +78,11 @@ export default function ChapterPage() {
               <div>
                 <p className="font-display text-lg font-semibold">Ready for {chapter.title}?</p>
                 <p className="mt-1 text-sm text-navy-foreground/60">
-                  Lifetime access, one-time payment of {formatBDT(chapter.price)}.
+                  Enroll in any tier for lifetime access to this chapter and the full 13-chapter curriculum.
                 </p>
               </div>
               <Link
-                to={`/checkout?chapter=${chapter.id}`}
+                to="/checkout"
                 className="inline-flex items-center gap-2 rounded-full bg-brand px-6 py-3.5 text-sm font-bold text-brand-foreground transition-transform active:scale-[0.98] hover:brightness-110"
               >
                 Enroll Now <ArrowRight size={16} />

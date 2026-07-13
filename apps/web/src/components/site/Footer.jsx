@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { TrendingUp } from 'lucide-react';
 
 export default function Footer() {
@@ -17,11 +18,11 @@ export default function Footer() {
               A 13-chapter institutional trading mentorship — market structure, liquidity, psychology, risk and prop-firm mastery, taught step by step.
             </p>
           </div>
-          <div className="flex gap-10 text-sm">
+          <div className="flex flex-wrap gap-10 text-sm">
             <div className="space-y-2">
               <p className="font-semibold text-navy-foreground/90">Program</p>
               <a href="/#curriculum" className="block text-navy-foreground/60 hover:text-navy-foreground">Curriculum</a>
-              <a href="/#pricing" className="block text-navy-foreground/60 hover:text-navy-foreground">Pricing</a>
+              <a href="/#offer" className="block text-navy-foreground/60 hover:text-navy-foreground">Pricing</a>
               <a href="/#faq" className="block text-navy-foreground/60 hover:text-navy-foreground">FAQ</a>
             </div>
             <div className="space-y-2">
@@ -29,11 +30,17 @@ export default function Footer() {
               <a href="https://t.me/exclusive_mentorship_bot" target="_blank" rel="noreferrer" className="block text-navy-foreground/60 hover:text-navy-foreground">Telegram Support</a>
               <a href="/checkout" className="block text-navy-foreground/60 hover:text-navy-foreground">Enroll Now</a>
             </div>
+            <div className="space-y-2">
+              <p className="font-semibold text-navy-foreground/90">Legal</p>
+              <Link to="/terms" className="block text-navy-foreground/60 hover:text-navy-foreground">Terms &amp; Conditions</Link>
+              <Link to="/privacy" className="block text-navy-foreground/60 hover:text-navy-foreground">Privacy Policy</Link>
+              <Link to="/disclaimer" className="block text-navy-foreground/60 hover:text-navy-foreground">Disclaimer</Link>
+            </div>
           </div>
         </div>
         <div className="mt-10 flex flex-col gap-2 border-t border-navy-foreground/10 pt-6 text-xs text-navy-foreground/45 md:flex-row md:items-center md:justify-between">
           <p>&copy; {new Date().getFullYear()} Exclusive Mentorship. All rights reserved.</p>
-          <p>Trading involves substantial risk of loss. Past results are not indicative of future performance.</p>
+          <p>Trading involves substantial risk of loss. Past results are not indicative of future performance. Educational content only — not financial advice.</p>
         </div>
       </div>
     </footer>

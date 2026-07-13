@@ -264,27 +264,6 @@ export const chapters = [
       { title: 'Building Long-Term Consistency', tagline: 'Profitable in year three, not just month one.', description: 'The habits that keep you profitable in year three, not just month one.' },
       { title: 'Graduation — Becoming a Professional Trader', tagline: 'Walk out a pro, not a graduate.', description: 'Close the final chapter as a professional, with the plan, the psychology, and the edge to prove it.' }
     ],
-  },
-  {
-    id: 14,
-    slug: 'your-trading-business--personal-plan-and-graduation',
-    title: 'Your Trading Business — Personal Plan & Graduation',
-    tagline: "Everything you've learned becomes worthless without one final piece: your own plan.",
-    price: 1999,
-    overview:
-      'The capstone chapter. Every concept, every model, every psychological lesson gets distilled into a single, personalized trading plan — and you walk out the other side a professional trader, not just a course graduate.',
-    classes: [
-      { title: 'Why Every Trader Needs a Written Trading Plan', tagline: 'The doc pros have. Amateurs don\'t.', description: 'The single document separating professionals from permanent beginners.' },
-      { title: 'Finding Your Personal Trading Edge', tagline: 'Your setups. Your sessions. Your markets.', description: 'Identify the specific setups, sessions, and markets built for your strengths.' },
-      { title: 'Setting Entry, Stop-Loss & Take-Profit Rules', tagline: 'Never freeze at entry again.', description: "Rules so clear you'll never freeze at the moment of entry again." },
-      { title: 'The Pre-Trade Checklist', tagline: 'Last defense against emotional mistakes.', description: 'The last line of defense between a good setup and an emotional mistake.' },
-      { title: 'Daily Routine & Time Management', tagline: 'Trade your day like a funded pro.', description: 'Structure your trading day the way funded professionals structure theirs.' },
-      { title: 'Writing Down Your Complete Trading Plan', tagline: 'Every lesson → one living document.', description: "Turn every lesson in this mentorship into one document you'll trade from for years." },
-      { title: 'Combining Personal Capital With Prop Capital', tagline: 'Two income streams. One business.', description: 'Structure both income streams into one coherent trading business.' },
-      { title: 'Your First 90 Days', tagline: 'Week by week after graduation.', description: 'Exactly what to do, week by week, the moment this course ends.' },
-      { title: 'Building Long-Term Consistency', tagline: 'Profitable in year three, not just month one.', description: 'The habits that keep you profitable in year three, not just month one.' },
-      { title: 'Graduation — Becoming a Professional Trader', tagline: 'Walk out a pro, not a graduate.', description: 'Close the final chapter as a professional, with the plan, the psychology, and the edge to prove it.' }
-    ],
   }
 ];
 

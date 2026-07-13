@@ -1,0 +1,57 @@
+import React from 'react';
+import { motion } from 'framer-motion';
+import { Compass, RefreshCcw, AlertTriangle, Target } from 'lucide-react';
+import SectionHeading, { fadeUp } from './SectionHeading';
+
+const personas = [
+  {
+    icon: Compass,
+    title: 'The Chart-Overwhelmed Beginner',
+    desc: "You've watched a hundred random videos and taken notes from none of them. You need one ordered path from zero, not another isolated tip.",
+  },
+  {
+    icon: RefreshCcw,
+    title: 'The Indicator-Hopping Trader',
+    desc: "You've tried five strategies and three indicator packs this year. Nothing sticks because nothing was ever a complete system.",
+  },
+  {
+    icon: AlertTriangle,
+    title: 'The Undisciplined Risk-Taker',
+    desc: 'You know a few ICT terms already, but no real risk plan sits behind your entries — so one bad week erases three good ones.',
+  },
+  {
+    icon: Target,
+    title: 'The Funded-Account Hopeful',
+    desc: 'You want to pass a prop firm challenge and actually keep the account — which takes a repeatable process, not a lucky streak.',
+  },
+];
+
+export default function WhoIsThisFor() {
+  return (
+    <section className="py-20">
+      <div className="mx-auto max-w-[72rem] px-6">
+        <SectionHeading
+          eyebrow="Who Is This For"
+          title="Built for four kinds of traders. Maybe you recognize yourself."
+          subtitle="If any of this sounds familiar, the curriculum below was built with exactly your starting point in mind."
+        />
+        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {personas.map(({ icon: Icon, title, desc }, i) => (
+            <motion.div
+              key={title}
+              {...fadeUp}
+              transition={{ duration: 0.5, ease: 'easeOut', delay: i * 0.06 }}
+              className="rounded-2xl border border-border bg-card p-6"
+            >
+              <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-accent text-accent-foreground">
+                <Icon size={20} strokeWidth={2.2} />
+              </span>
+              <p className="mt-4 font-display font-semibold text-foreground">{title}</p>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{desc}</p>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}

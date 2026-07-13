@@ -1,0 +1,52 @@
+import React from 'react';
+import { motion } from 'framer-motion';
+import { fadeUp } from './SectionHeading';
+
+const pillars = [
+  {
+    title: 'Framework over signals',
+    desc: "You are never handed a 'buy here' alert. Every chapter teaches the reasoning underneath the entry, so the skill still works the day the mentor isn't watching.",
+  },
+  {
+    title: 'Risk and psychology, first',
+    desc: 'Position sizing, drawdown limits and trade psychology are taught before advanced entries — because the entry was rarely what blew the account.',
+  },
+  {
+    title: 'Proof of work, not promises',
+    desc: 'The Notion journal and demo-trade requirement exist so progress is measurable — by you and by the mentor — instead of assumed.',
+  },
+];
+
+export default function MainValue() {
+  return (
+    <section className="bg-navy py-20 text-navy-foreground">
+      <div className="mx-auto max-w-[72rem] px-6">
+        <div className="grid gap-12 lg:grid-cols-[0.9fr,1.1fr]">
+          <motion.div {...fadeUp}>
+            <p className="text-sm font-semibold uppercase tracking-wide text-brand">Our Main Value</p>
+            <h2 className="mt-3 font-display text-3xl font-bold leading-tight tracking-tight sm:text-4xl">
+              What we actually believe, stated plainly.
+            </h2>
+            <p className="mt-5 max-w-sm text-navy-foreground/60">
+              Not a slogan wall — the three principles every chapter, every Q&A, and the guarantee itself are built around.
+            </p>
+          </motion.div>
+
+          <div className="divide-y divide-navy-foreground/10 border-t border-navy-foreground/10">
+            {pillars.map((p, i) => (
+              <motion.div
+                key={p.title}
+                {...fadeUp}
+                transition={{ duration: 0.5, ease: 'easeOut', delay: i * 0.08 }}
+                className="py-7 first:pt-0"
+              >
+                <p className="font-display text-xl font-semibold text-navy-foreground sm:text-2xl">{p.title}</p>
+                <p className="mt-2.5 max-w-xl leading-relaxed text-navy-foreground/60">{p.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

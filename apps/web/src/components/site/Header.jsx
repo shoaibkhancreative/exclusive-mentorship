@@ -14,7 +14,7 @@ export default function Header() {
         </Link>
         <nav className="hidden items-center gap-8 text-sm font-medium text-muted-foreground md:flex">
           <a href="/#curriculum" className="transition-colors hover:text-foreground">Curriculum</a>
-          <a href="/#pricing" className="transition-colors hover:text-foreground">Pricing</a>
+          <a href="/#offer" className="transition-colors hover:text-foreground">Pricing</a>
           <a href="/#faq" className="transition-colors hover:text-foreground">FAQ</a>
         </nav>
         <Link
