@@ -87,7 +87,7 @@ export const tiers = [
     tagline: 'Personal, 1-on-1, and strictly limited.',
     priceBDT: 17999,
     priceUSD: 149,
-    badge: 'APPLY ONLY',
+    badge: 'LIMITED SEATS',
     addonsIncluded: true,
     features: [
       { label: 'Everything in Tier 2', included: true },
@@ -95,9 +95,14 @@ export const tiers = [
       { label: 'Personal Portfolio & Trade Review', included: true },
     ],
     limitation: 'Strictly 5 students per month',
-    applyOnly: true,
-    applyUrl: 'https://forms.gle/REPLACE-WITH-YOUR-VIP-APPLICATION-FORM',
-    ctaLabel: 'Apply to VIP Circle',
+    // Joins through the normal checkout flow, exactly like Tier 1 & 2 — no
+    // external application form. The only thing that changes month to month
+    // is this flag: flip it to `false` the moment this month's 5 seats are
+    // full, and the pricing card + checkout automatically switch to a
+    // "fully booked, join the waitlist" state. Flip it back to `true` when
+    // next month's seats open back up.
+    available: true,
+    ctaLabel: 'Join the Inner Circle',
   },
 ];
 

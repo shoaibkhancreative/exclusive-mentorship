@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, TrendingUp } from 'lucide-react';
+import { ArrowRight, Star } from 'lucide-react';
 import Header from '@/components/site/Header';
 import Footer from '@/components/site/Footer';
 import VideoEmbed from '@/components/site/VideoEmbed';
@@ -16,7 +16,6 @@ import Curriculum from '@/components/home/Curriculum';
 import PricingOffer from '@/components/home/PricingOffer';
 import GuaranteeSection from '@/components/home/GuaranteeSection';
 import FAQSection from '@/components/home/FAQSection';
-import MarketMotif from '@/components/home/MarketMotif';
 
 const fadeUp = {
   initial: { opacity: 0, y: 24 },
@@ -25,11 +24,6 @@ const fadeUp = {
   transition: { duration: 0.5, ease: 'easeOut' },
 };
 
-// NOTE: kept identical to the previous hero, with one factual correction —
-// the old "Money-Back Guarantee: 7 Days" stat no longer reflects the revised
-// business model (there is no cash-refund guarantee under the new plan, only
-// the Accountability Protocol), so it's swapped for an accurate, still
-// concrete trust stat.
 const trustStats = [
   { label: 'Chapters', value: '13' },
   { label: 'On-Demand Classes', value: `${totalClasses}+` },
@@ -37,19 +31,31 @@ const trustStats = [
   { label: 'Tier 2 Batch Cap', value: '50' },
 ];
 
+// SAMPLE — Replace with the mentor's real intro video once it's recorded.
+// This is the official, freely-licensed Blender Foundation short film
+// "Big Buck Bunny" (Creative Commons), used only so this component isn't
+// empty — swap the id below for your real YouTube video id.
+const SAMPLE_INTRO_VIDEO_ID = 'aqz-KE-bpKQ';
+
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-background font-sans text-foreground">
       <Header />
 
-      {/* HERO — signature motif: the "liquidity sweep" line is the one visual
-          native to this brand's own subject matter (price wicks above a
-          prior high, then reverses hard) so it replaces the generic glow
-          blob and quietly echoes the headline instead of decorating it. */}
+      {/* HERO — a fine dot-grid (fading toward the edges) stands in for any
+          literal illustration: enough texture to feel considered, restrained
+          enough to stay out of the way of the typography. A small floating
+          rating card gives the video frame some depth. */}
       <section className="relative overflow-hidden border-b border-border bg-gradient-to-b from-tint to-background pb-24 pt-14 md:pt-20">
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-48 opacity-[0.16] sm:h-64">
-          <MarketMotif className="h-full w-full" />
-        </div>
+        <div
+          className="pointer-events-none absolute inset-0"
+          style={{
+            backgroundImage: 'radial-gradient(hsl(var(--brand) / 0.35) 1px, transparent 1px)',
+            backgroundSize: '24px 24px',
+            maskImage: 'radial-gradient(ellipse 65% 55% at 50% 0%, black 30%, transparent 100%)',
+            WebkitMaskImage: 'radial-gradient(ellipse 65% 55% at 50% 0%, black 30%, transparent 100%)',
+          }}
+        />
 
         <div className="relative mx-auto grid max-w-[90rem] gap-14 px-6 lg:grid-cols-[1.05fr,1fr] lg:items-center">
           <motion.div {...fadeUp}>
@@ -84,11 +90,21 @@ export default function HomePage() {
             </div>
           </motion.div>
 
-          <motion.div {...fadeUp} transition={{ duration: 0.5, ease: 'easeOut', delay: 0.1 }}>
-            <VideoEmbed title="Mentorship Introduction" />
+          <motion.div {...fadeUp} transition={{ duration: 0.5, ease: 'easeOut', delay: 0.1 }} className="relative">
+            <VideoEmbed title="Mentorship Introduction" videoId={SAMPLE_INTRO_VIDEO_ID} />
             <p className="mt-3 text-center text-sm text-muted-foreground">
               Watch the 2-minute program overview before you enroll.
             </p>
+            {/* SAMPLE rating — replace once real reviews exist (see Testimonials). */}
+            <div className="absolute -bottom-2 -left-4 hidden items-center gap-3 rounded-2xl border border-border bg-card px-4 py-3 shadow-softLg sm:flex">
+              <span className="flex h-9 w-9 items-center justify-center rounded-full bg-gold/15 text-gold">
+                <Star size={16} className="fill-gold" />
+              </span>
+              <div className="leading-tight">
+                <p className="text-sm font-bold text-foreground">4.9 / 5</p>
+                <p className="text-xs text-muted-foreground">Early student rating</p>
+              </div>
+            </div>
           </motion.div>
         </div>
       </section>
@@ -104,20 +120,36 @@ export default function HomePage() {
       <GuaranteeSection />
       <FAQSection />
 
-      {/* Closing CTA — bookends the hero's chart motif so the page opens and
-          closes on the same signature line instead of a generic banner. */}
-      <section className="relative overflow-hidden border-t border-border bg-navy py-16 text-navy-foreground">
-        <div className="pointer-events-none absolute inset-x-0 top-0 h-40 -scale-y-100 opacity-[0.14]">
-          <MarketMotif className="h-full w-full" />
-        </div>
-        <div className="relative mx-auto flex max-w-3xl flex-col items-center gap-5 px-6 text-center">
-          <TrendingUp className="text-brand" size={32} />
-          <h2 className="font-display text-2xl font-bold tracking-tight sm:text-3xl">
-            Your next chart doesn't have to feel like noise.
-          </h2>
-          <CtaButton to="/checkout" variant="onDark" size="lg">
-            Join Now <ArrowRight size={18} />
-          </CtaButton>
+      {/* Closing CTA — an asymmetric, typographic close instead of a centered
+          icon-and-banner template. */}
+      <section className="border-t border-border bg-navy py-20 text-navy-foreground md:py-24">
+        <div className="mx-auto max-w-[72rem] px-6">
+          <div className="grid gap-10 md:grid-cols-[1.3fr,1fr] md:items-center">
+            <motion.div {...fadeUp}>
+              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-brand">Enrollment Open</p>
+              <h2 className="mt-3 font-display text-3xl font-bold leading-tight tracking-tight sm:text-4xl">
+                Stop trading on guesses.
+                <br />
+                Start trading on structure.
+              </h2>
+              <p className="mt-4 max-w-md leading-relaxed text-navy-foreground/60">
+                {totalClasses}+ classes across 13 chapters, already recorded and waiting — built to take you from
+                your first chart to a funded account.
+              </p>
+            </motion.div>
+            <motion.div
+              {...fadeUp}
+              transition={{ duration: 0.5, ease: 'easeOut', delay: 0.1 }}
+              className="flex flex-col items-start gap-3 md:items-end"
+            >
+              <CtaButton to="/checkout" variant="onDark" size="lg">
+                Join the Mentorship <ArrowRight size={18} />
+              </CtaButton>
+              <p className="text-xs text-navy-foreground/45 md:text-right">
+                Backed by the ICT Mastery Accountability Protocol
+              </p>
+            </motion.div>
+          </div>
         </div>
       </section>
 

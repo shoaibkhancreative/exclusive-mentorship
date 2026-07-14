@@ -2,7 +2,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Building2, Users2, GraduationCap, ShieldCheck, HeartHandshake } from 'lucide-react';
 import SectionHeading, { fadeUp } from './SectionHeading';
-import MarketMotif from './MarketMotif';
 
 const reasons = [
   {
@@ -32,30 +31,35 @@ const reasons = [
   },
 ];
 
+// A numbered, editorial list rather than a grid of identical cards — the
+// large muted numerals and generous rhythm are the section's own visual
+// signature instead of a decorative graphic.
 export default function WhyChooseUs() {
   return (
-    <section className="relative overflow-hidden border-y border-border bg-tint py-20 md:py-24">
-      <div className="pointer-events-none absolute inset-x-0 top-8 opacity-40">
-        <MarketMotif className="h-28 w-full sm:h-36" />
-      </div>
-      <div className="relative mx-auto max-w-[72rem] px-6">
+    <section className="bg-tint py-20 md:py-24">
+      <div className="mx-auto max-w-[64rem] px-6">
         <SectionHeading
           eyebrow="Why Choose Us"
           title="Everything here exists for one reason: to be different from the last course you tried."
         />
-        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-14 border-y border-border/70 divide-y divide-border/70">
           {reasons.map(({ icon: Icon, title, desc }, i) => (
             <motion.div
               key={title}
               {...fadeUp}
               transition={{ duration: 0.5, ease: 'easeOut', delay: i * 0.06 }}
-              className={`group rounded-2xl border border-border bg-card p-6 shadow-soft transition-transform duration-300 hover:-translate-y-1 ${i === 4 ? 'sm:col-span-2 lg:col-span-1' : ''}`}
+              className="group grid gap-2 py-8 sm:grid-cols-[3.5rem,1fr] sm:gap-8 sm:py-9"
             >
-              <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-brand/10 text-brand transition-colors group-hover:bg-brand group-hover:text-brand-foreground">
-                <Icon size={20} strokeWidth={2.2} />
+              <span className="font-display text-3xl font-bold text-brand/20 transition-colors duration-300 group-hover:text-brand/45 sm:text-4xl">
+                {String(i + 1).padStart(2, '0')}
               </span>
-              <p className="mt-4 font-display font-semibold text-foreground">{title}</p>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{desc}</p>
+              <div>
+                <p className="flex items-center gap-2.5 font-display text-lg font-semibold text-foreground sm:text-xl">
+                  <Icon size={19} className="shrink-0 text-brand" strokeWidth={2.2} />
+                  {title}
+                </p>
+                <p className="mt-2 max-w-2xl leading-relaxed text-muted-foreground">{desc}</p>
+              </div>
             </motion.div>
           ))}
         </div>

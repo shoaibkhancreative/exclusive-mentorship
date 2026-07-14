@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowLeft, ArrowRight, Check, Copy, LifeBuoy, ShieldCheck, Send, ExternalLink, Sparkles } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Check, Copy, LifeBuoy, ShieldCheck, Send, Sparkles } from 'lucide-react';
 import Header from '@/components/site/Header';
 import Footer from '@/components/site/Footer';
 import { tiers, addons, paymentMethods, formatBDT, formatUSD, bdtFromUSD, ADDONS_VALUE_BDT } from '@/data/pricing';
@@ -21,10 +21,13 @@ export default function CheckoutPage() {
   const [params] = useSearchParams();
   const { toast } = useToast();
 
-  // Tier 3 is application-only and never runs through this stepper.
-  const requestedTier3 = params.get('tier') === '3';
-
-  const initialPackage = params.get('tier') === '1' ? 'tier1' : params.get('tier') === '2' ? 'tier2' : params.get('addon') ? 'addons' : 'tier2';
+  // Tier 3 now runs through the same stepper as Tier 1 & 2. If someone lands
+  // on ?tier=3 while it's marked unavailable (tier3.available === false),
+  // fall back to the anchor plan instead of pre-selecting a tier they can't
+  // actually pick.
+  const requestedPackage =
+    params.get('tier') === '1' ? 'tier1' : params.get('tier') === '2' ? 'tier2' : params.get('tier') === '3' ? 'tier3' : params.get('addon') ? 'addons' : 'tier2';
+  const initialPackage = requestedPackage === 'tier3' && tier3.available === false ? 'tier2' : requestedPackage;
   const [step, setStep] = React.useState(0);
   const [sent, setSent] = React.useState(false);
   const [packageType, setPackageType] = React.useState(initialPackage);
@@ -40,7 +43,7 @@ export default function CheckoutPage() {
   const [paymentMethod, setPaymentMethod] = React.useState(null);
   const [copied, setCopied] = React.useState(false);
 
-  const addonsIncludedFree = packageType === 'tier2';
+  const addonsIncludedFree = packageType === 'tier2' || packageType === 'tier3';
   const toggleAddon = (id) => setSelectedAddons((s) => ({ ...s, [id]: !s[id] }));
   const selectedAddonIds = Object.entries(selectedAddons).filter(([, v]) => v).map(([k]) => k);
   const anyAddonSelected = selectedAddonIds.length > 0;
@@ -63,6 +66,9 @@ export default function CheckoutPage() {
       dueNowBDT = tier2.priceBDT;
       dueNowUSD = tier2.priceUSD;
     }
+  } else if (packageType === 'tier3') {
+    dueNowBDT = tier3.priceBDT;
+    dueNowUSD = tier3.priceUSD;
   } else {
     dueNowBDT = addonsCostBDT;
     dueNowUSD = addonsCostUSD;
@@ -77,7 +83,7 @@ export default function CheckoutPage() {
 
   const paymentLabel = paymentMethods.find((p) => p.id === paymentMethod)?.label;
 
-  const packageKey = packageType === 'tier1' ? 'T1' : packageType === 'tier2' ? 'T2' : 'ADDONS';
+  const packageKey = packageType === 'tier1' ? 'T1' : packageType === 'tier2' ? 'T2' : packageType === 'tier3' ? 'T3' : 'ADDONS';
   const effectiveAddonFlags = addonsIncludedFree ? { insight: true, templates: true, archive: true } : selectedAddons;
   const telegramUrl = buildTelegramDeepLink({
     packageKey,
@@ -98,7 +104,7 @@ export default function CheckoutPage() {
   };
 
   const packageSummaryLabel =
-    packageType === 'tier1' ? tier1.name : packageType === 'tier2' ? tier2.name : 'Add-ons Only';
+    packageType === 'tier1' ? tier1.name : packageType === 'tier2' ? tier2.name : packageType === 'tier3' ? tier3.name : 'Add-ons Only';
 
   return (
     <div className="min-h-screen bg-background font-sans text-foreground">
@@ -130,25 +136,6 @@ export default function CheckoutPage() {
 
       <section className="py-14">
         <div className="mx-auto max-w-3xl px-6">
-          {requestedTier3 && (
-            <div className="mb-8 flex flex-col items-start gap-4 rounded-2xl border-2 border-gold/50 bg-card p-6 sm:flex-row sm:items-center sm:justify-between">
-              <div>
-                <p className="font-display font-semibold text-foreground">Tier 3 — The Inner Circle is by application only</p>
-                <p className="mt-1 text-sm text-muted-foreground">
-                  To keep it genuinely 1-on-1 (5 seats a month), VIP access is screened through a short application, not this checkout flow.
-                </p>
-              </div>
-              <a
-                href={tier3.applyUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex shrink-0 items-center gap-2 rounded-full bg-gold px-5 py-3 text-sm font-bold text-navy transition-transform active:scale-[0.98] hover:brightness-105"
-              >
-                Apply Now <ExternalLink size={15} />
-              </a>
-            </div>
-          )}
-
           <AnimatePresence mode="wait">
             <motion.div
               key={step}
@@ -159,7 +146,7 @@ export default function CheckoutPage() {
             >
               {step === 0 && (
                 <div className="space-y-8">
-                  <div className="grid gap-4 sm:grid-cols-2">
+                  <div className="grid gap-4 sm:grid-cols-3">
                     <button
                       type="button"
                       onClick={() => setPackageType('tier1')}
@@ -189,6 +176,33 @@ export default function CheckoutPage() {
                       <p className="mt-4 font-display text-2xl font-bold text-foreground">{formatBDT(tier2.priceBDT)}</p>
                       <p className="mt-1 text-xs text-muted-foreground">≈ {formatUSD(tier2.priceUSD)} USDT · or split into 2 payments</p>
                     </button>
+                    {tier3.available ? (
+                      <button
+                        type="button"
+                        onClick={() => setPackageType('tier3')}
+                        className={`relative rounded-2xl border-2 p-6 text-left transition-colors ${
+                          packageType === 'tier3' ? 'border-gold bg-gold/10' : 'border-border bg-card hover:border-gold/40'
+                        }`}
+                      >
+                        <span className="absolute right-4 top-4 rounded-full bg-gold px-2.5 py-0.5 text-[10px] font-bold text-navy">
+                          {tier3.badge}
+                        </span>
+                        <p className="text-xs font-bold uppercase tracking-wide text-gold">{tier3.shortName}</p>
+                        <p className="mt-1 font-display text-lg font-semibold text-foreground">{tier3.name}</p>
+                        <p className="text-sm text-muted-foreground">1-on-1 mentorship, strictly limited</p>
+                        <p className="mt-4 font-display text-2xl font-bold text-foreground">{formatBDT(tier3.priceBDT)}</p>
+                        <p className="mt-1 text-xs text-muted-foreground">≈ {formatUSD(tier3.priceUSD)} USDT · 5 seats a month</p>
+                      </button>
+                    ) : (
+                      <div className="relative rounded-2xl border-2 border-dashed border-border bg-secondary/40 p-6 text-left">
+                        <span className="absolute right-4 top-4 rounded-full bg-muted px-2.5 py-0.5 text-[10px] font-bold text-muted-foreground">
+                          FULL THIS MONTH
+                        </span>
+                        <p className="text-xs font-bold uppercase tracking-wide text-muted-foreground">{tier3.shortName}</p>
+                        <p className="mt-1 font-display text-lg font-semibold text-muted-foreground">{tier3.name}</p>
+                        <p className="mt-2 text-sm text-muted-foreground">This month's 5 seats are filled — check back next month.</p>
+                      </div>
+                    )}
                   </div>
 
                   <div className="flex flex-col items-center gap-2 rounded-xl border border-dashed border-border p-4 text-center text-sm text-muted-foreground sm:flex-row sm:justify-between sm:text-left">
@@ -196,13 +210,6 @@ export default function CheckoutPage() {
                     <button type="button" onClick={() => setPackageType('addons')} className="font-semibold text-brand hover:underline">
                       Browse add-ons only
                     </button>
-                  </div>
-                  <div className="rounded-xl border border-dashed border-gold/50 bg-gold/5 p-4 text-center text-sm text-muted-foreground">
-                    Looking for <strong className="text-foreground">Tier 3 — The Inner Circle</strong>? That's by application only —{' '}
-                    <a href={tier3.applyUrl} target="_blank" rel="noreferrer" className="font-semibold text-brand hover:underline">
-                      apply here
-                    </a>{' '}
-                    (5 seats a month).
                   </div>
 
                   {packageType === 'tier2' && (

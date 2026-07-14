@@ -23,9 +23,12 @@ const ctaVariant = {
   tier3: 'gold',
 };
 
+const tierNumber = { tier1: '1', tier2: '2', tier3: '3' };
+
 function TierCard({ tier, index }) {
   const isTier2 = tier.id === 'tier2';
   const isTier3 = tier.id === 'tier3';
+  const isFull = tier.available === false;
   const mutedText = isTier2 ? 'text-navy-foreground/60' : 'text-muted-foreground';
   const bodyText = isTier2 ? 'text-navy-foreground' : 'text-foreground';
 
@@ -36,8 +39,12 @@ function TierCard({ tier, index }) {
       className={`relative flex flex-col rounded-2xl border-2 p-7 transition-transform duration-300 ${cardStyles[tier.id]}`}
     >
       {tier.badge && (
-        <span className={`absolute right-6 top-6 rounded-full px-3 py-1 text-[11px] font-bold tracking-wide ${badgeStyles[tier.id]}`}>
-          {tier.badge}
+        <span
+          className={`absolute right-6 top-6 rounded-full px-3 py-1 text-[11px] font-bold tracking-wide ${
+            isFull ? 'bg-muted text-muted-foreground' : badgeStyles[tier.id]
+          }`}
+        >
+          {isFull ? 'FULL THIS MONTH' : tier.badge}
         </span>
       )}
       <p className={`text-xs font-bold uppercase tracking-wide ${isTier3 ? 'text-gold' : 'text-brand'}`}>{tier.shortName}</p>
@@ -74,12 +81,13 @@ function TierCard({ tier, index }) {
       )}
 
       <div className="mt-7">
-        {tier.applyOnly ? (
-          <CtaButton href={tier.applyUrl} target="_blank" rel="noreferrer" variant={ctaVariant[tier.id]} full>
-            {tier.ctaLabel}
-          </CtaButton>
+        {isFull ? (
+          <div className="flex w-full flex-col items-center gap-0.5 rounded-full border-2 border-dashed border-muted-foreground/30 px-7 py-3.5 text-center">
+            <span className="text-sm font-semibold text-muted-foreground">Full for this month</span>
+            <span className="text-xs text-muted-foreground/70">Next batch opens next month</span>
+          </div>
         ) : (
-          <CtaButton to={`/checkout?tier=${tier.id === 'tier1' ? '1' : '2'}`} variant={ctaVariant[tier.id]} full>
+          <CtaButton to={`/checkout?tier=${tierNumber[tier.id]}`} variant={ctaVariant[tier.id]} full>
             {tier.ctaLabel}
           </CtaButton>
         )}
