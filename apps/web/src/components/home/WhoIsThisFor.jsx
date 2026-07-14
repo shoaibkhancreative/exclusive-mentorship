@@ -28,7 +28,7 @@ const personas = [
 
 export default function WhoIsThisFor() {
   return (
-    <section className="py-20">
+    <section className="py-20 md:py-24">
       <div className="mx-auto max-w-[72rem] px-6">
         <SectionHeading
           eyebrow="Who Is This For"
@@ -41,9 +41,9 @@ export default function WhoIsThisFor() {
               key={title}
               {...fadeUp}
               transition={{ duration: 0.5, ease: 'easeOut', delay: i * 0.06 }}
-              className="rounded-2xl border border-border bg-card p-6"
+              className="group rounded-2xl border border-border bg-card p-6 shadow-soft transition-transform duration-300 hover:-translate-y-1"
             >
-              <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-accent text-accent-foreground">
+              <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-accent text-accent-foreground transition-colors group-hover:bg-brand group-hover:text-brand-foreground">
                 <Icon size={20} strokeWidth={2.2} />
               </span>
               <p className="mt-4 font-display font-semibold text-foreground">{title}</p>

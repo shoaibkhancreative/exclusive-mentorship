@@ -19,16 +19,16 @@ const pillars = [
 
 export default function MainValue() {
   return (
-    <section className="bg-navy py-20 text-navy-foreground">
+    <section className="bg-navy py-20 text-navy-foreground md:py-24">
       <div className="mx-auto max-w-[72rem] px-6">
         <div className="grid gap-12 lg:grid-cols-[0.9fr,1.1fr]">
-          <motion.div {...fadeUp}>
-            <p className="text-sm font-semibold uppercase tracking-wide text-brand">Our Main Value</p>
+          <motion.div {...fadeUp} className="lg:sticky lg:top-24 lg:self-start">
+            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-brand">Our Main Value</p>
             <h2 className="mt-3 font-display text-3xl font-bold leading-tight tracking-tight sm:text-4xl">
               What we actually believe, stated plainly.
             </h2>
-            <p className="mt-5 max-w-sm text-navy-foreground/60">
-              Not a slogan wall — the three principles every chapter, every Q&A, and the guarantee itself are built around.
+            <p className="mt-5 max-w-sm leading-relaxed text-navy-foreground/60">
+              Not a slogan wall — the three principles every chapter, every Q&amp;A, and the guarantee itself are built around.
             </p>
           </motion.div>
 

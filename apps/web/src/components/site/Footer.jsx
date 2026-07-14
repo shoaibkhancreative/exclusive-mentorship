@@ -5,36 +5,36 @@ import { TrendingUp } from 'lucide-react';
 export default function Footer() {
   return (
     <footer className="border-t border-border bg-navy text-navy-foreground">
-      <div className="mx-auto max-w-[90rem] px-6 py-12">
-        <div className="flex flex-col items-start justify-between gap-8 md:flex-row">
-          <div>
+      <div className="mx-auto max-w-[90rem] px-6 py-14">
+        <div className="flex flex-col items-start justify-between gap-10 md:flex-row">
+          <div className="max-w-sm">
             <div className="flex items-center gap-2 font-display text-lg font-bold">
               <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-brand text-brand-foreground">
                 <TrendingUp size={18} strokeWidth={2.4} />
               </span>
               Exclusive Mentorship
             </div>
-            <p className="mt-3 max-w-sm text-sm text-navy-foreground/60">
+            <p className="mt-3 text-sm leading-relaxed text-navy-foreground/60">
               A 13-chapter institutional trading mentorship — market structure, liquidity, psychology, risk and prop-firm mastery, taught step by step.
             </p>
           </div>
           <div className="flex flex-wrap gap-10 text-sm">
-            <div className="space-y-2">
+            <div className="space-y-2.5">
               <p className="font-semibold text-navy-foreground/90">Program</p>
-              <a href="/#curriculum" className="block text-navy-foreground/60 hover:text-navy-foreground">Curriculum</a>
-              <a href="/#offer" className="block text-navy-foreground/60 hover:text-navy-foreground">Pricing</a>
-              <a href="/#faq" className="block text-navy-foreground/60 hover:text-navy-foreground">FAQ</a>
+              <a href="/#curriculum" className="block text-navy-foreground/60 transition-colors hover:text-navy-foreground">Curriculum</a>
+              <a href="/#offer" className="block text-navy-foreground/60 transition-colors hover:text-navy-foreground">Pricing</a>
+              <a href="/#faq" className="block text-navy-foreground/60 transition-colors hover:text-navy-foreground">FAQ</a>
             </div>
-            <div className="space-y-2">
+            <div className="space-y-2.5">
               <p className="font-semibold text-navy-foreground/90">Support</p>
-              <a href="https://t.me/exclusive_mentorship_bot" target="_blank" rel="noreferrer" className="block text-navy-foreground/60 hover:text-navy-foreground">Telegram Support</a>
-              <a href="/checkout" className="block text-navy-foreground/60 hover:text-navy-foreground">Enroll Now</a>
+              <a href="https://t.me/exclusive_mentorship_bot" target="_blank" rel="noreferrer" className="block text-navy-foreground/60 transition-colors hover:text-navy-foreground">Telegram Support</a>
+              <Link to="/checkout" className="block text-navy-foreground/60 transition-colors hover:text-navy-foreground">Enroll Now</Link>
             </div>
-            <div className="space-y-2">
+            <div className="space-y-2.5">
               <p className="font-semibold text-navy-foreground/90">Legal</p>
-              <Link to="/terms" className="block text-navy-foreground/60 hover:text-navy-foreground">Terms &amp; Conditions</Link>
-              <Link to="/privacy" className="block text-navy-foreground/60 hover:text-navy-foreground">Privacy Policy</Link>
-              <Link to="/disclaimer" className="block text-navy-foreground/60 hover:text-navy-foreground">Disclaimer</Link>
+              <Link to="/terms" className="block text-navy-foreground/60 transition-colors hover:text-navy-foreground">Terms &amp; Conditions</Link>
+              <Link to="/privacy" className="block text-navy-foreground/60 transition-colors hover:text-navy-foreground">Privacy Policy</Link>
+              <Link to="/disclaimer" className="block text-navy-foreground/60 transition-colors hover:text-navy-foreground">Disclaimer</Link>
             </div>
           </div>
         </div>

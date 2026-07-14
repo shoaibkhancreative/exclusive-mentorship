@@ -32,6 +32,9 @@ module.exports = {
 				gold: {
 					DEFAULT: 'hsl(var(--gold))',
 				},
+				tint: {
+					DEFAULT: 'hsl(var(--section-tint))',
+				},
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
@@ -80,6 +83,10 @@ module.exports = {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
 				sm: 'calc(var(--radius) - 4px)',
+			},
+			boxShadow: {
+				soft: '0 1px 2px 0 rgb(15 23 42 / 0.04), 0 10px 28px -12px rgb(15 23 42 / 0.12)',
+				softLg: '0 2px 8px 0 rgb(15 23 42 / 0.05), 0 24px 48px -16px rgb(15 23 42 / 0.18)',
 			},
 			keyframes: {
 				'accordion-down': {

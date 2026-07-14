@@ -34,9 +34,9 @@ const reasons = [
 
 export default function WhyChooseUs() {
   return (
-    <section className="relative overflow-hidden border-y border-border bg-secondary/40 py-20">
-      <div className="pointer-events-none absolute inset-x-0 top-10 opacity-70">
-        <MarketMotif className="h-32 w-full sm:h-40" />
+    <section className="relative overflow-hidden border-y border-border bg-tint py-20 md:py-24">
+      <div className="pointer-events-none absolute inset-x-0 top-8 opacity-40">
+        <MarketMotif className="h-28 w-full sm:h-36" />
       </div>
       <div className="relative mx-auto max-w-[72rem] px-6">
         <SectionHeading
@@ -49,9 +49,9 @@ export default function WhyChooseUs() {
               key={title}
               {...fadeUp}
               transition={{ duration: 0.5, ease: 'easeOut', delay: i * 0.06 }}
-              className={`rounded-2xl border border-border bg-card p-6 ${i === 4 ? 'sm:col-span-2 lg:col-span-1' : ''}`}
+              className={`group rounded-2xl border border-border bg-card p-6 shadow-soft transition-transform duration-300 hover:-translate-y-1 ${i === 4 ? 'sm:col-span-2 lg:col-span-1' : ''}`}
             >
-              <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-brand/10 text-brand">
+              <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-brand/10 text-brand transition-colors group-hover:bg-brand group-hover:text-brand-foreground">
                 <Icon size={20} strokeWidth={2.2} />
               </span>
               <p className="mt-4 font-display font-semibold text-foreground">{title}</p>

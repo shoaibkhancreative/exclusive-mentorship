@@ -1,20 +1,26 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { ArrowRight, Check, X, Sparkles } from 'lucide-react';
+import { Check, X, Sparkles } from 'lucide-react';
 import { tiers, addons, formatBDT, formatUSD, ADDONS_VALUE_BDT, bdtFromUSD } from '@/data/pricing';
 import SectionHeading, { fadeUp } from './SectionHeading';
+import CtaButton from '@/components/site/CtaButton';
+import { motion } from 'framer-motion';
 
 const cardStyles = {
-  tier1: 'border-border bg-card',
-  tier2: 'border-brand bg-navy text-navy-foreground shadow-2xl shadow-brand/20 lg:-translate-y-3',
-  tier3: 'border-gold/50 bg-card',
+  tier1: 'border-border bg-card shadow-soft hover:-translate-y-1',
+  tier2: 'border-brand bg-navy text-navy-foreground shadow-softLg lg:-translate-y-3',
+  tier3: 'border-gold/50 bg-card shadow-soft hover:-translate-y-1',
 };
 
 const badgeStyles = {
   tier1: '',
   tier2: 'bg-brand text-brand-foreground',
   tier3: 'bg-gold text-navy',
+};
+
+const ctaVariant = {
+  tier1: 'outline',
+  tier2: 'onDark',
+  tier3: 'gold',
 };
 
 function TierCard({ tier, index }) {
@@ -27,7 +33,7 @@ function TierCard({ tier, index }) {
     <motion.div
       {...fadeUp}
       transition={{ duration: 0.5, ease: 'easeOut', delay: index * 0.08 }}
-      className={`relative flex flex-col rounded-2xl border-2 p-7 ${cardStyles[tier.id]}`}
+      className={`relative flex flex-col rounded-2xl border-2 p-7 transition-transform duration-300 ${cardStyles[tier.id]}`}
     >
       {tier.badge && (
         <span className={`absolute right-6 top-6 rounded-full px-3 py-1 text-[11px] font-bold tracking-wide ${badgeStyles[tier.id]}`}>
@@ -39,7 +45,7 @@ function TierCard({ tier, index }) {
       <p className={`mt-1 text-sm ${mutedText}`}>{tier.tagline}</p>
 
       <p className={`mt-6 flex items-baseline gap-2 ${bodyText}`}>
-        <span className="font-display text-3xl font-bold">{formatBDT(tier.priceBDT)}</span>
+        <span className="font-display text-3xl font-bold tracking-tight">{formatBDT(tier.priceBDT)}</span>
         <span className={`text-sm ${mutedText}`}>≈ {formatUSD(tier.priceUSD)} USDT</span>
       </p>
 
@@ -59,6 +65,8 @@ function TierCard({ tier, index }) {
         ))}
       </ul>
 
+      <div className="flex-1" />
+
       {tier.limitation && (
         <p className={`mt-5 rounded-lg px-3 py-2 text-xs font-medium ${isTier2 ? 'bg-navy-foreground/10 text-navy-foreground/70' : 'bg-secondary text-muted-foreground'}`}>
           {tier.limitation}
@@ -67,23 +75,13 @@ function TierCard({ tier, index }) {
 
       <div className="mt-7">
         {tier.applyOnly ? (
-          <a
-            href={tier.applyUrl}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-gold py-3.5 text-sm font-bold text-navy transition-transform active:scale-[0.98] hover:brightness-105"
-          >
-            {tier.ctaLabel} <ArrowRight size={16} />
-          </a>
+          <CtaButton href={tier.applyUrl} target="_blank" rel="noreferrer" variant={ctaVariant[tier.id]} full>
+            {tier.ctaLabel}
+          </CtaButton>
         ) : (
-          <Link
-            to={`/checkout?tier=${tier.id === 'tier1' ? '1' : '2'}`}
-            className={`inline-flex w-full items-center justify-center gap-2 rounded-full py-3.5 text-sm font-bold transition-transform active:scale-[0.98] hover:brightness-110 ${
-              isTier2 ? 'bg-brand text-brand-foreground' : 'border border-border text-foreground hover:bg-secondary'
-            }`}
-          >
-            {tier.ctaLabel} <ArrowRight size={16} />
-          </Link>
+          <CtaButton to={`/checkout?tier=${tier.id === 'tier1' ? '1' : '2'}`} variant={ctaVariant[tier.id]} full>
+            {tier.ctaLabel}
+          </CtaButton>
         )}
       </div>
 
@@ -99,7 +97,7 @@ function TierCard({ tier, index }) {
 
 export default function PricingOffer() {
   return (
-    <section id="offer" className="border-y border-border bg-secondary/40 py-20">
+    <section id="offer" className="border-y border-border bg-tint py-20 md:py-24">
       <div className="mx-auto max-w-[78rem] px-6">
         <SectionHeading
           eyebrow="The Offer, Add-ons & Pricing"
@@ -107,13 +105,13 @@ export default function PricingOffer() {
           subtitle="Every tier includes the full recorded course. What changes is the support around it — and how much of it is free."
         />
 
-        <div className="mt-14 grid gap-6 lg:grid-cols-3">
+        <div className="mt-14 grid gap-6 lg:grid-cols-3 lg:items-stretch">
           {tiers.map((tier, i) => (
             <TierCard key={tier.id} tier={tier} index={i} />
           ))}
         </div>
 
-        <motion.div {...fadeUp} className="mt-10 rounded-2xl border border-border bg-card p-8">
+        <motion.div {...fadeUp} className="mt-10 rounded-2xl border border-border bg-card p-8 shadow-soft">
           <div className="flex flex-wrap items-center justify-between gap-3">
             <p className="font-display text-lg font-semibold text-foreground">Standalone Add-ons</p>
             <p className="flex items-center gap-1.5 text-xs font-semibold text-brand">
@@ -127,17 +125,14 @@ export default function PricingOffer() {
             {addons.map((a) => (
               <div key={a.id} className="flex flex-col rounded-xl border border-border p-5">
                 <p className="font-medium text-foreground">{a.name}</p>
-                <p className="mt-1.5 flex-1 text-xs text-muted-foreground">{a.description}</p>
+                <p className="mt-1.5 flex-1 text-xs leading-relaxed text-muted-foreground">{a.description}</p>
                 <p className="mt-4 flex items-baseline gap-1.5">
                   <span className="font-display text-lg font-bold text-foreground">{formatBDT(a.priceBDT)}</span>
                   <span className="text-xs text-muted-foreground">≈{formatUSD(a.priceUSD)}</span>
                 </p>
-                <Link
-                  to={`/checkout?addon=${a.id}`}
-                  className="mt-3 text-xs font-semibold text-brand hover:underline"
-                >
+                <CtaButton to={`/checkout?addon=${a.id}`} variant="ghost" size="sm" className="mt-3 self-start text-xs">
                   Buy separately
-                </Link>
+                </CtaButton>
               </div>
             ))}
           </div>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { TrendingUp } from 'lucide-react';
+import CtaButton from './CtaButton';
 
 export default function Header() {
   return (
@@ -17,12 +18,9 @@ export default function Header() {
           <a href="/#offer" className="transition-colors hover:text-foreground">Pricing</a>
           <a href="/#faq" className="transition-colors hover:text-foreground">FAQ</a>
         </nav>
-        <Link
-          to="/checkout"
-          className="rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-sm shadow-primary/20 transition-transform active:scale-[0.98] hover:brightness-110"
-        >
+        <CtaButton to="/checkout" size="sm">
           Join Now
-        </Link>
+        </CtaButton>
       </div>
     </header>
   );

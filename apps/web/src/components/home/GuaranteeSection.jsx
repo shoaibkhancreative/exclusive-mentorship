@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ShieldCheck, FileCheck2, NotebookPen, LineChart, ArrowRight } from 'lucide-react';
 import SectionHeading, { fadeUp } from './SectionHeading';
+import CtaButton from '@/components/site/CtaButton';
 
 const requirements = [
   {
@@ -23,7 +24,7 @@ const requirements = [
 
 export default function GuaranteeSection() {
   return (
-    <section className="py-20">
+    <section className="py-20 md:py-24">
       <div className="mx-auto max-w-[64rem] px-6">
         <SectionHeading
           eyebrow="Guarantee"
@@ -37,7 +38,7 @@ export default function GuaranteeSection() {
               key={title}
               {...fadeUp}
               transition={{ duration: 0.5, ease: 'easeOut', delay: i * 0.08 }}
-              className="rounded-2xl border border-border bg-card p-6"
+              className="rounded-2xl border border-border bg-card p-6 shadow-soft"
             >
               <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-accent text-accent-foreground">
                 <Icon size={18} strokeWidth={2.2} />
@@ -48,13 +49,13 @@ export default function GuaranteeSection() {
           ))}
         </div>
 
-        <motion.div {...fadeUp} className="relative mt-6 flex flex-col gap-5 rounded-2xl border-2 border-brand bg-navy p-8 text-navy-foreground sm:flex-row sm:items-center">
+        <motion.div {...fadeUp} className="relative mt-6 flex flex-col gap-5 rounded-2xl border-2 border-brand bg-navy p-8 text-navy-foreground shadow-softLg sm:flex-row sm:items-center">
           <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-brand text-brand-foreground">
             <ShieldCheck size={22} strokeWidth={2.2} />
           </span>
           <div>
             <p className="font-display text-lg font-semibold">Meet all three, and still not seeing it click?</p>
-            <p className="mt-1.5 text-sm text-navy-foreground/65">
+            <p className="mt-1.5 text-sm leading-relaxed text-navy-foreground/65">
               The Mentorship Team personally monitors your live trading for a full week and runs a free 1-on-1 Live
               Breakdown Session to diagnose exactly what's going wrong — not a refund form, a real intervention.
             </p>
@@ -62,9 +63,9 @@ export default function GuaranteeSection() {
         </motion.div>
 
         <motion.div {...fadeUp} className="mt-8 flex items-center justify-center">
-          <a href="#faq" className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand hover:underline">
+          <CtaButton href="#faq" variant="ghost" size="sm">
             Read the full terms in our FAQ <ArrowRight size={14} />
-          </a>
+          </CtaButton>
         </motion.div>
       </div>
     </section>

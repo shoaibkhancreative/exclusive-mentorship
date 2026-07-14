@@ -35,6 +35,25 @@ body {
   border-radius: 999px;
 }
 
+/* Shared focus treatment for every interactive element on the marketing site */
+.focus-ring {
+  outline: none;
+}
+.focus-ring:focus-visible {
+  outline: 2px solid hsl(var(--ring));
+  outline-offset: 3px;
+  border-radius: 999px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 /*
   ---break---
 */
@@ -42,30 +61,34 @@ body {
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 222 45% 11%;
+    --foreground: 222 44% 10%;
     --card: 0 0% 100%;
-    --card-foreground: 222 45% 11%;
+    --card-foreground: 222 44% 10%;
     --popover: 0 0% 100%;
-    --popover-foreground: 222 45% 11%;
-    --primary: 160 84% 30%;
+    --popover-foreground: 222 44% 10%;
+    --primary: 162 68% 25%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 210 30% 96%;
-    --secondary-foreground: 222 45% 11%;
-    --muted: 210 25% 95.5%;
-    --muted-foreground: 220 15% 40%;
-    --accent: 160 60% 94%;
-    --accent-foreground: 160 84% 24%;
+    --secondary: 180 18% 95%;
+    --secondary-foreground: 222 44% 10%;
+    --muted: 180 14% 95.5%;
+    --muted-foreground: 215 14% 42%;
+    --accent: 162 55% 93%;
+    --accent-foreground: 162 70% 21%;
     --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 98%;
-    --border: 220 20% 90%;
-    --input: 220 20% 88%;
-    --ring: 160 84% 30%;
+    --border: 195 16% 89%;
+    --input: 195 16% 87%;
+    --ring: 162 68% 25%;
     --radius: 0.9rem;
     --navy: 222 47% 9%;
     --navy-foreground: 210 40% 96%;
-    --brand: 160 84% 30%;
+    --brand: 162 68% 25%;
     --brand-foreground: 0 0% 100%;
-    --gold: 42 87% 55%;
+    --gold: 38 72% 50%;
+    /* Dedicated tint used only for alternating section bands, kept distinct
+       from --secondary (which drives hover/UI states) so the page's light/
+       tint/dark rhythm reads as one deliberate system. */
+    --section-tint: 158 35% 96.5%;
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
     --sidebar-primary: 240 5.9% 10%;

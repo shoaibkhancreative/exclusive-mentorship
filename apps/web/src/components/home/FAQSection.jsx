@@ -46,15 +46,19 @@ const faqs = [
 
 export default function FAQSection() {
   return (
-    <section id="faq" className="py-20">
+    <section id="faq" className="bg-tint py-20 md:py-24">
       <div className="mx-auto max-w-3xl px-6">
         <SectionHeading eyebrow="FAQ" title="Questions, answered." />
         <motion.div {...fadeUp} className="mt-10">
           <Accordion type="single" collapsible className="space-y-3">
             {faqs.map((f, i) => (
-              <AccordionItem key={f.q} value={`faq-${i}`} className="rounded-xl border border-border bg-card px-5">
+              <AccordionItem
+                key={f.q}
+                value={`faq-${i}`}
+                className="rounded-xl border border-border bg-card px-5 shadow-soft"
+              >
                 <AccordionTrigger className="text-left font-medium hover:no-underline">{f.q}</AccordionTrigger>
-                <AccordionContent className="text-muted-foreground">{f.a}</AccordionContent>
+                <AccordionContent className="leading-relaxed text-muted-foreground">{f.a}</AccordionContent>
               </AccordionItem>
             ))}
           </Accordion>

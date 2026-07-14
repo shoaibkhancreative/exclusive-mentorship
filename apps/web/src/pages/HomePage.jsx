@@ -1,10 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight, TrendingUp } from 'lucide-react';
 import Header from '@/components/site/Header';
 import Footer from '@/components/site/Footer';
 import VideoEmbed from '@/components/site/VideoEmbed';
+import CtaButton from '@/components/site/CtaButton';
 import { totalClasses } from '@/data/chapters';
 
 import WhoIsThisFor from '@/components/home/WhoIsThisFor';
@@ -16,6 +16,7 @@ import Curriculum from '@/components/home/Curriculum';
 import PricingOffer from '@/components/home/PricingOffer';
 import GuaranteeSection from '@/components/home/GuaranteeSection';
 import FAQSection from '@/components/home/FAQSection';
+import MarketMotif from '@/components/home/MarketMotif';
 
 const fadeUp = {
   initial: { opacity: 0, y: 24 },
@@ -41,12 +42,18 @@ export default function HomePage() {
     <div className="min-h-screen bg-background font-sans text-foreground">
       <Header />
 
-      {/* HERO — unchanged */}
-      <section className="relative overflow-hidden border-b border-border bg-gradient-to-b from-secondary/60 to-background pb-20 pt-16 md:pt-24">
-        <div className="pointer-events-none absolute -top-32 right-0 h-96 w-96 rounded-full bg-brand/10 blur-3xl" />
-        <div className="mx-auto grid max-w-[90rem] gap-14 px-6 lg:grid-cols-[1.05fr,1fr] lg:items-center">
+      {/* HERO — signature motif: the "liquidity sweep" line is the one visual
+          native to this brand's own subject matter (price wicks above a
+          prior high, then reverses hard) so it replaces the generic glow
+          blob and quietly echoes the headline instead of decorating it. */}
+      <section className="relative overflow-hidden border-b border-border bg-gradient-to-b from-tint to-background pb-24 pt-14 md:pt-20">
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-48 opacity-[0.16] sm:h-64">
+          <MarketMotif className="h-full w-full" />
+        </div>
+
+        <div className="relative mx-auto grid max-w-[90rem] gap-14 px-6 lg:grid-cols-[1.05fr,1fr] lg:items-center">
           <motion.div {...fadeUp}>
-            <span className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-4 py-1.5 text-xs font-semibold uppercase tracking-wide text-brand">
+            <span className="inline-flex items-center gap-2 rounded-full border border-border bg-background/80 px-4 py-1.5 text-xs font-semibold uppercase tracking-wide text-brand">
               Institutional Trading Mentorship
             </span>
             <h1 className="mt-6 font-display text-4xl font-bold leading-[1.08] tracking-tight text-foreground sm:text-5xl lg:text-[3.4rem]">
@@ -54,26 +61,20 @@ export default function HomePage() {
               <br />
               <span className="mark-underline">actually</span> hunting your stop-loss.
             </h1>
-            <p className="mt-6 max-w-xl text-lg text-muted-foreground">
+            <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
               13 chapters. {totalClasses}+ classes. One complete system for reading liquidity, market structure,
               psychology, and risk the way professional desks do — built from zero to funded trader.
             </p>
-            <div className="mt-9 flex flex-col gap-4 sm:flex-row sm:items-center">
-              <Link
-                to="/checkout"
-                className="group inline-flex items-center justify-center gap-2 rounded-full bg-primary px-7 py-4 text-base font-semibold text-primary-foreground shadow-lg shadow-primary/25 transition-transform active:scale-[0.98] hover:brightness-110"
-              >
+            <div className="mt-9 flex flex-col gap-3.5 sm:flex-row sm:items-center">
+              <CtaButton to="/checkout" size="lg">
                 Join the Mentorship
                 <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
-              </Link>
-              <a
-                href="#curriculum"
-                className="inline-flex items-center justify-center rounded-full border border-border px-7 py-4 text-base font-semibold text-foreground transition-colors hover:bg-secondary"
-              >
+              </CtaButton>
+              <CtaButton href="#curriculum" variant="outline" size="lg">
                 See Full Curriculum
-              </a>
+              </CtaButton>
             </div>
-            <div className="mt-10 grid grid-cols-2 gap-6 sm:grid-cols-4">
+            <div className="mt-11 grid grid-cols-2 gap-x-6 gap-y-6 border-t border-border/70 pt-7 sm:grid-cols-4">
               {trustStats.map((s) => (
                 <div key={s.label}>
                   <p className="font-display text-2xl font-bold text-foreground">{s.value}</p>
@@ -103,19 +104,20 @@ export default function HomePage() {
       <GuaranteeSection />
       <FAQSection />
 
-      {/* Slim closing CTA banner */}
-      <section className="border-t border-border bg-navy py-16 text-navy-foreground">
-        <div className="mx-auto flex max-w-3xl flex-col items-center gap-5 px-6 text-center">
+      {/* Closing CTA — bookends the hero's chart motif so the page opens and
+          closes on the same signature line instead of a generic banner. */}
+      <section className="relative overflow-hidden border-t border-border bg-navy py-16 text-navy-foreground">
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-40 -scale-y-100 opacity-[0.14]">
+          <MarketMotif className="h-full w-full" />
+        </div>
+        <div className="relative mx-auto flex max-w-3xl flex-col items-center gap-5 px-6 text-center">
           <TrendingUp className="text-brand" size={32} />
           <h2 className="font-display text-2xl font-bold tracking-tight sm:text-3xl">
             Your next chart doesn't have to feel like noise.
           </h2>
-          <Link
-            to="/checkout"
-            className="inline-flex items-center gap-2 rounded-full bg-brand px-8 py-4 text-base font-bold text-brand-foreground transition-transform active:scale-[0.98] hover:brightness-110"
-          >
+          <CtaButton to="/checkout" variant="onDark" size="lg">
             Join Now <ArrowRight size={18} />
-          </Link>
+          </CtaButton>
         </div>
       </section>
 

@@ -12,9 +12,11 @@ export default function SectionHeading({ eyebrow, title, subtitle, align = 'cent
   const alignClass = align === 'center' ? 'mx-auto text-center' : 'text-left';
   return (
     <motion.div {...fadeUp} className={`max-w-2xl ${alignClass} ${className}`}>
-      <p className="text-sm font-semibold uppercase tracking-wide text-brand">{eyebrow}</p>
-      <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-foreground sm:text-4xl">{title}</h2>
-      {subtitle && <p className="mt-4 text-muted-foreground">{subtitle}</p>}
+      <p className="text-xs font-semibold uppercase tracking-[0.12em] text-brand">{eyebrow}</p>
+      <h2 className="mt-3 font-display text-3xl font-bold leading-tight tracking-tight text-foreground sm:text-4xl">
+        {title}
+      </h2>
+      {subtitle && <p className="mt-4 leading-relaxed text-muted-foreground">{subtitle}</p>}
     </motion.div>
   );
 }
