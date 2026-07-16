@@ -32,7 +32,7 @@ export const addons = [
     name: 'Setup Templates (Chart & Journal)',
     description: 'Plug-and-play chart templates plus the Notion trading journal used throughout the course.',
     longDescription:
-      "Skip the hour of rebuilding your charts from scratch. This add-on hands you the exact chart templates used for every setup taught across all 13 chapters, plus the same Notion trading journal referenced throughout the course — the one used to track the 30 demo trades required for the Guarantee.",
+      "Skip the hour of rebuilding your charts from scratch. This add-on hands you the exact chart templates used for every setup taught across all 5 chapters, plus the same Notion trading journal referenced throughout the course — the one used to track the 30 demo trades required for the Guarantee.",
     features: [
       'Pre-built chart templates for every setup covered in the curriculum',
       'The exact Notion trading journal used throughout the mentorship',
@@ -67,7 +67,7 @@ export const tiers = [
     shortName: 'Tier 1',
     tagline: 'The complete core system, on your own.',
     longDescription:
-      "Tier 1 hands you the complete 13-chapter ICT curriculum and nothing else — no live calls, no add-ons bundled in, no scaffolding. If you're self-directed and just want the full system without the extras, this is the leanest way in.",
+      "Tier 1 hands you the complete 5-chapter ICT curriculum and nothing else — no live calls, no add-ons bundled in, no scaffolding. If you're self-directed and just want the full system without the extras, this is the leanest way in.",
     idealFor: [
       'You want the full curriculum and can study independently',
       'You\'re comfortable troubleshooting your own charts between chat replies',

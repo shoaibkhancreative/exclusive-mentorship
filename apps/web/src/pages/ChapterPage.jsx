@@ -78,7 +78,7 @@ export default function ChapterPage() {
               <div>
                 <p className="font-display text-lg font-semibold">Ready for {chapter.title}?</p>
                 <p className="mt-1 text-sm text-navy-foreground/60">
-                  Enroll in any tier for lifetime access to this chapter and the full 13-chapter curriculum.
+                  Enroll in any tier for lifetime access to this chapter and the full 5-chapter curriculum.
                 </p>
               </div>
               <Link

@@ -8,7 +8,7 @@ import SectionHeading, { fadeUp } from './SectionHeading';
 // "Years Trading" and "Students Mentored" figures) is placeholder text
 // written only so this section isn't empty. Swap in the mentor's real name,
 // photo, story and actual figures before this goes live. "Chapters
-// Authored" is left as the one real, verifiable number (13, from the
+// Authored" is left as the one real, verifiable number (5, from the
 // curriculum itself).
 // ---------------------------------------------------------------------------
 const MENTOR_NAME = 'Tanvir Ahmed';
@@ -19,7 +19,7 @@ const MENTOR_BIO =
 const stats = [
   { icon: TrendingUp, label: 'Years Trading', value: '7+' },
   { icon: Users, label: 'Students Mentored', value: '500+' },
-  { icon: BookOpenCheck, label: 'Chapters Authored', value: '13' },
+  { icon: BookOpenCheck, label: 'Chapters Authored', value: '5' },
 ];
 
 export default function AboutMentor() {

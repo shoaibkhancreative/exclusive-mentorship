@@ -132,8 +132,8 @@ export default function ProgramPage() {
           <div className="mt-10 rounded-2xl border border-border bg-card p-8 shadow-soft">
             <p className="font-display text-lg font-semibold text-foreground">Every tier includes the full curriculum</p>
             <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
-              {chapters.length} chapters, {totalClasses}+ classes — from market basics to your own written trading
-              plan, no matter which tier you choose.
+              {chapters.length} chapters, {totalClasses}+ classes — from market basics and ICT concepts to macroeconomics,
+              psychology, risk, and prop-firm strategy, no matter which tier you choose.
             </p>
             <Link to="/curriculum" className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-brand hover:underline">
               See the full curriculum <ArrowRight size={14} />

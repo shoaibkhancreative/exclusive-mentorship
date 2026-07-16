@@ -19,7 +19,7 @@ export default function Footer() {
               Exclusive Mentorship
             </div>
             <p className="mt-3 text-sm leading-relaxed text-navy-foreground/60">
-              A 13-chapter institutional trading mentorship — market structure, liquidity, psychology, risk and prop-firm mastery, taught step by step.
+              A 5-chapter institutional trading mentorship — basic foundations, ICT concepts, macroeconomics, psychology, risk, and prop-firm mastery, taught step by step.
             </p>
           </div>
           <div className="flex flex-wrap gap-10 text-sm">

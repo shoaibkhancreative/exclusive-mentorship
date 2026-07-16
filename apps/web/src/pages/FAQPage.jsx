@@ -22,7 +22,7 @@ const faqCategories = [
       },
       {
         q: "What's the actual difference between the three tiers?",
-        a: 'All three tiers include the complete 13-chapter course. Tier 1 is the course on its own. Tier 2 adds Priority Support, Bi-Weekly Live Q&A, and all 3 add-ons free. Tier 3 adds three months of weekly 1-on-1 consultation and a personal portfolio/trade review on top of everything in Tier 2.',
+        a: 'All three tiers include the complete 5-chapter course. Tier 1 is the course on its own. Tier 2 adds Priority Support, Bi-Weekly Live Q&A, and all 3 add-ons free. Tier 3 adds three months of weekly 1-on-1 consultation and a personal portfolio/trade review on top of everything in Tier 2.',
       },
       {
         q: 'Do I need to sign up or create an account?',

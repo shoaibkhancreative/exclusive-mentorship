@@ -5,7 +5,7 @@ import Header from '@/components/site/Header';
 import Footer from '@/components/site/Footer';
 import VideoEmbed from '@/components/site/VideoEmbed';
 import CtaButton from '@/components/site/CtaButton';
-import { totalClasses } from '@/data/chapters';
+import { chapters, totalClasses } from '@/data/chapters';
 
 import WhoIsThisFor from '@/components/home/WhoIsThisFor';
 import WhyChooseUs from '@/components/home/WhyChooseUs';
@@ -25,7 +25,7 @@ const fadeUp = {
 };
 
 const trustStats = [
-  { label: 'Chapters', value: '13' },
+  { label: 'Chapters', value: `${chapters.length}` },
   { label: 'On-Demand Classes', value: `${totalClasses}+` },
   { label: 'Lifetime Access', value: '100%' },
   { label: 'Tier 2 Batch Cap', value: '50' },
@@ -68,7 +68,7 @@ export default function HomePage() {
               <span className="mark-underline">actually</span> hunting your stop-loss.
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
-              13 chapters. {totalClasses}+ classes. One complete system for reading liquidity, market structure,
+              {chapters.length} chapters. {totalClasses}+ classes. One complete system for reading liquidity, market structure,
               psychology, and risk the way professional desks do — built from zero to funded trader.
             </p>
             <div className="mt-9 flex flex-col gap-3.5 sm:flex-row sm:items-center">
