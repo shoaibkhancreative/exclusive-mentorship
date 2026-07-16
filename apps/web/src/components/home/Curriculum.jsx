@@ -54,6 +54,12 @@ export default function Curriculum() {
                         </li>
                       ))}
                     </ul>
+                    <Link
+                      to={`/chapter/${chapter.slug}`}
+                      className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-brand hover:underline"
+                    >
+                      View this chapter's page <ArrowRight size={14} />
+                    </Link>
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
