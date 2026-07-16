@@ -49,7 +49,7 @@ export default function Footer() {
                   to={`/addons/${addon.slug}`}
                   className="block text-navy-foreground/60 transition-colors hover:text-navy-foreground"
                 >
-                  {addon.name}
+                  {addon.shortName || addon.name}
                 </Link>
               ))}
             </div>

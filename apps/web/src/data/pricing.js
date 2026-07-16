@@ -15,6 +15,7 @@ export const addons = [
     id: 'insight',
     slug: 'daily-market-insight',
     name: 'Daily Market Insight',
+    shortName: 'Daily Insight',
     description: 'A daily read on session bias, key levels and liquidity draws before the candles print.',
     longDescription:
       "Every trading day, before the London and New York sessions open, you get a written breakdown of what the market is likely to do and why — session bias, the key levels in play, and where the day's liquidity draws are sitting. It's the daily habit of reading price the way the mentorship teaches, done for you as a reference while you build the skill yourself.",
@@ -30,6 +31,7 @@ export const addons = [
     id: 'templates',
     slug: 'setup-templates',
     name: 'Setup Templates (Chart & Journal)',
+    shortName: 'Setup Templates',
     description: 'Plug-and-play chart templates plus the Notion trading journal used throughout the course.',
     longDescription:
       "Skip the hour of rebuilding your charts from scratch. This add-on hands you the exact chart templates used for every setup taught across all 5 chapters, plus the same Notion trading journal referenced throughout the course — the one used to track the 30 demo trades required for the Guarantee.",
@@ -45,6 +47,7 @@ export const addons = [
     id: 'archive',
     slug: 'live-trade-breakdown-archive',
     name: 'Live Trade Breakdown Archive',
+    shortName: 'Trade Archive',
     description: 'The full back-catalogue of recorded live trade breakdowns, sorted by setup type.',
     longDescription:
       "Real trades, broken down after the fact — why the setup was taken, where the stop and target sat, and what actually happened. This add-on unlocks the entire back-catalogue of these recorded breakdowns, organized by setup type so you can study one pattern at a time instead of scrolling through everything.",
