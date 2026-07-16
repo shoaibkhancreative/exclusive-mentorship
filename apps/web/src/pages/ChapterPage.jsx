@@ -20,7 +20,7 @@ export default function ChapterPage() {
 
       <section className="border-b border-border bg-secondary/40 py-14">
         <div className="mx-auto max-w-[72rem] px-6">
-          <Link to="/#curriculum" className="inline-flex items-center gap-1.5 text-sm font-medium text-muted-foreground hover:text-foreground">
+          <Link to="/curriculum" className="inline-flex items-center gap-1.5 text-sm font-medium text-muted-foreground hover:text-foreground">
             <ArrowLeft size={15} /> Back to full curriculum
           </Link>
           <div className="mt-6 grid gap-10 lg:grid-cols-[1.1fr,1fr] lg:items-center">

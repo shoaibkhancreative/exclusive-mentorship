@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { ArrowRight } from 'lucide-react';
 import SectionHeading, { fadeUp } from './SectionHeading';
 import {
   Accordion,
@@ -62,7 +63,13 @@ export default function FAQSection() {
               </AccordionItem>
             ))}
           </Accordion>
-          <p className="mt-6 text-center text-xs text-muted-foreground">
+          <div className="mt-8 text-center">
+            <Link to="/faq" className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand hover:underline">
+              View All FAQs <ArrowRight size={14} />
+            </Link>
+          </div>
+
+          <p className="mt-4 text-center text-xs text-muted-foreground">
             More questions on terms, payment, or refunds? See our{' '}
             <Link to="/terms" className="font-medium text-brand hover:underline">Terms &amp; Conditions</Link> or{' '}
             <Link to="/disclaimer" className="font-medium text-brand hover:underline">Disclaimer</Link>.

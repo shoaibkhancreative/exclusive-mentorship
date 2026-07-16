@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight, Check } from 'lucide-react';
 import { chapters, totalClasses } from '@/data/chapters';
@@ -60,7 +61,13 @@ export default function Curriculum() {
           ))}
         </div>
 
-        <motion.div {...fadeUp} className="mt-10 text-center">
+        <motion.div {...fadeUp} className="mt-10 flex flex-col items-center justify-center gap-3.5 sm:flex-row">
+          <Link
+            to="/curriculum"
+            className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand hover:underline"
+          >
+            View Full Curriculum Page <ArrowRight size={14} />
+          </Link>
           <CtaButton href="#offer" variant="outline" size="sm">
             See the Tiers &amp; Pricing <ArrowRight size={15} />
           </CtaButton>

@@ -1,6 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { TrendingUp } from 'lucide-react';
+import { tiers, addons } from '@/data/pricing';
+
+// TODO: replace with your real support inbox before this goes live.
+const SUPPORT_EMAIL = 'support@exclusivementorship.com';
 
 export default function Footer() {
   return (
@@ -20,15 +24,34 @@ export default function Footer() {
           </div>
           <div className="flex flex-wrap gap-10 text-sm">
             <div className="space-y-2.5">
-              <p className="font-semibold text-navy-foreground/90">Program</p>
-              <a href="/#curriculum" className="block text-navy-foreground/60 transition-colors hover:text-navy-foreground">Curriculum</a>
-              <a href="/#offer" className="block text-navy-foreground/60 transition-colors hover:text-navy-foreground">Pricing</a>
-              <a href="/#faq" className="block text-navy-foreground/60 transition-colors hover:text-navy-foreground">FAQ</a>
+              <p className="font-semibold text-navy-foreground/90">Programs</p>
+              {tiers.map((tier) => (
+                <Link
+                  key={tier.id}
+                  to={`/programs/${tier.slug}`}
+                  className="block text-navy-foreground/60 transition-colors hover:text-navy-foreground"
+                >
+                  {tier.name}
+                </Link>
+              ))}
             </div>
             <div className="space-y-2.5">
               <p className="font-semibold text-navy-foreground/90">Support</p>
-              <a href="https://t.me/exclusive_mentorship_bot" target="_blank" rel="noreferrer" className="block text-navy-foreground/60 transition-colors hover:text-navy-foreground">Telegram Support</a>
-              <Link to="/checkout" className="block text-navy-foreground/60 transition-colors hover:text-navy-foreground">Enroll Now</Link>
+              <a href="https://t.me/exclusive_mentorship_bot" target="_blank" rel="noreferrer" className="block text-navy-foreground/60 transition-colors hover:text-navy-foreground">Telegram</a>
+              <a href={`mailto:${SUPPORT_EMAIL}`} className="block text-navy-foreground/60 transition-colors hover:text-navy-foreground">Email</a>
+              <Link to="/faq" className="block text-navy-foreground/60 transition-colors hover:text-navy-foreground">FAQ</Link>
+            </div>
+            <div className="space-y-2.5">
+              <p className="font-semibold text-navy-foreground/90">Add-ons</p>
+              {addons.map((addon) => (
+                <Link
+                  key={addon.id}
+                  to={`/addons/${addon.slug}`}
+                  className="block text-navy-foreground/60 transition-colors hover:text-navy-foreground"
+                >
+                  {addon.name}
+                </Link>
+              ))}
             </div>
             <div className="space-y-2.5">
               <p className="font-semibold text-navy-foreground/90">Legal</p>

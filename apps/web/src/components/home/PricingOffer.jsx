@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Check, X, Sparkles } from 'lucide-react';
 import { tiers, addons, formatBDT, formatUSD, ADDONS_VALUE_BDT, bdtFromUSD } from '@/data/pricing';
 import SectionHeading, { fadeUp } from './SectionHeading';
@@ -93,6 +94,13 @@ function TierCard({ tier, index }) {
         )}
       </div>
 
+      <Link
+        to={`/programs/${tier.slug}`}
+        className={`mt-4 block text-center text-xs font-semibold hover:underline ${isTier2 ? 'text-navy-foreground/70' : 'text-brand'}`}
+      >
+        Full tier details →
+      </Link>
+
       {tier.splitPayment && (
         <p className={`mt-3 text-center text-xs ${mutedText}`}>
           Or split it: {formatUSD(tier.splitPayment.installment1USD)} now (≈{formatBDT(bdtFromUSD(tier.splitPayment.installment1USD))}) +{' '}
@@ -138,9 +146,14 @@ export default function PricingOffer() {
                   <span className="font-display text-lg font-bold text-foreground">{formatBDT(a.priceBDT)}</span>
                   <span className="text-xs text-muted-foreground">≈{formatUSD(a.priceUSD)}</span>
                 </p>
-                <CtaButton to={`/checkout?addon=${a.id}`} variant="ghost" size="sm" className="mt-3 self-start text-xs">
-                  Buy separately
-                </CtaButton>
+                <div className="mt-3 flex items-center gap-4">
+                  <Link to={`/addons/${a.slug}`} className="text-xs font-semibold text-brand hover:underline">
+                    Learn more
+                  </Link>
+                  <CtaButton to={`/checkout?addon=${a.id}`} variant="ghost" size="sm" className="text-xs">
+                    Buy separately
+                  </CtaButton>
+                </div>
               </div>
             ))}
           </div>

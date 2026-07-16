@@ -91,10 +91,10 @@ export default function HomePage() {
           </motion.div>
 
           <motion.div {...fadeUp} transition={{ duration: 0.5, ease: 'easeOut', delay: 0.1 }} className="relative">
-            <VideoEmbed title="Mentorship Introduction" videoId={SAMPLE_INTRO_VIDEO_ID} />
-            <p className="mt-3 text-center text-sm text-muted-foreground">
+            <p className="mb-3 text-center text-sm text-muted-foreground">
               Watch the 2-minute program overview before you enroll.
             </p>
+            <VideoEmbed title="Mentorship Introduction" videoId={SAMPLE_INTRO_VIDEO_ID} />
             {/* SAMPLE rating — replace once real reviews exist (see Testimonials). */}
             <div className="absolute -bottom-2 -left-4 hidden items-center gap-3 rounded-2xl border border-border bg-card px-4 py-3 shadow-softLg sm:flex">
               <span className="flex h-9 w-9 items-center justify-center rounded-full bg-gold/15 text-gold">
@@ -119,39 +119,6 @@ export default function HomePage() {
       <PricingOffer />
       <GuaranteeSection />
       <FAQSection />
-
-      {/* Closing CTA — an asymmetric, typographic close instead of a centered
-          icon-and-banner template. */}
-      <section className="border-t border-border bg-navy py-20 text-navy-foreground md:py-24">
-        <div className="mx-auto max-w-[72rem] px-6">
-          <div className="grid gap-10 md:grid-cols-[1.3fr,1fr] md:items-center">
-            <motion.div {...fadeUp}>
-              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-brand">Enrollment Open</p>
-              <h2 className="mt-3 font-display text-3xl font-bold leading-tight tracking-tight sm:text-4xl">
-                Stop trading on guesses.
-                <br />
-                Start trading on structure.
-              </h2>
-              <p className="mt-4 max-w-md leading-relaxed text-navy-foreground/60">
-                {totalClasses}+ classes across 13 chapters, already recorded and waiting — built to take you from
-                your first chart to a funded account.
-              </p>
-            </motion.div>
-            <motion.div
-              {...fadeUp}
-              transition={{ duration: 0.5, ease: 'easeOut', delay: 0.1 }}
-              className="flex flex-col items-start gap-3 md:items-end"
-            >
-              <CtaButton to="/checkout" variant="onDark" size="lg">
-                Join the Mentorship <ArrowRight size={18} />
-              </CtaButton>
-              <p className="text-xs text-navy-foreground/45 md:text-right">
-                Backed by the ICT Mastery Accountability Protocol
-              </p>
-            </motion.div>
-          </div>
-        </div>
-      </section>
 
       <Footer />
     </div>

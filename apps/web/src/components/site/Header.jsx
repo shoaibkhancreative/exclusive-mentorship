@@ -14,9 +14,9 @@ export default function Header() {
           Exclusive Mentorship
         </Link>
         <nav className="hidden items-center gap-8 text-sm font-medium text-muted-foreground md:flex">
-          <a href="/#curriculum" className="transition-colors hover:text-foreground">Curriculum</a>
+          <Link to="/curriculum" className="transition-colors hover:text-foreground">Curriculum</Link>
           <a href="/#offer" className="transition-colors hover:text-foreground">Pricing</a>
-          <a href="/#faq" className="transition-colors hover:text-foreground">FAQ</a>
+          <Link to="/faq" className="transition-colors hover:text-foreground">FAQ</Link>
         </nav>
         <CtaButton to="/checkout" size="sm">
           Join Now

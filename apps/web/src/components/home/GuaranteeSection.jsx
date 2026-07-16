@@ -1,8 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ShieldCheck, FileCheck2, NotebookPen, LineChart, ArrowRight } from 'lucide-react';
+import { ShieldCheck, FileCheck2, NotebookPen, LineChart } from 'lucide-react';
 import SectionHeading, { fadeUp } from './SectionHeading';
-import CtaButton from '@/components/site/CtaButton';
 
 const requirements = [
   {
@@ -60,12 +59,6 @@ export default function GuaranteeSection() {
               Breakdown Session to diagnose exactly what's going wrong — not a refund form, a real intervention.
             </p>
           </div>
-        </motion.div>
-
-        <motion.div {...fadeUp} className="mt-8 flex items-center justify-center">
-          <CtaButton href="#faq" variant="ghost" size="sm">
-            Read the full terms in our FAQ <ArrowRight size={14} />
-          </CtaButton>
         </motion.div>
       </div>
     </section>

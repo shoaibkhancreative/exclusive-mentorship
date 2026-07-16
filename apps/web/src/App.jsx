@@ -3,6 +3,10 @@ import { Route, Routes, BrowserRouter as Router } from 'react-router-dom';
 import ScrollToTop from './components/ScrollToTop';
 import HomePage from './pages/HomePage';
 import ChapterPage from './pages/ChapterPage';
+import ProgramPage from './pages/ProgramPage';
+import AddonPage from './pages/AddonPage';
+import CurriculumPage from './pages/CurriculumPage';
+import FAQPage from './pages/FAQPage';
 import CheckoutPage from './pages/CheckoutPage';
 import TermsPage from './pages/TermsPage';
 import PrivacyPage from './pages/PrivacyPage';
@@ -16,6 +20,10 @@ function App() {
             <Routes>
                 <Route path="/" element={<HomePage />} />
                 <Route path="/chapter/:slug" element={<ChapterPage />} />
+                <Route path="/programs/:slug" element={<ProgramPage />} />
+                <Route path="/addons/:slug" element={<AddonPage />} />
+                <Route path="/curriculum" element={<CurriculumPage />} />
+                <Route path="/faq" element={<FAQPage />} />
                 <Route path="/checkout" element={<CheckoutPage />} />
                 <Route path="/terms" element={<TermsPage />} />
                 <Route path="/privacy" element={<PrivacyPage />} />
