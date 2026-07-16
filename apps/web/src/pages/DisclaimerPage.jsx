@@ -1,79 +1,90 @@
 import React from 'react';
-import LegalLayout, { LegalH2, LegalP, LegalUl } from '@/components/site/LegalLayout';
+import { Link } from 'react-router-dom';
+import LegalLayout, { LegalH2, LegalP, LegalUl, LegalNote } from '@/components/site/LegalLayout';
 
 export default function DisclaimerPage() {
   return (
-    <LegalLayout eyebrow="Legal" title="Disclaimer" updated="14 July 2026">
+    <LegalLayout eyebrow="Legal" title="Disclaimer" updated="সর্বশেষ হালনাগাদ: ১৬ জুলাই, ২০২৬">
       <LegalP>
-        Please read this Disclaimer carefully before purchasing or using any part of the Exclusive Mentorship
-        Program.
+        Exclusive Mentorship Program-এর যেকোনো অংশ Purchase বা ব্যবহার করার আগে অনুগ্রহ করে এই Disclaimer
+        সম্পূর্ণভাবে মনোযোগ সহকারে পড়ুন।
       </LegalP>
 
-      <LegalH2>1. Not Financial Advice</LegalH2>
+      <LegalH2>1. আর্থিক পরামর্শ নয়</LegalH2>
       <LegalP>
-        Everything in this Program — the recorded course, add-ons, Live Q&A, and any 1-on-1 sessions — is educational
-        content only. It is not, and should not be treated as, personalized financial, investment, or trading advice.
-        We are not registered financial advisors, and nothing here is a recommendation to buy, sell, or hold any
-        financial instrument.
+        এই Program-এর সবকিছু — রেকর্ড করা কোর্স, Add-on, Live Q&A এবং যেকোনো 1-on-1 Session — শুধুমাত্র
+        শিক্ষামূলক Content। এটিকে ব্যক্তিগত আর্থিক, বিনিয়োগ বা Trading সংক্রান্ত পরামর্শ হিসেবে গণ্য করা উচিত
+        নয়, এবং তা কখনোই সেভাবে বিবেচিত হবে না। আমরা কোনো Registered Financial Advisor নই, এবং এখানে থাকা
+        কোনো Content-ই কোনো Financial Instrument কেনা, বিক্রি বা ধরে রাখার সুপারিশ নয়।
       </LegalP>
 
-      <LegalH2>2. Trading Involves Substantial Risk</LegalH2>
+      <LegalH2>2. Trading-এ যথেষ্ট ঝুঁকি জড়িত</LegalH2>
       <LegalP>
-        Trading forex, crypto, commodities, and other leveraged instruments carries a high level of risk and may not
-        be suitable for everyone. It is possible to lose some, all, or — with leverage — more than your original
-        capital. You should only trade with money you can afford to lose, and should independently assess your own
-        financial situation before doing so.
+        Forex, Crypto, Commodities এবং অন্যান্য Leveraged Instrument-এ Trading করা যথেষ্ট ঝুঁকিপূর্ণ এবং তা
+        সবার জন্য উপযুক্ত নয়। আপনার মূল Capital-এর কিছু অংশ, সম্পূর্ণটাই, অথবা Leverage-এর কারণে তার চেয়েও
+        বেশি হারানোর সম্ভাবনা থাকে। যে Money হারালে আপনার কোনো সমস্যা হবে না, শুধুমাত্র সেই পরিমাণ Money দিয়েই
+        Trading করা উচিত, এবং Trading শুরুর আগে নিজের আর্থিক অবস্থা স্বাধীনভাবে যাচাই করে নেওয়া উচিত।
       </LegalP>
 
-      <LegalH2>3. No Guaranteed Results or Income</LegalH2>
+      <LegalH2>3. কোনো নির্দিষ্ট ফলাফল বা আয়ের গ্যারান্টি নেই</LegalH2>
       <LegalP>
-        We do not promise, guarantee, or imply that you will achieve any particular level of profit, win rate, or
-        income by completing this Program, nor that you will pass any prop-firm challenge. Trading outcomes depend on
-        many factors outside our control, including your own discipline, risk management, and market conditions.
+        এই Program সম্পূর্ণ করলে আপনি নির্দিষ্ট কোনো পরিমাণ Profit, Win Rate বা Income অর্জন করবেন, কিংবা
+        কোনো Prop-Firm Challenge Pass করবেন — এমন কোনো প্রতিশ্রুতি, নিশ্চয়তা বা ইঙ্গিত আমরা দিই না। Trading-এর
+        ফলাফল অনেকগুলো বিষয়ের ওপর নির্ভর করে যা আমাদের নিয়ন্ত্রণের বাইরে — যেমন আপনার নিজের Discipline, Risk
+        Management এবং তৎকালীন Market Condition।
       </LegalP>
 
-      <LegalH2>4. Past Performance</LegalH2>
+      <LegalH2>4. অতীত পারফরম্যান্স</LegalH2>
       <LegalP>
-        Any historical chart examples, backtests, or past trade breakdowns shown in the course or its add-ons are for
-        illustrative and educational purposes only. Past performance — ours or anyone else's — is not indicative of
-        future results.
+        কোর্স বা এর Add-on-এ দেখানো যেকোনো Historical Chart Example, Backtest বা পূর্বের Trade Breakdown
+        শুধুমাত্র উদাহরণ ও শিক্ষামূলক উদ্দেশ্যে দেখানো হয়। অতীতের পারফরম্যান্স — আমাদের হোক বা অন্য কারো —
+        ভবিষ্যৎ ফলাফলের কোনো নিশ্চয়তা দেয় না।
       </LegalP>
 
-      <LegalH2>5. Demo Account Performance</LegalH2>
+      <LegalH2>5. Demo Account-এর পারফরম্যান্স</LegalH2>
       <LegalP>
-        The ICT Mastery Accountability Protocol asks you to execute trades on a demo account as part of its
-        requirements. Demo-account performance is a useful learning signal, but it does not replicate live-market
-        conditions such as slippage, emotion, or liquidity, and does not guarantee equivalent results on a live
-        account.
+        ICT Mastery Accountability Protocol-এর একটি শর্ত হলো Demo Account-এ Trade সম্পন্ন করা। Demo
+        Account-এর পারফরম্যান্স শেখার ক্ষেত্রে একটি কার্যকর Signal হলেও, তা Live Market-এর প্রকৃত পরিস্থিতি —
+        যেমন Slippage, মানসিক চাপ, বা Liquidity — পুরোপুরি প্রতিফলিত করে না, এবং Live Account-এ একই ফলাফলের
+        নিশ্চয়তা দেয় না।
       </LegalP>
 
-      <LegalH2>6. The Accountability Protocol Is Not a Profit Guarantee</LegalH2>
+      <LegalH2>6. Accountability Protocol কোনো Profit-এর গ্যারান্টি নয়</LegalH2>
       <LegalP>
-        The ICT Mastery Accountability Protocol (see our Terms and the homepage Guarantee section) provides a
-        diagnostic review and additional mentor support if you meet its requirements and are still not seeing
-        results. It is a commitment to additional support, not a promise of eventual profitability.
+        ICT Mastery Accountability Protocol (বিস্তারিত আমাদের{' '}
+        <Link to="/terms" className="font-medium text-brand hover:underline">Terms & Conditions</Link> এবং
+        Homepage-এর Guarantee Section-এ) এর শর্ত পূরণ করার পরও যদি আপনি ফলাফল না পান, তাহলে এটি একটি
+        Diagnostic Review এবং মেন্টরের অতিরিক্ত সহায়তা প্রদান করে। এটি অতিরিক্ত সহায়তার একটি প্রতিশ্রুতি মাত্র,
+        ভবিষ্যতে লাভবান হওয়ার কোনো নিশ্চয়তা নয়।
       </LegalP>
 
-      <LegalH2>7. Testimonials &amp; Reviews</LegalH2>
+      <LegalH2>7. Testimonial ও Review</LegalH2>
       <LegalP>
-        Any student testimonials or ratings shown reflect individual experiences and opinions. They are not typical,
-        are not a guarantee of your own results, and should not be relied upon as a predictor of what you will
-        personally achieve.
+        প্রদর্শিত যেকোনো Student Testimonial বা Rating তাদের নিজস্ব ব্যক্তিগত অভিজ্ঞতা ও মতামতের প্রতিফলন
+        মাত্র। এগুলো সাধারণ বা প্রত্যাশিত ফলাফল নয়, আপনার নিজের ফলাফলের কোনো নিশ্চয়তা নয়, এবং আপনি
+        ব্যক্তিগতভাবে কী অর্জন করবেন তার পূর্বাভাস হিসেবে এর ওপর নির্ভর করা উচিত নয়।
       </LegalP>
 
-      <LegalH2>8. Third-Party Platforms</LegalH2>
+      <LegalH2>8. Third-Party Platform সমূহ</LegalH2>
       <LegalUl
         items={[
-          'We are not responsible for the availability, performance, or policies of third-party platforms used to run this Program, including Telegram, Bkash, Nagad, Binance, and Google Forms.',
-          'We are not affiliated with, and do not receive compensation from, any specific broker or prop-trading firm mentioned in the course.',
+          'এই Program পরিচালনার জন্য ব্যবহৃত Third-Party Platform — যেমন Telegram, Bkash, Nagad এবং Binance — এর প্রাপ্যতা, পারফরম্যান্স বা নীতির জন্য আমরা দায়ী নই।',
+          'কোর্সে উল্লেখিত কোনো নির্দিষ্ট Broker বা Prop-Trading Firm-এর সাথে আমাদের কোনো Affiliation নেই, এবং তাদের কাছ থেকে আমরা কোনো Compensation গ্রহণ করি না।',
         ]}
       />
 
-      <LegalH2>9. Your Responsibility</LegalH2>
+      <LegalH2>9. আপনার দায়িত্ব</LegalH2>
       <LegalP>
-        You are solely responsible for any trading decisions you make, whether during or after this Program, and for
-        independently verifying any information before acting on it.
+        এই Program চলাকালীন বা তার পরে আপনি যেকোনো Trading সিদ্ধান্ত নিজে নেন, তার জন্য একমাত্র আপনি নিজেই
+        দায়ী। পাশাপাশি, কোনো তথ্যের ভিত্তিতে পদক্ষেপ নেওয়ার আগে তা স্বাধীনভাবে যাচাই করে নেওয়ার দায়িত্বও
+        আপনার নিজের।
       </LegalP>
+
+      <LegalNote>
+        এই Page-টি একটি সাধারণ Template এবং আইনি পরামর্শের বিকল্প নয়। নির্ভরযোগ্যভাবে ব্যবহারের আগে
+        বাংলাদেশের Consumer-Protection ও Financial-Services সংক্রান্ত আইনে অভিজ্ঞ কোনো আইনজীবীর মাধ্যমে এটি
+        যাচাই করিয়ে নেওয়ার পরামর্শ দেওয়া হচ্ছে।
+      </LegalNote>
     </LegalLayout>
   );
 }

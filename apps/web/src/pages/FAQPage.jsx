@@ -14,79 +14,91 @@ const fadeUp = {
 
 const faqCategories = [
   {
-    category: 'Getting Started',
+    category: 'শুরু করার আগে',
     items: [
       {
-        q: 'Do I need any trading experience to start?',
-        a: 'None at all. Chapter 1 assumes zero background and takes you step by step to an institutional-level vocabulary before anything advanced begins.',
+        q: 'শুরু করতে কি কোনো Trading অভিজ্ঞতা লাগবে?',
+        a: 'একদমই না। Chapter 1 কোনো পূর্ব-অভিজ্ঞতা ছাড়াই শুরু হয় এবং ধাপে ধাপে আপনাকে institutional-level vocabulary পর্যন্ত নিয়ে যায়, তারপরই advanced বিষয়গুলো শুরু হয়। পুরো ৫টি Chapter এমনভাবে সাজানো, যাতে প্রতিটি ধাপ আগের ধাপের ওপর ভিত্তি করে তৈরি হয় — তাই সম্পূর্ণ নতুন হলেও কোনো সমস্যা নেই।',
       },
       {
-        q: "What's the actual difference between the three tiers?",
-        a: 'All three tiers include the complete 5-chapter course. Tier 1 is the course on its own. Tier 2 adds Priority Support, Bi-Weekly Live Q&A, and all 3 add-ons free. Tier 3 adds three months of weekly 1-on-1 consultation and a personal portfolio/trade review on top of everything in Tier 2.',
+        q: 'তিনটি Tier-এর মধ্যে প্রকৃত পার্থক্য কী?',
+        a: 'তিনটি Tier-এই সম্পূর্ণ ৫-Chapter কোর্স অন্তর্ভুক্ত থাকে, পার্থক্য তৈরি হয় এর বাইরের সুবিধাগুলোতে। Tier 1-এ শুধু মূল কোর্সটিই পাবেন। Tier 2-তে মূল কোর্সের সাথে যুক্ত হয় Priority Support, Bi-Weekly Live Q&A, এবং ৩টি Add-on সম্পূর্ণ ফ্রি। আর Tier 3-তে Tier 2-এর সবকিছুর পাশাপাশি টানা ৩ মাসের Weekly 1-on-1 Consultation এবং একটি Personal Portfolio ও Trade Review যুক্ত হয়।',
       },
       {
-        q: 'Do I need to sign up or create an account?',
-        a: 'No. There is no separate login. Enrollment, verification, and delivery of your course access all happen through Telegram.',
+        q: 'আলাদা করে কোনো Account বা Sign Up করতে হবে কি?',
+        a: 'না, আলাদা কোনো Account বা Login তৈরির প্রয়োজন নেই। Enrollment, Payment Verification এবং কোর্স Access — সবকিছুই সম্পূর্ণভাবে Telegram-এর মাধ্যমে সম্পন্ন হয়। নতুন কোনো Password মনে রাখার ঝামেলা নেই — আপনার Telegram Account-ই যথেষ্ট।',
       },
     ],
   },
   {
-    category: 'Pricing & Payment',
+    category: 'মূল্য ও পেমেন্ট',
     items: [
       {
-        q: 'How do I pay, and is it safe?',
-        a: 'Bkash, Nagad, and Binance UID (USDT) are all accepted. After paying, you send your screenshot as proof directly through the Telegram bot, and the team personally verifies every single payment before granting access.',
+        q: 'Payment কীভাবে করবো, এবং এটি কি নিরাপদ?',
+        a: 'Payment-এর জন্য Bkash, Nagad এবং Binance UID (USDT) — এই তিনটি মাধ্যমই গ্রহণযোগ্য। Payment করার পর সেই Payment-এর Screenshot Telegram Bot-এর মাধ্যমে সরাসরি পাঠাতে হবে প্রমাণ হিসেবে। এরপর আমাদের Team ব্যক্তিগতভাবে প্রতিটি Payment যাচাই করে, তারপরই Access দেওয়া হয় — তাই প্রতিটি Enrollment ম্যানুয়ালি নিশ্চিত করা হয়, যা পুরো প্রক্রিয়াটিকে নিরাপদ রাখে।',
       },
       {
-        q: 'How does the Tier 2 split payment work?',
-        a: "Pay the first installment to unlock Part 1 of the video modules. Pay the second installment within 30 days to unlock Part 2, all 3 add-ons, and Live Q&A access. Splitting costs slightly more in total than paying once. If the second installment isn't paid within that window, Part 1 access is paused until it is.",
+        q: 'Tier 2-এর Split Payment কীভাবে কাজ করে?',
+        a: 'পুরো Payment একবারে না করে দুই ভাগে (Installment) দেওয়া যায়। প্রথম Installment পরিশোধ করলে Video Module-এর Part 1 (প্রায় অর্ধেক) Unlock হয়ে যায়। এরপর ৩০ দিনের মধ্যে দ্বিতীয় Installment পরিশোধ করলে বাকি Part 2, ৩টি Add-on এবং Live Q&A অ্যাক্সেস সহ সবকিছু Unlock হয়। মনে রাখবেন, Split করে Payment করলে মোট খরচ একবারে পরিশোধের চেয়ে সামান্য বেশি পড়ে। আর ৩০ দিনের মধ্যে দ্বিতীয় Installment পরিশোধ না করলে, তা সম্পন্ন না হওয়া পর্যন্ত Part 1-এর Access সাময়িকভাবে বন্ধ থাকবে।',
       },
       {
-        q: 'Can I buy an add-on without enrolling in a tier?',
-        a: "Yes. Each add-on can be purchased on its own from its add-on page, independent of any tier — though it comes free automatically if you're on Tier 2 or Tier 3.",
+        q: 'কোনো Tier না কিনে শুধু একটি Add-on কেনা যাবে কি?',
+        a: 'হ্যাঁ। প্রতিটি Add-on তার নিজস্ব Add-on Page থেকে সম্পূর্ণ আলাদাভাবে, কোনো Tier না কিনেও কেনা সম্ভব। তবে আপনি যদি Tier 2 বা Tier 3-তে থাকেন, তাহলে ৩টি Add-onই স্বয়ংক্রিয়ভাবে বিনামূল্যে পেয়ে যাবেন।',
+      },
+      {
+        q: 'Website-এ দেখানো দাম আর Telegram Bot-এ চাওয়া Amount কি সবসময় এক থাকে?',
+        a: 'সাধারণত হ্যাঁ, তবে চূড়ান্ত ও সঠিক Amount সবসময় নির্ধারণ করে আমাদের Telegram Bot। Website-এ দেখানো মূল্য মূলত আপনার সুবিধার জন্য একটি সহজবোধ্য ধারণা মাত্র। তাই Checkout সম্পন্ন করার সময় Bot যে Amount নিশ্চিত করবে, সেটিকেই চূড়ান্ত ও সঠিক হিসেবে বিবেচনা করুন।',
       },
     ],
   },
   {
-    category: 'Tiers & Add-ons',
+    category: 'Tier এবং Add-on',
     items: [
       {
-        q: 'Are the add-ons really free with Tier 2 and Tier 3?',
-        a: 'Yes — all 3 add-ons, worth ৳3,897 combined, are included at no extra cost with Tier 2 and Tier 3. On Tier 1, or on their own, each add-on is purchased individually.',
+        q: 'Tier 2 এবং Tier 3-এর সাথে কি সত্যিই সব Add-on ফ্রি?',
+        a: 'হ্যাঁ, সম্পূর্ণ সত্যি। একসাথে ৳3,897 মূল্যের ৩টি Add-on-ই Tier 2 এবং Tier 3-এর সাথে সম্পূর্ণ বিনামূল্যে অন্তর্ভুক্ত থাকে, কোনো অতিরিক্ত খরচ ছাড়াই। তবে আপনি যদি Tier 1 নেন, বা শুধু Add-on-ই কিনতে চান, সেক্ষেত্রে প্রতিটি Add-on আলাদাভাবে কিনতে হবে।',
       },
       {
-        q: "What's actually in each add-on?",
-        a: 'Daily Market Insight is a daily written session-bias read; Setup Templates gives you the course chart templates and trading journal; the Live Trade Breakdown Archive is the full back-catalogue of recorded trade breakdowns. Each add-on page has the full breakdown.',
+        q: 'প্রতিটি Add-on-এ আসলে কী থাকে?',
+        a: 'Daily Market Insight হলো প্রতিদিনের একটি লিখিত Session Bias Analysis, যা London ও New York Session শুরুর আগেই পাঠানো হয়। Setup Templates Add-on-এ পাবেন কোর্সে ব্যবহৃত Chart Template এবং Trading Journal। আর Live Trade Breakdown Archive Add-on-এ থাকছে আগের সব রেকর্ড করা Live Trade Breakdown-এর সম্পূর্ণ Archive, যা Setup অনুযায়ী সাজানো। প্রতিটি Add-on-এর সম্পূর্ণ বিস্তারিত বিবরণ সংশ্লিষ্ট Add-on Page-এ পাওয়া যাবে।',
       },
       {
-        q: 'How do I get into the Tier 3 Inner Circle?',
-        a: "Tier 3 goes through the same checkout flow as the other tiers, but seats are strictly capped at 5 students a month to keep it genuinely 1-on-1. If the current month is full, the tier shows as full on the site until the next batch opens.",
+        q: 'Tier 3 — The Inner Circle-এ কীভাবে যোগ দেব?',
+        a: 'Tier 3-এ যোগ দিতে অন্যান্য Tier-এর মতোই একই Checkout Process অনুসরণ করতে হয়, আলাদা কোনো Application Form পূরণের প্রয়োজন নেই। তবে সত্যিকার অর্থে 1-on-1 সহায়তা নিশ্চিত করতে প্রতি মাসে সিট সংখ্যা কঠোরভাবে মাত্র ৫ জনে সীমাবদ্ধ রাখা হয়। চলতি মাসের সিট পূর্ণ হয়ে গেলে Website-এ Tier 3 "Full" দেখাবে এবং পরবর্তী Batch শুরু না হওয়া পর্যন্ত নতুন Enrollment বন্ধ থাকবে।',
       },
     ],
   },
   {
-    category: 'Guarantee & Refunds',
+    category: 'গ্যারান্টি ও রিফান্ড',
     items: [
       {
-        q: 'Is there a refund policy?',
-        a: "All enrollments are final sale. In place of a cash refund, every tier is backed by the ICT Mastery Accountability Protocol — complete the course, keep the journal, and log 30 demo trades, and the mentor personally steps in if it still isn't clicking.",
+        q: 'কোনো Refund নীতি আছে কি?',
+        a: 'সব ধরনের Enrollment চূড়ান্ত (Final Sale) — অর্থাৎ কোনো নগদ Refund দেওয়া হয় না। তবে এর পরিবর্তে প্রতিটি Tier-এর সাথে থাকছে আমাদের ICT Mastery Accountability Protocol। আপনি যদি সম্পূর্ণ কোর্স শেষ করেন, নিয়মিত Journal Maintain করেন এবং Demo Account-এ ৩০টি Trade সম্পন্ন করেন, তারপরও যদি ফলাফল না আসে, তাহলে মেন্টর ব্যক্তিগতভাবে আপনার পাশে দাঁড়াবেন।',
       },
       {
-        q: 'What is the ICT Mastery Accountability Protocol, exactly?',
-        a: "Finish 100% of the course videos, keep the provided trading journal consistently, and execute 30 trades on a demo account. Meet all three and still not seeing it click? The team personally monitors your live trading for a full week and runs a free 1-on-1 Live Breakdown Session to diagnose what's going wrong.",
+        q: 'ICT Mastery Accountability Protocol আসলে কী?',
+        a: 'এই Protocol-এর শর্ত তিনটি — কোর্সের ১০০% Video সম্পূর্ণ দেখা, প্রদত্ত Trading Journal নিয়মিতভাবে Maintain করা, এবং Demo Account-এ ৩০টি Trade বাস্তবে সম্পন্ন করা। এই তিনটি শর্তই সঠিকভাবে পূরণ করার পরও যদি ফলাফলে কোনো উন্নতি না দেখেন, তাহলে আমাদের Team সরাসরি এক সপ্তাহ ধরে আপনার Live Trading পর্যবেক্ষণ করবে এবং সমস্যাটি ঠিক কোথায় হচ্ছে তা খুঁজে বের করতে একটি সম্পূর্ণ বিনামূল্যের 1-on-1 Live Breakdown Session পরিচালনা করবে।',
+      },
+      {
+        q: 'শুধু Add-on কিনলে কি এই Protocol প্রযোজ্য হবে?',
+        a: 'না। ICT Mastery Accountability Protocol মূলত প্রতিটি Tier Enrollment-এর সাথে যুক্ত, কারণ এর শর্তগুলো (যেমন সম্পূর্ণ কোর্স শেষ করা) পূরণ করতে হলে আপনাকে কোর্সসহ একটি Tier-এ Enroll করতে হবে। শুধুমাত্র Add-on কেনা হলে তা এই Protocol-এর অন্তর্ভুক্ত নয়।',
       },
     ],
   },
   {
-    category: 'Enrollment & Access',
+    category: 'এনরোলমেন্ট ও অ্যাক্সেস',
     items: [
       {
-        q: 'What actually happens after I click "Confirm & Proceed"?',
-        a: "You're taken to the Telegram bot with your package pre-loaded. It confirms your order and the exact amount due, you send payment and attach your screenshot, and access is granted manually once it's verified — usually within a few hours.",
+        q: '"Confirm & Proceed"-এ ক্লিক করার পর আসলে কী হয়?',
+        a: '"Confirm & Proceed" বাটনে ক্লিক করার সাথে সাথে আপনি সরাসরি আমাদের Telegram Bot-এ চলে যাবেন, যেখানে আপনার বেছে নেওয়া Package আগে থেকেই Load করা থাকবে। Bot আপনার Order এবং পরিশোধযোগ্য সঠিক Amount নিশ্চিত করবে। এরপর আপনি Payment করে তার Screenshot Bot-এ সংযুক্ত করবেন, এবং তা যাচাই হওয়ার পর ম্যানুয়ালি Access দেওয়া হবে — সাধারণত এতে কয়েক ঘণ্টার মধ্যেই সম্পন্ন হয়ে যায়, তবে কখনো কখনো এর চেয়ে একটু বেশি সময়ও লাগতে পারে।',
       },
       {
-        q: 'How long do I have access to the course?',
-        a: 'Lifetime access, once your enrollment is verified — the recorded curriculum is yours to revisit for as long as you need it.',
+        q: 'কোর্সের Access কতদিন পর্যন্ত থাকবে?',
+        a: 'একবার আপনার Enrollment Verify হয়ে গেলে, আপনি পাবেন Lifetime Access। অর্থাৎ, রেকর্ড করা পুরো Curriculum যতবার প্রয়োজন, ততবারই আপনি ফিরে দেখতে পারবেন — এর জন্য কোনো নির্দিষ্ট মেয়াদ বেঁধে দেওয়া নেই।',
+      },
+      {
+        q: 'একটি Enrollment কি পরিবার বা বন্ধুর সাথে Share করা যাবে?',
+        a: 'না। Access একান্তভাবে আপনার ব্যক্তিগত ব্যবহারের জন্য দেওয়া হয়, এবং তা Share, Resell বা Redistribute করা যাবে না। এটি আমাদের Terms & Conditions-এর একটি গুরুত্বপূর্ণ অংশ, যা কোর্সের মান এবং সব Student-এর স্বার্থ রক্ষা করতে সহায়তা করে।',
       },
     ],
   },
@@ -103,9 +115,9 @@ export default function FAQPage() {
           <h1 className="mt-3 font-display text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             Every question, answered.
           </h1>
-          <p className="mt-4 leading-relaxed text-muted-foreground">
-            Everything about tiers, add-ons, payment, and the guarantee — organized by topic so you can find your
-            answer fast.
+          <p className="font-bn mt-4 leading-relaxed text-muted-foreground">
+            Tier, Add-on, Payment এবং Guarantee সংক্রান্ত প্রতিটি প্রশ্নের উত্তর বিষয়ভিত্তিকভাবে সাজানো — যাতে
+            আপনি সহজেই আপনার উত্তরটি খুঁজে পান।
           </p>
         </div>
       </section>
@@ -114,7 +126,7 @@ export default function FAQPage() {
         <div className="mx-auto max-w-3xl px-6">
           {faqCategories.map((group, gi) => (
             <motion.div key={group.category} {...fadeUp} className={gi > 0 ? 'mt-12' : ''}>
-              <h2 className="font-display text-lg font-bold text-foreground">{group.category}</h2>
+              <h2 className="font-bn-display text-lg font-bold text-foreground">{group.category}</h2>
               <Accordion type="single" collapsible className="mt-4 space-y-3">
                 {group.items.map((f, i) => (
                   <AccordionItem
@@ -122,8 +134,8 @@ export default function FAQPage() {
                     value={`${group.category}-${i}`}
                     className="rounded-xl border border-border bg-card px-5 shadow-soft"
                   >
-                    <AccordionTrigger className="text-left font-medium hover:no-underline">{f.q}</AccordionTrigger>
-                    <AccordionContent className="leading-relaxed text-muted-foreground">{f.a}</AccordionContent>
+                    <AccordionTrigger className="font-bn text-left font-medium hover:no-underline">{f.q}</AccordionTrigger>
+                    <AccordionContent className="font-bn leading-relaxed text-muted-foreground">{f.a}</AccordionContent>
                   </AccordionItem>
                 ))}
               </Accordion>
@@ -131,19 +143,19 @@ export default function FAQPage() {
           ))}
 
           <div className="mt-14 rounded-2xl border border-border bg-navy p-8 text-center text-navy-foreground">
-            <p className="font-display text-lg font-semibold">Still have a question?</p>
-            <p className="mx-auto mt-1.5 max-w-md text-sm text-navy-foreground/60">
-              Message the team directly on Telegram, or check the legal pages for the full terms, privacy, and
-              disclaimer details.
+            <p className="font-bn-display text-lg font-semibold">আরও কোনো প্রশ্ন আছে?</p>
+            <p className="font-bn mx-auto mt-1.5 max-w-md text-sm text-navy-foreground/60">
+              সরাসরি Telegram-এ আমাদের Team-কে মেসেজ করুন, অথবা সম্পূর্ণ Terms, Privacy ও Disclaimer সংক্রান্ত
+              বিস্তারিত জানতে নিচের Legal Page গুলো দেখুন।
             </p>
             <div className="mt-5 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm">
               <a
                 href="https://t.me/exclusive_mentorship_bot"
                 target="_blank"
                 rel="noreferrer"
-                className="font-semibold text-brand hover:underline"
+                className="font-bn font-semibold text-brand hover:underline"
               >
-                Message us on Telegram
+                Telegram-এ মেসেজ করুন
               </a>
               <Link to="/terms" className="font-medium text-navy-foreground/70 hover:text-navy-foreground">
                 Terms &amp; Conditions
