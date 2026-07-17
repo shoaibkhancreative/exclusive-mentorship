@@ -3,63 +3,7 @@ import { motion } from 'framer-motion';
 import { Star, Quote, ChevronLeft, ChevronRight } from 'lucide-react';
 import SectionHeading, { fadeUp } from './SectionHeading';
 import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel';
-
-// ---------------------------------------------------------------------------
-// SAMPLE CONTENT — every name, location, quote, and the rating/breakdown
-// numbers below are placeholder, written only so this section isn't empty.
-// None of these are real students. Replace with genuine, verifiable reviews
-// (and the real rating distribution) before this goes live — publishing
-// invented reviews or numbers as if they were real would be misleading to
-// buyers. The breakdown below is just 4.9/5 expressed as a distribution.
-// ---------------------------------------------------------------------------
-const SAMPLE_RATING = { score: '4.9', count: 47 };
-
-const ratingBreakdown = [
-  { stars: 5, pct: 89 },
-  { stars: 4, pct: 9 },
-  { stars: 3, pct: 2 },
-  { stars: 2, pct: 0 },
-  { stars: 1, pct: 0 },
-];
-
-const sampleReviews = [
-  {
-    name: 'Rakib Hasan',
-    location: 'Dhaka',
-    quote:
-      'The way market structure and liquidity are explained finally made sense after months of random YouTube videos. Chapter by chapter, it just clicks.',
-  },
-  {
-    name: 'Nusrat Jahan',
-    location: 'Chattogram',
-    quote:
-      "What stood out was how personally the mentor responds in Q&A — it never feels like a pre-recorded course, it feels like actual mentorship.",
-  },
-  {
-    name: 'Shakil Ahmed',
-    location: 'Sylhet',
-    quote:
-      'I started completely at zero. By Chapter 6 I was reading charts I used to just stare at confused. Slow and steady, but it works.',
-  },
-  {
-    name: 'Farhana Akter',
-    location: 'Rajshahi',
-    quote:
-      'The risk management chapter alone was worth it. I stopped revenge trading after one blown demo account and actually started following a plan.',
-  },
-  {
-    name: 'Imran Kabir',
-    location: 'Khulna',
-    quote:
-      'Tier 2 support is the reason I stuck with it. Asking a question and getting a real answer within a day kept me from quitting in week two.',
-  },
-  {
-    name: 'Mahin Rahman',
-    location: 'Barishal',
-    quote:
-      "Passed my first prop firm challenge using exactly what's taught in Chapter 13. Didn't expect that chapter to matter this much until it did.",
-  },
-];
+import { rating, ratingBreakdown, reviews } from '@/data/testimonials';
 
 function RatingBreakdownBar({ stars, pct }) {
   return (
@@ -133,13 +77,13 @@ export default function Testimonials() {
           className="mx-auto mt-12 grid max-w-3xl gap-8 rounded-2xl border border-border bg-card p-7 shadow-soft sm:grid-cols-[auto,1fr] sm:gap-10 sm:p-8"
         >
           <div className="flex flex-col items-center justify-center border-b border-border pb-6 text-center sm:border-b-0 sm:border-r sm:pb-0 sm:pr-10">
-            <p className="font-display text-5xl font-bold tracking-tight text-foreground">{SAMPLE_RATING.score}</p>
+            <p className="font-display text-5xl font-bold tracking-tight text-foreground">{rating.score}</p>
             <div className="mt-2 flex text-gold">
               {Array.from({ length: 5 }).map((_, s) => (
                 <Star key={s} size={16} className="fill-gold" />
               ))}
             </div>
-            <p className="mt-2 whitespace-nowrap text-xs text-muted-foreground">from {SAMPLE_RATING.count} early students</p>
+            <p className="mt-2 whitespace-nowrap text-xs text-muted-foreground">from {rating.count} early students</p>
           </div>
           <div className="flex flex-col justify-center gap-2">
             {ratingBreakdown.map((row) => (
@@ -156,7 +100,7 @@ export default function Testimonials() {
           >
             <Carousel setApi={setApi} opts={{ loop: true, align: 'start' }}>
               <CarouselContent>
-                {sampleReviews.map((review) => (
+                {reviews.map((review) => (
                   <CarouselItem key={review.name} className="basis-[86%] sm:basis-1/2 lg:basis-1/3">
                     <ReviewCard {...review} />
                   </CarouselItem>
@@ -175,7 +119,7 @@ export default function Testimonials() {
               <ChevronLeft size={17} />
             </button>
             <div className="flex items-center gap-1.5">
-              {sampleReviews.map((review, i) => (
+              {reviews.map((review, i) => (
                 <button
                   key={review.name}
                   type="button"

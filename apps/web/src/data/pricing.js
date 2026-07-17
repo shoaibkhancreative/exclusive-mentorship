@@ -5,7 +5,7 @@
 // approximation for the split-payment breakdown — update if your real rate changes.
 // ---------------------------------------------------------------------------
 
-export const FX_RATE = 123; // 1 USD/USDT ≈ 123 BDT (display estimate only)
+export const FX_RATE = 123.5; // 1 USD/USDT ≈ 123.50 BDT (display estimate only)
 
 export const ADDONS_VALUE_BDT = 3897;
 export const ADDONS_VALUE_USD = 39;
