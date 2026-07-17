@@ -6,6 +6,7 @@ import ChapterPage from './pages/ChapterPage';
 import ProgramPage from './pages/ProgramPage';
 import AddonPage from './pages/AddonPage';
 import CurriculumPage from './pages/CurriculumPage';
+import TierComparisonPage from './pages/TierComparisonPage';
 import FAQPage from './pages/FAQPage';
 import CheckoutPage from './pages/CheckoutPage';
 import TermsPage from './pages/TermsPage';
@@ -23,6 +24,7 @@ function App() {
                 <Route path="/programs/:slug" element={<ProgramPage />} />
                 <Route path="/addons/:slug" element={<AddonPage />} />
                 <Route path="/curriculum" element={<CurriculumPage />} />
+                <Route path="/compare-tiers" element={<TierComparisonPage />} />
                 <Route path="/faq" element={<FAQPage />} />
                 <Route path="/checkout" element={<CheckoutPage />} />
                 <Route path="/terms" element={<TermsPage />} />

@@ -25,6 +25,9 @@ export default function Footer() {
           <div className="flex flex-wrap gap-10 text-sm">
             <div className="space-y-2.5">
               <p className="font-semibold text-navy-foreground/90">Programs</p>
+              <Link to="/compare-tiers" className="block text-navy-foreground/60 transition-colors hover:text-navy-foreground">
+                Compare All Tiers
+              </Link>
               {tiers.map((tier) => (
                 <Link
                   key={tier.id}
@@ -39,6 +42,7 @@ export default function Footer() {
               <p className="font-semibold text-navy-foreground/90">Support</p>
               <a href="https://t.me/exclusive_mentorship_bot" target="_blank" rel="noreferrer" className="block text-navy-foreground/60 transition-colors hover:text-navy-foreground">Telegram</a>
               <a href={`mailto:${SUPPORT_EMAIL}`} className="block text-navy-foreground/60 transition-colors hover:text-navy-foreground">Email</a>
+              <a href="https://www.youtube.com/@WeAreNLT" target="_blank" rel="noreferrer" className="block text-navy-foreground/60 transition-colors hover:text-navy-foreground">YouTube</a>
               <Link to="/faq" className="block text-navy-foreground/60 transition-colors hover:text-navy-foreground">FAQ</Link>
             </div>
             <div className="space-y-2.5">

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Check, X, Sparkles } from 'lucide-react';
+import { Check, X, Sparkles, ArrowRight } from 'lucide-react';
 import { tiers, addons, formatBDT, formatUSD, ADDONS_VALUE_BDT, bdtFromUSD } from '@/data/pricing';
 import SectionHeading, { fadeUp } from './SectionHeading';
 import CtaButton from '@/components/site/CtaButton';
@@ -126,6 +126,12 @@ export default function PricingOffer() {
             <TierCard key={tier.id} tier={tier} index={i} />
           ))}
         </div>
+
+        <motion.div {...fadeUp} className="mt-6 text-center">
+          <Link to="/compare-tiers" className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand hover:underline">
+            See the full side-by-side comparison <ArrowRight size={14} />
+          </Link>
+        </motion.div>
 
         <motion.div {...fadeUp} className="mt-10 rounded-2xl border border-border bg-card p-8 shadow-soft">
           <div className="flex flex-wrap items-center justify-between gap-3">

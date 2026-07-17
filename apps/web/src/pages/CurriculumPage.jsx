@@ -34,7 +34,7 @@ export default function CurriculumPage() {
             <CtaButton to="/checkout" size="md">
               Join the Mentorship <ArrowRight size={16} />
             </CtaButton>
-            <CtaButton href="/#offer" variant="outline" size="md">
+            <CtaButton to="/compare-tiers" variant="outline" size="md">
               Compare Tiers &amp; Pricing
             </CtaButton>
           </div>

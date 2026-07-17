@@ -13,6 +13,7 @@ import AboutMentor from '@/components/home/AboutMentor';
 import MainValue from '@/components/home/MainValue';
 import Testimonials from '@/components/home/Testimonials';
 import Curriculum from '@/components/home/Curriculum';
+import YouTubeSection from '@/components/home/YouTubeSection';
 import PricingOffer from '@/components/home/PricingOffer';
 import GuaranteeSection from '@/components/home/GuaranteeSection';
 import FAQSection from '@/components/home/FAQSection';
@@ -116,6 +117,7 @@ export default function HomePage() {
       <MainValue />
       <Testimonials />
       <Curriculum />
+      <YouTubeSection />
       <PricingOffer />
       <GuaranteeSection />
       <FAQSection />

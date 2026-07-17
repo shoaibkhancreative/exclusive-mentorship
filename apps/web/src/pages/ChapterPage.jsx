@@ -40,7 +40,7 @@ export default function ChapterPage() {
                 >
                   Enroll in the Mentorship <ArrowRight size={16} />
                 </Link>
-                <Link to="/#offer" className="text-sm font-semibold text-brand hover:underline">
+                <Link to="/compare-tiers" className="text-sm font-semibold text-brand hover:underline">
                   Compare tiers &amp; pricing
                 </Link>
               </div>

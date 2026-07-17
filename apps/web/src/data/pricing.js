@@ -157,6 +157,79 @@ export const tiers = [
   },
 ];
 
+// ---------------------------------------------------------------------------
+// COMPARISON MATRIX — a normalized, row-by-row dataset purpose-built for the
+// All Tier Comparison page. Kept separate from each tier's own `features`
+// list above (which uses tier-specific phrasing for the individual pricing
+// cards/program pages) so neither representation has to compromise for the
+// other. `value` is `true` / `false` for plain include-or-not rows, or a
+// short string when the row differs by wording per tier (e.g. support level).
+// ---------------------------------------------------------------------------
+export const comparisonGroups = [
+  {
+    group: 'Curriculum & Support',
+    rows: [
+      {
+        label: 'Full 5-Chapter Recorded ICT Curriculum',
+        note: 'Lifetime access, every class',
+        values: { tier1: true, tier2: true, tier3: true },
+      },
+      {
+        label: 'Chat Support',
+        values: { tier1: 'Basic', tier2: 'Priority', tier3: 'Priority' },
+      },
+      {
+        label: 'Bi-Weekly Live Q&A Access',
+        values: { tier1: false, tier2: true, tier3: true },
+      },
+    ],
+  },
+  {
+    group: 'Add-ons',
+    rows: [
+      {
+        label: 'Daily Market Insight',
+        values: { tier1: 'Buy separately', tier2: true, tier3: true },
+      },
+      {
+        label: 'Setup Templates (Chart & Journal)',
+        values: { tier1: 'Buy separately', tier2: true, tier3: true },
+      },
+      {
+        label: 'Live Trade Breakdown Archive',
+        values: { tier1: 'Buy separately', tier2: true, tier3: true },
+      },
+    ],
+  },
+  {
+    group: '1-on-1 & Personal',
+    rows: [
+      {
+        label: 'Weekly 1-on-1 Consultation',
+        note: '3 months',
+        values: { tier1: false, tier2: false, tier3: true },
+      },
+      {
+        label: 'Personal Portfolio & Trade Review',
+        values: { tier1: false, tier2: false, tier3: true },
+      },
+    ],
+  },
+  {
+    group: 'Availability',
+    rows: [
+      {
+        label: 'Batch Size',
+        values: { tier1: 'Unlimited', tier2: 'Max 50 / batch', tier3: 'Max 5 / month' },
+      },
+      {
+        label: 'Payment Flexibility',
+        values: { tier1: 'One-time', tier2: 'Split payment available', tier3: 'One-time' },
+      },
+    ],
+  },
+];
+
 export const paymentMethods = [
   { id: 'bkash', label: 'Bkash', number: '01XXXXXXXXX', note: 'Use "Send Money" (not "Payment") to this number, then attach your screenshot in Telegram.' },
   { id: 'nagad', label: 'Nagad', number: '01XXXXXXXXX', note: 'Use "Send Money" to this number, then attach your screenshot in Telegram.' },

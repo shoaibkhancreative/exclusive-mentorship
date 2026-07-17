@@ -17,7 +17,6 @@ export default function ProgramPage() {
 
   const isTier3 = tier.id === 'tier3';
   const isFull = tier.available === false;
-  const otherTiers = tiers.filter((t) => t.id !== tier.id);
   const accent = isTier3 ? 'text-gold' : 'text-brand';
 
   return (
@@ -26,7 +25,7 @@ export default function ProgramPage() {
 
       <section className="border-b border-border bg-secondary/40 py-14">
         <div className="mx-auto max-w-[64rem] px-6">
-          <Link to="/#offer" className="inline-flex items-center gap-1.5 text-sm font-medium text-muted-foreground hover:text-foreground">
+          <Link to="/compare-tiers" className="inline-flex items-center gap-1.5 text-sm font-medium text-muted-foreground hover:text-foreground">
             <ArrowLeft size={15} /> Back to all tiers
           </Link>
 
@@ -63,7 +62,7 @@ export default function ProgramPage() {
                 {tier.ctaLabel} <ArrowRight size={18} />
               </CtaButton>
             )}
-            <Link to="/#offer" className="text-sm font-semibold text-brand hover:underline">
+            <Link to="/compare-tiers" className="text-sm font-semibold text-brand hover:underline">
               Compare all 3 tiers
             </Link>
           </div>
@@ -158,17 +157,14 @@ export default function ProgramPage() {
               )}
             </div>
 
-            <div className="mt-6 grid gap-3 border-t border-navy-foreground/10 pt-5 sm:grid-cols-2">
-              {otherTiers.map((o) => (
-                <Link
-                  key={o.id}
-                  to={`/programs/${o.slug}`}
-                  className="flex items-center justify-between gap-2 text-sm text-navy-foreground/70 hover:text-navy-foreground"
-                >
-                  <span>Compare with {o.name}</span>
-                  <ArrowRight size={14} />
-                </Link>
-              ))}
+            <div className="mt-6 border-t border-navy-foreground/10 pt-5">
+              <Link
+                to="/compare-tiers"
+                className="flex items-center justify-between gap-2 text-sm text-navy-foreground/70 hover:text-navy-foreground"
+              >
+                <span>See how {tier.shortName} compares to every other tier</span>
+                <ArrowRight size={14} />
+              </Link>
             </div>
           </div>
         </div>
