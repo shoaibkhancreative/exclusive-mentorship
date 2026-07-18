@@ -3,7 +3,7 @@ import { Link, useParams, Navigate } from 'react-router-dom';
 import { ArrowLeft, ArrowRight, Check, Sparkles } from 'lucide-react';
 import Header from '@/components/site/Header';
 import Footer from '@/components/site/Footer';
-import { addons, tiers, formatBDT, formatUSD, getAddonBySlug } from '@/data/pricing';
+import { addons, tiers, formatUSD, getAddonBySlug } from '@/data/pricing';
 
 export default function AddonPage() {
   const { slug } = useParams();
@@ -28,8 +28,8 @@ export default function AddonPage() {
           <p className="mt-4 max-w-2xl leading-relaxed text-muted-foreground">{addon.longDescription}</p>
 
           <p className="mt-8 flex items-baseline gap-2">
-            <span className="font-display text-4xl font-bold tracking-tight text-foreground">{formatBDT(addon.priceBDT)}</span>
-            <span className="text-sm text-muted-foreground">≈ {formatUSD(addon.priceUSD)}</span>
+            <span className="font-display text-4xl font-bold tracking-tight text-foreground">{formatUSD(addon.priceUSD)}</span>
+            <span className="text-sm text-muted-foreground">USDT</span>
           </p>
 
           <div className="mt-7 flex flex-wrap items-center gap-4">

@@ -4,7 +4,7 @@ import { ArrowLeft, ArrowRight, Check, X, Sparkles } from 'lucide-react';
 import Header from '@/components/site/Header';
 import Footer from '@/components/site/Footer';
 import CtaButton from '@/components/site/CtaButton';
-import { tiers, formatBDT, formatUSD, bdtFromUSD, ADDONS_VALUE_BDT, getTierBySlug } from '@/data/pricing';
+import { tiers, formatUSD, ADDONS_VALUE_USD, getTierBySlug } from '@/data/pricing';
 import { chapters, totalClasses } from '@/data/chapters';
 
 const tierNumber = { tier1: '1', tier2: '2', tier3: '3' };
@@ -47,8 +47,8 @@ export default function ProgramPage() {
           <p className="mt-5 max-w-2xl leading-relaxed text-muted-foreground">{tier.longDescription}</p>
 
           <p className="mt-8 flex items-baseline gap-2">
-            <span className="font-display text-4xl font-bold tracking-tight text-foreground">{formatBDT(tier.priceBDT)}</span>
-            <span className="text-sm text-muted-foreground">≈ {formatUSD(tier.priceUSD)} USDT</span>
+            <span className="font-display text-4xl font-bold tracking-tight text-foreground">{formatUSD(tier.priceUSD)}</span>
+            <span className="text-sm text-muted-foreground">USDT</span>
           </p>
 
           <div className="mt-7 flex flex-wrap items-center gap-4">
@@ -74,7 +74,7 @@ export default function ProgramPage() {
           )}
           {tier.splitPayment && (
             <p className="mt-3 text-sm text-muted-foreground">
-              Or split it: {formatUSD(tier.splitPayment.installment1USD)} now (≈{formatBDT(bdtFromUSD(tier.splitPayment.installment1USD))}) +{' '}
+              Or split it: {formatUSD(tier.splitPayment.installment1USD)} now +{' '}
               {formatUSD(tier.splitPayment.installment2USD)} within {tier.splitPayment.penaltyDays} days.
             </p>
           )}
@@ -119,7 +119,7 @@ export default function ProgramPage() {
             <div className="mt-10 flex flex-col gap-2 rounded-2xl border border-brand/30 bg-accent px-6 py-5 text-sm font-medium text-accent-foreground sm:flex-row sm:items-center sm:gap-2.5">
               <Sparkles size={16} className="shrink-0" />
               <span>
-                All 3 add-ons are included free with this tier — worth {formatBDT(ADDONS_VALUE_BDT)}. See{' '}
+                All 3 add-ons are included free with this tier — worth {formatUSD(ADDONS_VALUE_USD)}. See{' '}
                 <Link to="/#offer" className="underline underline-offset-2">
                   what's inside
                 </Link>

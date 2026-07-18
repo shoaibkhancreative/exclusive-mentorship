@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Check, X, Sparkles, ArrowRight } from 'lucide-react';
-import { tiers, addons, formatBDT, formatUSD, ADDONS_VALUE_BDT, bdtFromUSD } from '@/data/pricing';
+import { tiers, addons, formatUSD, ADDONS_VALUE_USD } from '@/data/pricing';
 import SectionHeading, { fadeUp } from './SectionHeading';
 import CtaButton from '@/components/site/CtaButton';
 import { motion } from 'framer-motion';
@@ -53,8 +53,8 @@ function TierCard({ tier, index }) {
       <p className={`mt-1 text-sm ${mutedText}`}>{tier.tagline}</p>
 
       <p className={`mt-6 flex items-baseline gap-2 ${bodyText}`}>
-        <span className="font-display text-3xl font-bold tracking-tight">{formatBDT(tier.priceBDT)}</span>
-        <span className={`text-sm ${mutedText}`}>≈ {formatUSD(tier.priceUSD)} USDT</span>
+        <span className="font-display text-3xl font-bold tracking-tight">{formatUSD(tier.priceUSD)}</span>
+        <span className={`text-sm ${mutedText}`}>USDT</span>
       </p>
 
       <ul className="mt-6 space-y-3 text-sm">
@@ -103,7 +103,7 @@ function TierCard({ tier, index }) {
 
       {tier.splitPayment && (
         <p className={`mt-3 text-center text-xs ${mutedText}`}>
-          Or split it: {formatUSD(tier.splitPayment.installment1USD)} now (≈{formatBDT(bdtFromUSD(tier.splitPayment.installment1USD))}) +{' '}
+          Or split it: {formatUSD(tier.splitPayment.installment1USD)} now +{' '}
           {formatUSD(tier.splitPayment.installment2USD)} within {tier.splitPayment.penaltyDays} days
         </p>
       )}
@@ -137,7 +137,7 @@ export default function PricingOffer() {
           <div className="flex flex-wrap items-center justify-between gap-3">
             <p className="font-display text-lg font-semibold text-foreground">Standalone Add-ons</p>
             <p className="flex items-center gap-1.5 text-xs font-semibold text-brand">
-              <Sparkles size={14} /> All 3 are FREE inside Tier 2 &amp; Tier 3 — worth {formatBDT(ADDONS_VALUE_BDT)}
+              <Sparkles size={14} /> All 3 are FREE inside Tier 2 &amp; Tier 3 — worth {formatUSD(ADDONS_VALUE_USD)}
             </p>
           </div>
           <p className="mt-1 text-sm text-muted-foreground">
@@ -149,8 +149,7 @@ export default function PricingOffer() {
                 <p className="font-medium text-foreground">{a.name}</p>
                 <p className="mt-1.5 flex-1 text-xs leading-relaxed text-muted-foreground">{a.description}</p>
                 <p className="mt-4 flex items-baseline gap-1.5">
-                  <span className="font-display text-lg font-bold text-foreground">{formatBDT(a.priceBDT)}</span>
-                  <span className="text-xs text-muted-foreground">≈{formatUSD(a.priceUSD)}</span>
+                  <span className="font-display text-lg font-bold text-foreground">{formatUSD(a.priceUSD)}</span>
                 </p>
                 <div className="mt-3 flex items-center gap-4">
                   <Link to={`/addons/${a.slug}`} className="text-xs font-semibold text-brand hover:underline">

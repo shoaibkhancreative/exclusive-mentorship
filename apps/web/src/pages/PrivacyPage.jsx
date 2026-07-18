@@ -14,7 +14,7 @@ export default function PrivacyPage() {
       <LegalUl
         items={[
           'Checkout সম্পন্ন করার সময় আপনার দেওয়া যোগাযোগের তথ্য: পূর্ণ নাম, এবং Phone Number, Email অথবা Telegram Username-এর মধ্যে অন্তত একটি।',
-          'Payment Proof হিসেবে আপনার Bkash, Nagad বা Binance Transaction-এর Screenshot, যা Payment যাচাইয়ের জন্য আমাদের Telegram Bot-এ পাঠানো হয়।',
+          'Payment Proof হিসেবে আপনার Binance বা USDT Wallet Transaction-এর Screenshot, যা Payment যাচাইয়ের জন্য আমাদের Telegram Bot-এ পাঠানো হয়।',
           'আপনি যখন আমাদের Bot-এর সাথে কথোপকথন শুরু করেন, তখন Telegram-এর মাধ্যমে উপলব্ধ আপনার Account তথ্য, যেমন Username এবং User ID।',
           'Website Browse করার সময় তৈরি হওয়া Basic, Non-Identifying Usage Data (যেমন কোন Page দেখা হয়েছে), যদি আমরা Analytics চালু রাখি।',
         ]}
@@ -45,7 +45,7 @@ export default function PrivacyPage() {
       <LegalUl
         items={[
           'Telegram — আমাদের Enrollment Bot পরিচালনা, কোর্স Access প্রদান এবং Support দেওয়ার জন্য ব্যবহৃত হয়।',
-          'Bkash, Nagad এবং Binance — আপনার Payment গ্রহণের জন্য ব্যবহৃত Platform; আপনি Payment-এর প্রমাণ হিসেবে যা Share করেন, শুধু তা-ই আমরা দেখতে পাই।',
+          'Binance এবং USDT Wallet/Blockchain Network — আপনার Payment গ্রহণের জন্য ব্যবহৃত Platform; আপনি Payment-এর প্রমাণ হিসেবে যা Share করেন, শুধু তা-ই আমরা দেখতে পাই।',
         ]}
       />
       <LegalP>

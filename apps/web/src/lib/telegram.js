@@ -1,10 +1,12 @@
 // ---------------------------------------------------------------------------
 // TELEGRAM BOT DEEP-LINK BUILDER
 //
-// Per the Technical Integration spec: the website is NOT the pricing authority.
-// The generated link must carry only the Package ID and Add-on status — never
-// the amount — so the Bot can look up pricing itself and stay the single
-// source of truth. Replace BOT_USERNAME with your real bot's username.
+// The website is the single source of truth for pricing (see @/data/pricing).
+// The generated link still carries only the Package ID and Add-on status —
+// never a dollar amount — so the exact figure the student pays always comes
+// from this site's own pricing data, and the Bot's job is limited to
+// confirming that same package/plan and manually verifying payment proof.
+// Replace BOT_USERNAME with your real bot's username.
 // ---------------------------------------------------------------------------
 
 const BOT_USERNAME = 'exclusive_mentorship_bot'; // TODO: replace with your live bot username

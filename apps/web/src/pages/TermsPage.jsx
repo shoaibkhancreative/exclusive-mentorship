@@ -51,11 +51,10 @@ export default function TermsPage() {
 
       <LegalH2>5. মূল্য, Currency ও Payment পদ্ধতি</LegalH2>
       <LegalP>
-        এই Website-এ মূল্য প্রধানত Bangladeshi Taka (BDT)-তে দেখানো হয়, সাথে সুবিধার্থে আনুমানিক USD/USDT
-        সমমূল্যও উল্লেখ থাকে। Payment গ্রহণ করা হয় Bkash, Nagad এবং Binance UID (USDT)-এর মাধ্যমে। আপনার
-        Order-এর সঠিক ও চূড়ান্ত Amount নিশ্চিত করে আমাদের Telegram Bot এবং তা ম্যানুয়ালি যাচাই করা হয় — এই
-        Website-এ দেখানো সংখ্যাগুলো নিছকই আনুমানিক ধারণা দেওয়ার জন্য, চূড়ান্ত ও সঠিক পরিমাণের একমাত্র উৎস
-        হলো Telegram Bot।
+        এই Website-এ সকল মূল্য শুধুমাত্র USD (USDT)-তে দেখানো হয় — এই Website-ই আমাদের একমাত্র ও চূড়ান্ত
+        Pricing-এর উৎস। Payment গ্রহণ করা হয় Binance UID এবং সরাসরি USDT (TRC20) Wallet Address-এর মাধ্যমে।
+        Checkout-এ আপনি যে Package, Add-on বা Payment Plan বেছে নেবেন, আমাদের Telegram Bot শুধু সেই একই
+        Amount Confirm করে এবং আপনার Payment-এর Screenshot ম্যানুয়ালি যাচাই করে Access প্রদান করে।
       </LegalP>
 
       <LegalH2>6. Split Payment (শুধুমাত্র Tier 2)</LegalH2>

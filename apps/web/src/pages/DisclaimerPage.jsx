@@ -68,7 +68,7 @@ export default function DisclaimerPage() {
       <LegalH2>8. Third-Party Platform সমূহ</LegalH2>
       <LegalUl
         items={[
-          'এই Program পরিচালনার জন্য ব্যবহৃত Third-Party Platform — যেমন Telegram, Bkash, Nagad এবং Binance — এর প্রাপ্যতা, পারফরম্যান্স বা নীতির জন্য আমরা দায়ী নই।',
+          'এই Program পরিচালনার জন্য ব্যবহৃত Third-Party Platform — যেমন Telegram এবং Binance — এর প্রাপ্যতা, পারফরম্যান্স বা নীতির জন্য আমরা দায়ী নই।',
           'কোর্সে উল্লেখিত কোনো নির্দিষ্ট Broker বা Prop-Trading Firm-এর সাথে আমাদের কোনো Affiliation নেই, এবং তাদের কাছ থেকে আমরা কোনো Compensation গ্রহণ করি না।',
         ]}
       />

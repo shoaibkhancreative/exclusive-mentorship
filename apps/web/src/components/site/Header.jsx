@@ -6,7 +6,7 @@ import NavDropdown from './NavDropdown';
 import { Sheet, SheetTrigger, SheetContent, SheetTitle } from '@/components/ui/sheet';
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '@/components/ui/accordion';
 import { chapters, totalClasses } from '@/data/chapters';
-import { tiers, formatBDT } from '@/data/pricing';
+import { tiers, formatUSD } from '@/data/pricing';
 import { BOT_USERNAME } from '@/lib/telegram';
 import { cn } from '@/lib/utils';
 
@@ -118,7 +118,7 @@ function TierList({ onNavigate }) {
             </span>
             <span className="flex shrink-0 flex-col items-end gap-1">
               <TierBadge tier={tier} />
-              <span className="text-sm font-bold text-foreground">{formatBDT(tier.priceBDT)}</span>
+              <span className="text-sm font-bold text-foreground">{formatUSD(tier.priceUSD)}</span>
             </span>
           </Link>
         );
@@ -247,7 +247,7 @@ export default function Header() {
         <div className="flex items-center gap-3">
           <div className="hidden text-right leading-tight lg:block">
             <p className="text-[11px] text-muted-foreground">Starts at</p>
-            <p className="text-sm font-bold text-foreground">{formatBDT(entryTier.priceBDT)}</p>
+            <p className="text-sm font-bold text-foreground">{formatUSD(entryTier.priceUSD)}</p>
           </div>
 
           <CtaButton to="/checkout" size="sm" className="hidden sm:inline-flex">
@@ -341,7 +341,7 @@ export default function Header() {
                               </span>
                               <span className="flex shrink-0 flex-col items-end gap-1">
                                 <TierBadge tier={tier} />
-                                <span className="text-xs font-semibold text-foreground/70">{formatBDT(tier.priceBDT)}</span>
+                                <span className="text-xs font-semibold text-foreground/70">{formatUSD(tier.priceUSD)}</span>
                               </span>
                             </Link>
                           );
@@ -402,7 +402,7 @@ export default function Header() {
 
               <div className="border-t border-border p-4">
                 <p className="mb-2.5 text-center text-xs text-muted-foreground">
-                  Starting at <span className="font-semibold text-foreground">{formatBDT(entryTier.priceBDT)}</span> &middot; Lifetime access
+                  Starting at <span className="font-semibold text-foreground">{formatUSD(entryTier.priceUSD)}</span> &middot; Lifetime access
                 </p>
                 <CtaButton to="/checkout" size="md" full onClick={close}>
                   Join Now

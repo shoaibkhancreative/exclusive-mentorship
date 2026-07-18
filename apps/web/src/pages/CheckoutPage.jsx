@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowLeft, ArrowRight, Check, Copy, LifeBuoy, ShieldCheck, Send, Sparkles } from 'lucide-react';
 import Header from '@/components/site/Header';
 import Footer from '@/components/site/Footer';
-import { tiers, addons, paymentMethods, formatBDT, formatUSD, bdtFromUSD, ADDONS_VALUE_BDT } from '@/data/pricing';
+import { tiers, addons, paymentMethods, formatUSD, ADDONS_VALUE_USD } from '@/data/pricing';
 import { buildTelegramDeepLink } from '@/lib/telegram';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Input } from '@/components/ui/input';
@@ -48,29 +48,22 @@ export default function CheckoutPage() {
   const selectedAddonIds = Object.entries(selectedAddons).filter(([, v]) => v).map(([k]) => k);
   const anyAddonSelected = selectedAddonIds.length > 0;
 
-  const addonsCostBDT = addonsIncludedFree ? 0 : selectedAddonIds.reduce((sum, id) => sum + (addons.find((a) => a.id === id)?.priceBDT || 0), 0);
   const addonsCostUSD = addonsIncludedFree ? 0 : selectedAddonIds.reduce((sum, id) => sum + (addons.find((a) => a.id === id)?.priceUSD || 0), 0);
 
   const isSplit = packageType === 'tier2' && paymentPlan === 'split';
 
-  let dueNowBDT = 0;
   let dueNowUSD = 0;
   if (packageType === 'tier1') {
-    dueNowBDT = tier1.priceBDT + addonsCostBDT;
     dueNowUSD = tier1.priceUSD + addonsCostUSD;
   } else if (packageType === 'tier2') {
     if (isSplit) {
       dueNowUSD = tier2.splitPayment.installment1USD;
-      dueNowBDT = bdtFromUSD(dueNowUSD);
     } else {
-      dueNowBDT = tier2.priceBDT;
       dueNowUSD = tier2.priceUSD;
     }
   } else if (packageType === 'tier3') {
-    dueNowBDT = tier3.priceBDT;
     dueNowUSD = tier3.priceUSD;
   } else {
-    dueNowBDT = addonsCostBDT;
     dueNowUSD = addonsCostUSD;
   }
 
@@ -157,8 +150,8 @@ export default function CheckoutPage() {
                       <p className="text-xs font-bold uppercase tracking-wide text-muted-foreground">{tier1.shortName}</p>
                       <p className="mt-1 font-display text-lg font-semibold text-foreground">{tier1.name}</p>
                       <p className="text-sm text-muted-foreground">Core recorded course, basic support</p>
-                      <p className="mt-4 font-display text-2xl font-bold text-foreground">{formatBDT(tier1.priceBDT)}</p>
-                      <p className="mt-1 text-xs text-muted-foreground">≈ {formatUSD(tier1.priceUSD)} USDT · add-ons sold separately</p>
+                      <p className="mt-4 font-display text-2xl font-bold text-foreground">{formatUSD(tier1.priceUSD)}</p>
+                      <p className="mt-1 text-xs text-muted-foreground">USDT · add-ons sold separately</p>
                     </button>
                     <button
                       type="button"
@@ -173,8 +166,8 @@ export default function CheckoutPage() {
                       <p className="text-xs font-bold uppercase tracking-wide text-brand">{tier2.shortName}</p>
                       <p className="mt-1 font-display text-lg font-semibold text-foreground">{tier2.name}</p>
                       <p className="text-sm text-muted-foreground">+ Priority Support, Live Q&A, all add-ons free</p>
-                      <p className="mt-4 font-display text-2xl font-bold text-foreground">{formatBDT(tier2.priceBDT)}</p>
-                      <p className="mt-1 text-xs text-muted-foreground">≈ {formatUSD(tier2.priceUSD)} USDT · or split into 2 payments</p>
+                      <p className="mt-4 font-display text-2xl font-bold text-foreground">{formatUSD(tier2.priceUSD)}</p>
+                      <p className="mt-1 text-xs text-muted-foreground">USDT · or split into 2 payments</p>
                     </button>
                     {tier3.available ? (
                       <button
@@ -190,8 +183,8 @@ export default function CheckoutPage() {
                         <p className="text-xs font-bold uppercase tracking-wide text-gold">{tier3.shortName}</p>
                         <p className="mt-1 font-display text-lg font-semibold text-foreground">{tier3.name}</p>
                         <p className="text-sm text-muted-foreground">1-on-1 mentorship, strictly limited</p>
-                        <p className="mt-4 font-display text-2xl font-bold text-foreground">{formatBDT(tier3.priceBDT)}</p>
-                        <p className="mt-1 text-xs text-muted-foreground">≈ {formatUSD(tier3.priceUSD)} USDT · 5 seats a month</p>
+                        <p className="mt-4 font-display text-2xl font-bold text-foreground">{formatUSD(tier3.priceUSD)}</p>
+                        <p className="mt-1 text-xs text-muted-foreground">USDT · 5 seats a month</p>
                       </button>
                     ) : (
                       <div className="relative rounded-2xl border-2 border-dashed border-border bg-secondary/40 p-6 text-left">
@@ -224,7 +217,7 @@ export default function CheckoutPage() {
                           }`}
                         >
                           <p className="text-sm font-semibold text-foreground">Pay in full</p>
-                          <p className="text-xs text-muted-foreground">{formatBDT(tier2.priceBDT)} (≈{formatUSD(tier2.priceUSD)}) today</p>
+                          <p className="text-xs text-muted-foreground">{formatUSD(tier2.priceUSD)} today</p>
                         </button>
                         <button
                           type="button"
@@ -255,7 +248,7 @@ export default function CheckoutPage() {
                       <p className="font-display font-semibold text-foreground">Add-ons</p>
                       {addonsIncludedFree && (
                         <p className="flex items-center gap-1.5 text-xs font-semibold text-brand">
-                          <Sparkles size={13} /> All included free — worth {formatBDT(ADDONS_VALUE_BDT)}
+                          <Sparkles size={13} /> All included free — worth {formatUSD(ADDONS_VALUE_USD)}
                         </p>
                       )}
                     </div>
@@ -279,7 +272,7 @@ export default function CheckoutPage() {
                             </div>
                           </div>
                           <span className="shrink-0 text-sm font-semibold text-foreground">
-                            {addonsIncludedFree ? 'FREE' : formatBDT(a.priceBDT)}
+                            {addonsIncludedFree ? 'FREE' : formatUSD(a.priceUSD)}
                           </span>
                         </label>
                       ))}
@@ -339,7 +332,7 @@ export default function CheckoutPage() {
                       capped at 50 students; Tier 3 is capped at 5 students per month with excess applicants waitlisted.
                     </p>
                     <p className="mt-3">
-                      Payment is accepted via Bkash, Nagad, or Binance UID (USDT). Enrollment is confirmed manually after your
+                      Payment is accepted via Binance UID or a direct USDT (TRC20) wallet address. Enrollment is confirmed manually after your
                       payment proof is reviewed via our Telegram bot — please ensure all information you submit is accurate.
                     </p>
                     <p className="mt-3">
@@ -363,7 +356,7 @@ export default function CheckoutPage() {
 
               {step === 3 && (
                 <div className="space-y-6">
-                  <div className="grid gap-4 sm:grid-cols-3">
+                  <div className="grid gap-4 sm:grid-cols-2">
                     {paymentMethods.map((m) => (
                       <button
                         key={m.id}
@@ -399,13 +392,11 @@ export default function CheckoutPage() {
 
                   <div className="rounded-2xl border border-brand/40 bg-accent/50 p-6">
                     <p className="text-sm text-muted-foreground">{isSplit ? 'Due Now (Installment 1)' : 'Total Due'}</p>
-                    <p className="mt-1 font-display text-3xl font-bold text-foreground">{formatBDT(dueNowBDT)}</p>
-                    <p className="mt-3 text-xs text-muted-foreground">
-                      ≈ {formatUSD(dueNowUSD)} USDT <span className="text-foreground/60">(estimate — the bot confirms the exact amount)</span>
-                    </p>
+                    <p className="mt-1 font-display text-3xl font-bold text-foreground">{formatUSD(dueNowUSD)}</p>
+                    <p className="mt-3 text-xs text-muted-foreground">USDT — send this exact amount via the method above</p>
                     {isSplit && (
                       <p className="mt-2 text-xs text-muted-foreground">
-                        + {formatUSD(tier2.splitPayment.installment2USD)} (≈{formatBDT(bdtFromUSD(tier2.splitPayment.installment2USD))}) due within{' '}
+                        + {formatUSD(tier2.splitPayment.installment2USD)} due within{' '}
                         {tier2.splitPayment.penaltyDays} days to unlock full access.
                       </p>
                     )}
@@ -417,7 +408,7 @@ export default function CheckoutPage() {
                     rel="noreferrer"
                     className="flex items-center justify-center gap-2 rounded-xl border border-dashed border-border p-4 text-sm font-semibold text-brand hover:bg-secondary"
                   >
-                    <LifeBuoy size={16} /> New to Bkash / Nagad / crypto? Get support before paying
+                    <LifeBuoy size={16} /> New to crypto payments? Get support before paying
                   </a>
                 </div>
               )}
@@ -430,7 +421,7 @@ export default function CheckoutPage() {
                     <div className="flex justify-between"><span>Package</span><span className="font-medium text-foreground">{packageSummaryLabel}</span></div>
                     {isSplit && <div className="flex justify-between"><span>Plan</span><span className="font-medium text-foreground">Split (2 payments)</span></div>}
                     <div className="flex justify-between"><span>Payment Method</span><span className="font-medium text-foreground">{paymentLabel}</span></div>
-                    <div className="flex justify-between border-t border-border pt-2"><span>{isSplit ? 'Due Now' : 'Total Due'}</span><span className="font-display text-lg font-bold text-foreground">{formatBDT(dueNowBDT)}</span></div>
+                    <div className="flex justify-between border-t border-border pt-2"><span>{isSplit ? 'Due Now' : 'Total Due'}</span><span className="font-display text-lg font-bold text-foreground">{formatUSD(dueNowUSD)}</span></div>
                   </div>
                   <p className="text-sm text-muted-foreground">
                     You'll be redirected to our Telegram bot with your package pre-loaded. The bot will confirm the exact amount —

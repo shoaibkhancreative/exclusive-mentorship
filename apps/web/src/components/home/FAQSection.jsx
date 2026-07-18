@@ -21,7 +21,7 @@ const faqs = [
   },
   {
     q: 'How does the Tier 2 split payment work?',
-    a: 'Pay $20 (≈৳2,460) to unlock Part 1 of the video modules. Pay the remaining $24 (≈৳2,952) within 30 days to unlock Part 2, all 3 add-ons, and Live Q&A access. Splitting costs $44 total instead of $39 one-time. If the second installment isn\'t paid within 30 days, Part 1 access is paused until it is.',
+    a: 'Pay $24 to unlock Part 1 of the video modules. Pay the remaining $20 within 30 days to unlock Part 2, all 3 add-ons, and Live Q&A access. Splitting costs $44 total instead of $39 one-time. If the second installment isn\'t paid within 30 days, Part 1 access is paused until it is.',
   },
   {
     q: 'How do I get into the Tier 3 Inner Circle?',
@@ -33,7 +33,7 @@ const faqs = [
   },
   {
     q: 'How do I pay, and is it safe?',
-    a: 'Bkash, Nagad, and Binance UID (USDT) are all accepted. After paying, you send your screenshot as proof directly through our Telegram bot, and the mentor personally verifies every single payment before granting access.',
+    a: 'Binance UID and a direct USDT (TRC20) wallet address are both accepted. After paying, you send your screenshot as proof directly through our Telegram bot, and the mentor personally verifies every single payment before granting access.',
   },
   {
     q: 'What actually happens after I click "Confirm & Proceed"?',

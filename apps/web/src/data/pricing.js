@@ -1,13 +1,13 @@
 // ---------------------------------------------------------------------------
 // PRICING & PACKAGE DATA — driven by the Mentorship Business Logic Spec (Revised)
-// BDT is the primary display currency ("charm pricing" for local psychology),
-// USD/USDT is shown as a secondary reference. FX_RATE is a display-only
-// approximation for the split-payment breakdown — update if your real rate changes.
+// USD (USDT) is the ONLY currency shown anywhere on the site — this file is
+// the single source of truth for every price displayed. Pages import and
+// render these values directly instead of hard-coding a number, so a price
+// only ever has to change in one place and every page stays in sync.
 // ---------------------------------------------------------------------------
 
-export const FX_RATE = 123.5; // 1 USD/USDT ≈ 123.50 BDT (display estimate only)
+export const formatUSD = (amount) => `$${Number(amount).toLocaleString('en-US')}`;
 
-export const ADDONS_VALUE_BDT = 3897;
 export const ADDONS_VALUE_USD = 39;
 
 export const addons = [
@@ -24,7 +24,6 @@ export const addons = [
       'Key levels and liquidity draws flagged before price actually reaches them',
       'Every past day archived, so you can review how the read played out',
     ],
-    priceBDT: 1499,
     priceUSD: 15,
   },
   {
@@ -40,7 +39,6 @@ export const addons = [
       'The exact Notion trading journal used throughout the mentorship',
       'Import straight into your charting platform and Notion — no setup from scratch',
     ],
-    priceBDT: 999,
     priceUSD: 10,
   },
   {
@@ -56,7 +54,6 @@ export const addons = [
       'Organized by setup type for focused, one-pattern-at-a-time study',
       'Growing archive — new breakdowns are added as they get recorded',
     ],
-    priceBDT: 1399,
     priceUSD: 14,
   },
 ];
@@ -76,7 +73,6 @@ export const tiers = [
       'You\'re comfortable troubleshooting your own charts between chat replies',
       'You\'d rather buy add-ons individually, only if and when you need them',
     ],
-    priceBDT: 2999,
     priceUSD: 25,
     badge: null,
     addonsIncluded: false,
@@ -104,21 +100,22 @@ export const tiers = [
       'You\'d rather get all 3 add-ons free than buy them piecemeal later',
       'You\'re fine with a capped batch size in exchange for closer support',
     ],
-    priceBDT: 4799,
     priceUSD: 39,
     badge: 'MOST POPULAR',
     addonsIncluded: true,
     features: [
       { label: 'Core Recorded ICT Course', included: true },
       { label: 'Priority Support + Bi-Weekly Live Q&A', included: true },
-      { label: 'All 3 Add-ons — FREE', included: true, note: `Worth ৳${ADDONS_VALUE_BDT.toLocaleString('en-US')}` },
+      { label: 'All 3 Add-ons — FREE', included: true, note: `Worth $${ADDONS_VALUE_USD}` },
       { label: 'Weekly 1-on-1 Consultation', included: false },
     ],
     limitation: 'Max 50 students per batch',
     ctaLabel: 'Get the Anchor Plan',
+    // Per spec: Installment 1 ($24) unlocks Phase 1 / Part 1 video access only.
+    // Installment 2 ($20), due within `penaltyDays`, unlocks full access.
     splitPayment: {
-      installment1USD: 20,
-      installment2USD: 24,
+      installment1USD: 24,
+      installment2USD: 20,
       penaltyDays: 30,
     },
   },
@@ -136,7 +133,6 @@ export const tiers = [
       'You can commit to weekly 1-on-1 sessions for 3 months',
       'You\'re applying early — seats are strictly capped at 5 per month',
     ],
-    priceBDT: 17999,
     priceUSD: 149,
     badge: 'LIMITED SEATS',
     addonsIncluded: true,
@@ -230,15 +226,12 @@ export const comparisonGroups = [
   },
 ];
 
+// Bkash and Nagad have been removed — Binance UID and a direct USDT wallet
+// address are the only accepted payment methods.
 export const paymentMethods = [
-  { id: 'bkash', label: 'Bkash', number: '01XXXXXXXXX', note: 'Use "Send Money" (not "Payment") to this number, then attach your screenshot in Telegram.' },
-  { id: 'nagad', label: 'Nagad', number: '01XXXXXXXXX', note: 'Use "Send Money" to this number, then attach your screenshot in Telegram.' },
   { id: 'binance', label: 'Binance UID (USDT)', number: '123456789', note: 'Send via Binance Pay / internal transfer to this UID. USDT only.' },
+  { id: 'usdt', label: 'USDT Address (TRC20)', number: 'TXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX', note: 'Send USDT on the TRC20 network only to this address, then attach your screenshot in Telegram.' },
 ];
-
-export const formatBDT = (amount) => `\u09F3${Number(amount).toLocaleString('en-US')}`;
-export const formatUSD = (amount) => `$${Number(amount).toLocaleString('en-US')}`;
-export const bdtFromUSD = (usd) => Math.round(usd * FX_RATE);
 
 export function getTier(id) {
   return tiers.find((t) => t.id === id);

@@ -5,7 +5,7 @@ import { ArrowLeft, ArrowRight, Check, X, BadgeCheck } from 'lucide-react';
 import Header from '@/components/site/Header';
 import Footer from '@/components/site/Footer';
 import CtaButton from '@/components/site/CtaButton';
-import { tiers, addons, comparisonGroups, formatBDT, formatUSD } from '@/data/pricing';
+import { tiers, addons, comparisonGroups, formatUSD } from '@/data/pricing';
 import { chapters, totalClasses } from '@/data/chapters';
 
 const fadeUp = {
@@ -106,9 +106,9 @@ export default function TierComparisonPage() {
                         {tier.name}
                       </p>
                       <p className={`mt-3 flex items-baseline gap-1.5 ${isTier2 ? 'text-navy-foreground' : 'text-foreground'}`}>
-                        <span className="font-display text-xl font-bold tracking-tight sm:text-2xl">{formatBDT(tier.priceBDT)}</span>
+                        <span className="font-display text-xl font-bold tracking-tight sm:text-2xl">{formatUSD(tier.priceUSD)}</span>
                         <span className={`text-[11px] ${isTier2 ? 'text-navy-foreground/60' : 'text-muted-foreground'}`}>
-                          ≈{formatUSD(tier.priceUSD)}
+                          USDT
                         </span>
                       </p>
                       <div className="mt-4">
