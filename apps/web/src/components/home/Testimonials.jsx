@@ -19,10 +19,27 @@ function RatingBreakdownBar({ stars, pct }) {
   );
 }
 
-function ReviewCard({ name, location, quote }) {
+function ReviewStars({ stars }) {
+  return (
+    <div className="flex items-center gap-0.5" role="img" aria-label={`Rated ${stars} out of 5 stars`}>
+      {Array.from({ length: 5 }).map((_, i) => (
+        <Star
+          key={i}
+          size={13}
+          className={i < stars ? 'fill-gold text-gold' : 'fill-transparent text-border'}
+        />
+      ))}
+    </div>
+  );
+}
+
+function ReviewCard({ name, location, quote, stars }) {
   return (
     <div className="flex h-full flex-col rounded-2xl border border-border bg-card p-6 shadow-soft">
-      <Quote className="text-brand/30" size={26} strokeWidth={1.75} />
+      <div className="flex items-center justify-between">
+        <Quote className="text-brand/30" size={26} strokeWidth={1.75} />
+        <ReviewStars stars={stars} />
+      </div>
       <p className="mt-3 flex-1 text-sm leading-relaxed text-foreground">{quote}</p>
       <div className="mt-5 flex items-center gap-3 border-t border-border pt-4">
         <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-accent text-xs font-bold text-accent-foreground">

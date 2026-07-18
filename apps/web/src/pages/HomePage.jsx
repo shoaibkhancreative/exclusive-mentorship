@@ -6,6 +6,7 @@ import Footer from '@/components/site/Footer';
 import VideoEmbed from '@/components/site/VideoEmbed';
 import CtaButton from '@/components/site/CtaButton';
 import { chapters, totalClasses } from '@/data/chapters';
+import { rating } from '@/data/testimonials';
 
 import WhoIsThisFor from '@/components/home/WhoIsThisFor';
 import WhyChooseUs from '@/components/home/WhyChooseUs';
@@ -96,13 +97,14 @@ export default function HomePage() {
               Watch the 2-minute program overview before you enroll.
             </p>
             <VideoEmbed title="Mentorship Introduction" videoId={SAMPLE_INTRO_VIDEO_ID} />
-            {/* SAMPLE rating — replace once real reviews exist (see Testimonials). */}
+            {/* Reads live from src/data/testimonials.js — add real reviews there
+                and this score updates on its own, no edit needed here. */}
             <div className="absolute -bottom-2 -left-4 hidden items-center gap-3 rounded-2xl border border-border bg-card px-4 py-3 shadow-softLg sm:flex">
               <span className="flex h-9 w-9 items-center justify-center rounded-full bg-gold/15 text-gold">
                 <Star size={16} className="fill-gold" />
               </span>
               <div className="leading-tight">
-                <p className="text-sm font-bold text-foreground">4.9 / 5</p>
+                <p className="text-sm font-bold text-foreground">{rating.score} / 5</p>
                 <p className="text-xs text-muted-foreground">Early student rating</p>
               </div>
             </div>
