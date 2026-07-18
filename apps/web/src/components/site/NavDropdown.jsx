@@ -13,7 +13,7 @@ let uid = 0;
 // - `children` is a render-prop — children(close) — so links inside the
 //   panel can close the menu the moment they're clicked/navigated.
 // ---------------------------------------------------------------------------
-export default function NavDropdown({ label, active = false, panelClassName, children }) {
+export default function NavDropdown({ label, active = false, panelClassName = 'w-80', children }) {
   const [open, setOpen] = React.useState(false);
   const closeTimer = React.useRef(null);
   const wrapRef = React.useRef(null);
@@ -60,6 +60,10 @@ export default function NavDropdown({ label, active = false, panelClassName, chi
     if (wrapRef.current && !wrapRef.current.contains(e.relatedTarget)) closeSoon();
   };
 
+  // Trigger reads as "on" whenever its own panel is open OR its route is
+  // active, so the underline bar below stays in sync with both signals.
+  const highlighted = active || open;
+
   return (
     <div ref={wrapRef} className="relative" onMouseEnter={openNow} onMouseLeave={closeSoon} onBlur={handleBlur}>
       <button
@@ -68,8 +72,8 @@ export default function NavDropdown({ label, active = false, panelClassName, chi
         aria-controls={panelId}
         onClick={() => (open ? closeNow() : openNow())}
         className={cn(
-          'flex items-center gap-1 py-2 transition-colors hover:text-foreground focus-visible:text-foreground',
-          active ? 'text-foreground' : 'text-muted-foreground'
+          'relative flex items-center gap-1 py-2 transition-colors hover:text-foreground focus-visible:text-foreground',
+          highlighted ? 'text-foreground' : 'text-muted-foreground'
         )}
       >
         {label}
@@ -78,6 +82,13 @@ export default function NavDropdown({ label, active = false, panelClassName, chi
           strokeWidth={2.4}
           className={cn('transition-transform duration-200', open && 'rotate-180')}
         />
+        <span
+          aria-hidden="true"
+          className={cn(
+            'pointer-events-none absolute -bottom-[3px] left-0 h-[2px] w-full origin-left scale-x-0 rounded-full bg-brand transition-transform duration-300',
+            highlighted && 'scale-x-100'
+          )}
+        />
       </button>
 
       {open && (
@@ -85,7 +96,7 @@ export default function NavDropdown({ label, active = false, panelClassName, chi
           <div
             id={panelId}
             className={cn(
-              'w-80 origin-top animate-in fade-in-0 zoom-in-95 slide-in-from-top-1 overflow-hidden rounded-2xl border border-border bg-card shadow-softLg duration-150',
+              'origin-top animate-in fade-in-0 zoom-in-95 slide-in-from-top-1 overflow-hidden rounded-2xl border border-border bg-card shadow-softLg duration-150',
               panelClassName
             )}
           >
