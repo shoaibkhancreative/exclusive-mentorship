@@ -11,12 +11,12 @@ import WhoIsThisFor from '@/components/home/WhoIsThisFor';
 import WhyChooseUs from '@/components/home/WhyChooseUs';
 import AboutMentor from '@/components/home/AboutMentor';
 import MainValue from '@/components/home/MainValue';
-import Testimonials from '@/components/home/Testimonials';
 import Curriculum from '@/components/home/Curriculum';
-import YouTubeSection from '@/components/home/YouTubeSection';
+import Testimonials from '@/components/home/Testimonials';
 import PricingOffer from '@/components/home/PricingOffer';
 import GuaranteeSection from '@/components/home/GuaranteeSection';
 import FAQSection from '@/components/home/FAQSection';
+import YouTubeSection from '@/components/home/YouTubeSection';
 
 const fadeUp = {
   initial: { opacity: 0, y: 24 },
@@ -110,17 +110,22 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Sections below the fold, in the requested order */}
+      {/* Sections below the fold, reordered for a stronger persuasion flow:
+          qualify the visitor -> differentiate from what they've already tried ->
+          build trust in the mentor -> explain the method -> show the concrete
+          curriculum -> social proof -> the offer -> de-risk it with the guarantee ->
+          answer remaining objections -> low-commitment alternative for anyone
+          still undecided, right before they'd otherwise leave. */}
       <WhoIsThisFor />
       <WhyChooseUs />
       <AboutMentor />
       <MainValue />
-      <Testimonials />
       <Curriculum />
-      <YouTubeSection />
+      <Testimonials />
       <PricingOffer />
       <GuaranteeSection />
       <FAQSection />
+      <YouTubeSection />
 
       <Footer />
     </div>
