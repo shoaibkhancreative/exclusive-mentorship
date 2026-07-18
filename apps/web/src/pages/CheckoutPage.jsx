@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowLeft, ArrowRight, Check, Copy, LifeBuoy, ShieldCheck, Send, Sparkles } from 'lucide-react';
 import Header from '@/components/site/Header';
 import Footer from '@/components/site/Footer';
+import Seo from '@/components/site/Seo';
 import { tiers, addons, paymentMethods, formatUSD, ADDONS_VALUE_USD } from '@/data/pricing';
 import { buildTelegramDeepLink } from '@/lib/telegram';
 import { Checkbox } from '@/components/ui/checkbox';
@@ -101,6 +102,7 @@ export default function CheckoutPage() {
 
   return (
     <div className="min-h-screen bg-background font-sans text-foreground">
+      <Seo title="Complete Your Enrollment" description="Choose your tier, confirm your details, and complete payment through Telegram." />
       <Header />
 
       <section className="border-b border-border bg-secondary/40 py-10">
@@ -288,22 +290,22 @@ export default function CheckoutPage() {
                 <div className="space-y-5 rounded-2xl border border-border bg-card p-6 sm:p-8">
                   <div>
                     <Label htmlFor="name">Full Name *</Label>
-                    <Input id="name" className="mt-1.5" value={info.name} onChange={(e) => setInfo({ ...info, name: e.target.value })} placeholder="Your full name" />
+                    <Input id="name" className="mt-1.5 h-11" value={info.name} onChange={(e) => setInfo({ ...info, name: e.target.value })} placeholder="Your full name" />
                   </div>
                   <p className="text-sm text-muted-foreground">Provide at least one contact method below.</p>
                   <div className="grid gap-5 sm:grid-cols-2">
                     <div>
                       <Label htmlFor="phone">Phone Number</Label>
-                      <Input id="phone" className="mt-1.5" value={info.phone} onChange={(e) => setInfo({ ...info, phone: e.target.value })} placeholder="+880 1XXXXXXXXX" />
+                      <Input id="phone" className="mt-1.5 h-11" value={info.phone} onChange={(e) => setInfo({ ...info, phone: e.target.value })} placeholder="+880 1XXXXXXXXX" />
                     </div>
                     <div>
                       <Label htmlFor="email">Email Address</Label>
-                      <Input id="email" type="email" className="mt-1.5" value={info.email} onChange={(e) => setInfo({ ...info, email: e.target.value })} placeholder="you@email.com" />
+                      <Input id="email" type="email" className="mt-1.5 h-11" value={info.email} onChange={(e) => setInfo({ ...info, email: e.target.value })} placeholder="you@email.com" />
                     </div>
                   </div>
                   <div>
                     <Label htmlFor="telegram">Telegram Username</Label>
-                    <Input id="telegram" className="mt-1.5" value={info.telegram} onChange={(e) => setInfo({ ...info, telegram: e.target.value })} placeholder="@yourusername" />
+                    <Input id="telegram" className="mt-1.5 h-11" value={info.telegram} onChange={(e) => setInfo({ ...info, telegram: e.target.value })} placeholder="@yourusername" />
                   </div>
                   {!contactFilled && (
                     <p className="text-xs text-destructive">Please provide at least one of: phone, email, or Telegram username.</p>
@@ -345,11 +347,11 @@ export default function CheckoutPage() {
                   </div>
                   <label className="flex cursor-pointer items-start gap-3 rounded-xl border border-border p-4">
                     <Checkbox checked={terms.agree} onCheckedChange={(v) => setTerms((t) => ({ ...t, agree: Boolean(v) }))} className="mt-0.5" />
-                    <span className="text-sm text-foreground">আমি সকল Terms &amp; Conditions সম্পূর্ণ পড়েছি ও সম্মত আছি।</span>
+                    <span className="text-sm text-foreground">I have fully read and agree to the Terms &amp; Conditions.</span>
                   </label>
                   <label className="flex cursor-pointer items-start gap-3 rounded-xl border border-border p-4">
                     <Checkbox checked={terms.risk} onCheckedChange={(v) => setTerms((t) => ({ ...t, risk: Boolean(v) }))} className="mt-0.5" />
-                    <span className="text-sm text-foreground">Trading risk সম্পর্কে আমি সচেতন।</span>
+                    <span className="text-sm text-foreground">I understand the risks involved in trading.</span>
                   </label>
                 </div>
               )}

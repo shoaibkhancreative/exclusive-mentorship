@@ -3,6 +3,7 @@ import { Link, useParams, Navigate } from 'react-router-dom';
 import { ArrowLeft, ArrowRight, Check, Sparkles } from 'lucide-react';
 import Header from '@/components/site/Header';
 import Footer from '@/components/site/Footer';
+import Seo from '@/components/site/Seo';
 import { addons, tiers, formatUSD, getAddonBySlug } from '@/data/pricing';
 
 export default function AddonPage() {
@@ -16,6 +17,7 @@ export default function AddonPage() {
 
   return (
     <div className="min-h-screen bg-background font-sans text-foreground">
+      <Seo title={`${addon.name} \u2014 Add-on`} description={addon.longDescription} />
       <Header />
 
       <section className="border-b border-border bg-secondary/40 py-14">

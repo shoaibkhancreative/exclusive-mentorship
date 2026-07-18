@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import Header from '@/components/site/Header';
 import Footer from '@/components/site/Footer';
+import Seo from '@/components/site/Seo';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 
 const fadeUp = {
@@ -107,6 +108,10 @@ const faqCategories = [
 export default function FAQPage() {
   return (
     <div className="min-h-screen bg-background font-sans text-foreground">
+      <Seo
+        title="FAQ"
+        description="Answers on tiers, add-ons, payment, the guarantee, and enrollment — everything you need before joining."
+      />
       <Header />
 
       <section className="border-b border-border bg-secondary/40 py-14">

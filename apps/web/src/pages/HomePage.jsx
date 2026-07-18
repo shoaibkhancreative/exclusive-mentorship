@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { ArrowRight, Star } from 'lucide-react';
 import Header from '@/components/site/Header';
 import Footer from '@/components/site/Footer';
+import Seo from '@/components/site/Seo';
 import VideoEmbed from '@/components/site/VideoEmbed';
 import CtaButton from '@/components/site/CtaButton';
 import { chapters, totalClasses } from '@/data/chapters';
@@ -42,6 +43,10 @@ const SAMPLE_INTRO_VIDEO_ID = 'aqz-KE-bpKQ';
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-background font-sans text-foreground">
+      <Seo
+        title="Institutional Trading Mentorship"
+        description={`${chapters.length} chapters, ${totalClasses}+ classes — one complete system for reading liquidity, market structure, psychology and risk the way professional desks do.`}
+      />
       <Header />
 
       {/* HERO — a fine dot-grid (fading toward the edges) stands in for any

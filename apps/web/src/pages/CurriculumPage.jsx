@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { ArrowRight, Check } from 'lucide-react';
 import Header from '@/components/site/Header';
 import Footer from '@/components/site/Footer';
+import Seo from '@/components/site/Seo';
 import CtaButton from '@/components/site/CtaButton';
 import { chapters, totalClasses } from '@/data/chapters';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
@@ -18,6 +19,10 @@ const fadeUp = {
 export default function CurriculumPage() {
   return (
     <div className="min-h-screen bg-background font-sans text-foreground">
+      <Seo
+        title="Full Curriculum"
+        description={`The complete ${chapters.length}-chapter, ${totalClasses}+ class syllabus, with every class description in one place.`}
+      />
       <Header />
 
       <section className="border-b border-border bg-secondary/40 py-14">

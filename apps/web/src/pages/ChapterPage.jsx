@@ -3,6 +3,7 @@ import { Link, useParams, Navigate } from 'react-router-dom';
 import { ArrowLeft, ArrowRight, Check } from 'lucide-react';
 import Header from '@/components/site/Header';
 import Footer from '@/components/site/Footer';
+import Seo from '@/components/site/Seo';
 import VideoEmbed from '@/components/site/VideoEmbed';
 import { getChapterBySlug, chapters } from '@/data/chapters';
 
@@ -16,6 +17,10 @@ export default function ChapterPage() {
 
   return (
     <div className="min-h-screen bg-background font-sans text-foreground">
+      <Seo
+        title={`${chapter.title} \u2014 Chapter ${String(chapter.id).padStart(2, '0')}`}
+        description={chapter.overview}
+      />
       <Header />
 
       <section className="border-b border-border bg-secondary/40 py-14">

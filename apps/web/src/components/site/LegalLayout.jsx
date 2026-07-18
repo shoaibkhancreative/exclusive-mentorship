@@ -3,10 +3,12 @@ import { Link } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
 import Header from './Header';
 import Footer from './Footer';
+import Seo from './Seo';
 
 export default function LegalLayout({ eyebrow, title, updated, children }) {
   return (
     <div className="min-h-screen bg-background font-sans text-foreground">
+      <Seo title={title} />
       <Header />
       <section className="border-b border-border bg-secondary/40 py-12">
         <div className="mx-auto max-w-3xl px-6">

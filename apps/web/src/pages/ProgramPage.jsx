@@ -3,6 +3,7 @@ import { Link, useParams, Navigate } from 'react-router-dom';
 import { ArrowLeft, ArrowRight, Check, X, Sparkles } from 'lucide-react';
 import Header from '@/components/site/Header';
 import Footer from '@/components/site/Footer';
+import Seo from '@/components/site/Seo';
 import CtaButton from '@/components/site/CtaButton';
 import { tiers, formatUSD, ADDONS_VALUE_USD, getTierBySlug } from '@/data/pricing';
 import { chapters, totalClasses } from '@/data/chapters';
@@ -21,6 +22,7 @@ export default function ProgramPage() {
 
   return (
     <div className="min-h-screen bg-background font-sans text-foreground">
+      <Seo title={`${tier.name} \u2014 Tier Details`} description={tier.longDescription} />
       <Header />
 
       <section className="border-b border-border bg-secondary/40 py-14">

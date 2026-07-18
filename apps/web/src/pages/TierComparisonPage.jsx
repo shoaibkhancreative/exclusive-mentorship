@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { ArrowLeft, ArrowRight, Check, X, BadgeCheck } from 'lucide-react';
 import Header from '@/components/site/Header';
 import Footer from '@/components/site/Footer';
+import Seo from '@/components/site/Seo';
 import CtaButton from '@/components/site/CtaButton';
 import { tiers, addons, comparisonGroups, formatUSD } from '@/data/pricing';
 import { chapters, totalClasses } from '@/data/chapters';
@@ -39,6 +40,10 @@ function ValueCell({ value }) {
 export default function TierComparisonPage() {
   return (
     <div className="min-h-screen bg-background font-sans text-foreground">
+      <Seo
+        title="Compare All Tiers"
+        description="See all three mentorship tiers side by side — what's included, what's free, and which fits how much support you want."
+      />
       <Header />
 
       {/* Intro */}
