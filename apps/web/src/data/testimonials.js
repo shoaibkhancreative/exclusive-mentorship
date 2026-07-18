@@ -66,13 +66,6 @@ export const reviews = [
     quote:
       "Passed my first prop firm challenge using exactly what's taught in Chapter 13. Didn't expect that chapter to matter this much until it did.",
   },
-  {
-    name: 'Sabuj Faysalo',
-    location: 'Noakhali',
-    stars: 1,
-    quote:
-      "Pgsmlkjtonbljf afhuiaghja vfuyaeiogv fuyeag",
-  },
 ];
 
 // --- Everything below is DERIVED from `reviews` above. Don't hand-edit. ---
