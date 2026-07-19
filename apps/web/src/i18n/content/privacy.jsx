@@ -8,20 +8,20 @@ export const privacy = {
   blocks: [
     {
       type: 'p',
-      en: 'This Privacy Policy explains what information Exclusive Mentorship collects when you complete Checkout, enroll in Tier 3 — The Inner Circle, or contact us, and how that information is used.',
-      bn: 'এই Privacy Policy ব্যাখ্যা করে যে, আপনি যখন Checkout সম্পন্ন করেন, Tier 3 — The Inner Circle-এ Enroll করেন, অথবা আমাদের সাথে যোগাযোগ করেন, তখন Exclusive Mentorship কী কী তথ্য সংগ্রহ করে এবং তা কীভাবে ব্যবহার করা হয়।',
+      en: 'This Privacy Policy explains what information Exclusive Mentorship collects when you complete Checkout, enroll in Tier 3 — ICT Inner Circle, or contact us, and how that information is used.',
+      bn: 'এই Privacy Policy ব্যাখ্যা করে যে, আপনি যখন Checkout সম্পন্ন করেন, Tier 3 — ICT Inner Circle-এ Enroll করেন, অথবা আমাদের সাথে যোগাযোগ করেন, তখন Exclusive Mentorship কী কী তথ্য সংগ্রহ করে এবং তা কীভাবে ব্যবহার করা হয়।',
     },
     { type: 'h2', en: '1. Information We Collect', bn: '১. আমরা যেসব তথ্য সংগ্রহ করি' },
     {
       type: 'ul',
       en: [
-        'Contact details you provide at Checkout: full name, plus at least one of Phone Number, Email, or Telegram Username.',
+        'Contact details you share with our Telegram Bot when you start the enrollment conversation — such as your name and a way to reach you.',
         'A Screenshot of your Binance or USDT Wallet transaction as Payment Proof, sent to our Telegram Bot for Payment verification.',
         'Your Account information available through Telegram — such as Username and User ID — once you start a conversation with our Bot.',
         'Basic, non-identifying usage data generated while browsing the Website (such as which pages were viewed), if we have Analytics enabled.',
       ],
       bn: [
-        'Checkout সম্পন্ন করার সময় আপনার দেওয়া যোগাযোগের তথ্য: পূর্ণ নাম, এবং Phone Number, Email অথবা Telegram Username-এর মধ্যে অন্তত একটি।',
+        'আপনি যখন Enrollment-এর কথোপকথন শুরু করেন, তখন আমাদের Telegram Bot-কে আপনি যে যোগাযোগের তথ্য দেন — যেমন আপনার নাম এবং যোগাযোগের একটি মাধ্যম।',
         'Payment Proof হিসেবে আপনার Binance বা USDT Wallet Transaction-এর Screenshot, যা Payment যাচাইয়ের জন্য আমাদের Telegram Bot-এ পাঠানো হয়।',
         'আপনি যখন আমাদের Bot-এর সাথে কথোপকথন শুরু করেন, তখন Telegram-এর মাধ্যমে উপলব্ধ আপনার Account তথ্য, যেমন Username এবং User ID।',
         'Website Browse করার সময় তৈরি হওয়া Basic, Non-Identifying Usage Data (যেমন কোন Page দেখা হয়েছে), যদি আমরা Analytics চালু রাখি।',
@@ -33,13 +33,13 @@ export const privacy = {
       en: [
         'To manually verify your Payment and grant Access to the correct Tier, Add-on, or Private Channel.',
         'To stay in touch with you about your Order, Enrollment, or Support needs.',
-        'To vet applicants for the limited Tier 3 — The Inner Circle seats, and manage the Waitlist when needed.',
+        'To vet applicants for the limited Tier 3 — ICT Inner Circle seats, and manage the Waitlist when needed.',
         'To keep records required for our own accounting and fraud-prevention purposes.',
       ],
       bn: [
         'আপনার Payment ম্যানুয়ালি যাচাই করে সঠিক Tier, Add-on বা Private Channel-এর Access প্রদান করতে।',
         'আপনার Order, Enrollment বা Support সংক্রান্ত বিষয়ে আপনার সাথে যোগাযোগ রাখতে।',
-        'সীমিত সংখ্যক Tier 3 — The Inner Circle সিটের জন্য আবেদনকারীদের যাচাই করতে, এবং প্রয়োজনে Waitlist পরিচালনা করতে।',
+        'সীমিত সংখ্যক Tier 3 — ICT Inner Circle সিটের জন্য আবেদনকারীদের যাচাই করতে, এবং প্রয়োজনে Waitlist পরিচালনা করতে।',
         'আমাদের নিজস্ব Accounting ও Fraud-Prevention সংক্রান্ত প্রয়োজনীয় Record সংরক্ষণ করতে।',
       ],
     },

@@ -8,11 +8,14 @@ import Seo from '@/components/site/Seo';
 import { tiers, addons, paymentMethods, formatUSD, ADDONS_VALUE_USD } from '@/data/pricing';
 import { buildTelegramDeepLink } from '@/lib/telegram';
 import { Checkbox } from '@/components/ui/checkbox';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { useToast } from '@/hooks/use-toast';
+import { LegalBlocks } from '@/components/site/LegalLayout';
+import { terms as termsContent } from '@/i18n/content/terms';
+import { privacy as privacyContent } from '@/i18n/content/privacy';
+import { disclaimer as disclaimerContent } from '@/i18n/content/disclaimer';
 
-const STEPS = ['Package', 'Your Info', 'Terms', 'Payment', 'Confirm'];
+const STEPS = ['Package', 'Terms', 'Payment', 'Confirm'];
 
 const tier1 = tiers.find((t) => t.id === 'tier1');
 const tier2 = tiers.find((t) => t.id === 'tier2');
@@ -39,7 +42,6 @@ export default function CheckoutPage() {
     templates: initialAddon === 'templates',
     archive: initialAddon === 'archive',
   });
-  const [info, setInfo] = React.useState({ name: '', phone: '', email: '', telegram: '' });
   const [terms, setTerms] = React.useState({ agree: false, risk: false });
   const [paymentMethod, setPaymentMethod] = React.useState(null);
   const [copied, setCopied] = React.useState(false);
@@ -68,12 +70,10 @@ export default function CheckoutPage() {
     dueNowUSD = addonsCostUSD;
   }
 
-  const contactFilled = Boolean(info.phone || info.email || info.telegram);
   const step1Valid = packageType === 'addons' ? anyAddonSelected : true;
-  const step2Valid = Boolean(info.name.trim() && contactFilled);
-  const step3Valid = terms.agree && terms.risk;
-  const step4Valid = Boolean(paymentMethod);
-  const canProceed = [step1Valid, step2Valid, step3Valid, step4Valid, true][step];
+  const step2Valid = terms.agree && terms.risk;
+  const step3Valid = Boolean(paymentMethod);
+  const canProceed = [step1Valid, step2Valid, step3Valid, true][step];
 
   const paymentLabel = paymentMethods.find((p) => p.id === paymentMethod)?.label;
 
@@ -287,36 +287,9 @@ export default function CheckoutPage() {
               )}
 
               {step === 1 && (
-                <div className="space-y-5 rounded-2xl border border-border bg-card p-6 sm:p-8">
-                  <div>
-                    <Label htmlFor="name">Full Name *</Label>
-                    <Input id="name" className="mt-1.5 h-11" value={info.name} onChange={(e) => setInfo({ ...info, name: e.target.value })} placeholder="Your full name" />
-                  </div>
-                  <p className="text-sm text-muted-foreground">Provide at least one contact method below.</p>
-                  <div className="grid gap-5 sm:grid-cols-2">
-                    <div>
-                      <Label htmlFor="phone">Phone Number</Label>
-                      <Input id="phone" className="mt-1.5 h-11" value={info.phone} onChange={(e) => setInfo({ ...info, phone: e.target.value })} placeholder="+880 1XXXXXXXXX" />
-                    </div>
-                    <div>
-                      <Label htmlFor="email">Email Address</Label>
-                      <Input id="email" type="email" className="mt-1.5 h-11" value={info.email} onChange={(e) => setInfo({ ...info, email: e.target.value })} placeholder="you@email.com" />
-                    </div>
-                  </div>
-                  <div>
-                    <Label htmlFor="telegram">Telegram Username</Label>
-                    <Input id="telegram" className="mt-1.5 h-11" value={info.telegram} onChange={(e) => setInfo({ ...info, telegram: e.target.value })} placeholder="@yourusername" />
-                  </div>
-                  {!contactFilled && (
-                    <p className="text-xs text-destructive">Please provide at least one of: phone, email, or Telegram username.</p>
-                  )}
-                </div>
-              )}
-
-              {step === 2 && (
                 <div className="space-y-5">
-                  <div className="max-h-64 overflow-y-auto rounded-2xl border border-border bg-card p-6 text-sm leading-relaxed text-muted-foreground scrollbar-thin">
-                    <p className="font-display font-semibold text-foreground">Terms &amp; Conditions (Summary)</p>
+                  <div className="rounded-2xl border border-border bg-card p-6 text-sm leading-relaxed text-muted-foreground">
+                    <p className="font-display font-semibold text-foreground">Before You Continue</p>
                     <p className="mt-3">
                       By enrolling you acknowledge this is educational content only and does not constitute financial advice. All
                       purchases are final — there is no cash refund. Instead, every tier is backed by the ICT Mastery Accountability
@@ -339,15 +312,51 @@ export default function CheckoutPage() {
                     </p>
                     <p className="mt-3">
                       Trading financial markets carries substantial risk of loss and is not suitable for everyone. You are solely
-                      responsible for your own trading decisions and outcomes. Full details:{' '}
-                      <Link to="/terms" target="_blank" className="font-medium text-brand hover:underline">Terms &amp; Conditions</Link>,{' '}
-                      <Link to="/privacy" target="_blank" className="font-medium text-brand hover:underline">Privacy Policy</Link>,{' '}
-                      <Link to="/disclaimer" target="_blank" className="font-medium text-brand hover:underline">Disclaimer</Link>.
+                      responsible for your own trading decisions and outcomes.
                     </p>
                   </div>
+
+                  <div className="rounded-2xl border border-border bg-card p-2 sm:p-3">
+                    <div className="px-4 pt-3 pb-2">
+                      <p className="font-display font-semibold text-foreground">Terms &amp; Conditions, Privacy Policy and Disclaimer</p>
+                      <p className="mt-1 text-xs text-muted-foreground">
+                        Full text of all three below — tap a section to expand it. Each is also its own page:{' '}
+                        <Link to="/terms" target="_blank" className="font-medium text-brand hover:underline">Terms &amp; Conditions</Link>,{' '}
+                        <Link to="/privacy" target="_blank" className="font-medium text-brand hover:underline">Privacy Policy</Link>,{' '}
+                        <Link to="/disclaimer" target="_blank" className="font-medium text-brand hover:underline">Disclaimer</Link>.
+                      </p>
+                    </div>
+                    <Accordion type="multiple">
+                      <AccordionItem value="terms" className="px-4">
+                        <AccordionTrigger className="text-sm font-semibold text-foreground">Terms &amp; Conditions</AccordionTrigger>
+                        <AccordionContent>
+                          <div className="max-h-72 overflow-y-auto pr-2 text-sm scrollbar-thin">
+                            <LegalBlocks blocks={termsContent.blocks} />
+                          </div>
+                        </AccordionContent>
+                      </AccordionItem>
+                      <AccordionItem value="privacy" className="px-4">
+                        <AccordionTrigger className="text-sm font-semibold text-foreground">Privacy Policy</AccordionTrigger>
+                        <AccordionContent>
+                          <div className="max-h-72 overflow-y-auto pr-2 text-sm scrollbar-thin">
+                            <LegalBlocks blocks={privacyContent.blocks} />
+                          </div>
+                        </AccordionContent>
+                      </AccordionItem>
+                      <AccordionItem value="disclaimer" className="border-b-0 px-4">
+                        <AccordionTrigger className="text-sm font-semibold text-foreground">Disclaimer</AccordionTrigger>
+                        <AccordionContent>
+                          <div className="max-h-72 overflow-y-auto pr-2 text-sm scrollbar-thin">
+                            <LegalBlocks blocks={disclaimerContent.blocks} />
+                          </div>
+                        </AccordionContent>
+                      </AccordionItem>
+                    </Accordion>
+                  </div>
+
                   <label className="flex cursor-pointer items-start gap-3 rounded-xl border border-border p-4">
                     <Checkbox checked={terms.agree} onCheckedChange={(v) => setTerms((t) => ({ ...t, agree: Boolean(v) }))} className="mt-0.5" />
-                    <span className="text-sm text-foreground">I have fully read and agree to the Terms &amp; Conditions.</span>
+                    <span className="text-sm text-foreground">I have fully read and agree to the Terms &amp; Conditions, Privacy Policy, and Disclaimer.</span>
                   </label>
                   <label className="flex cursor-pointer items-start gap-3 rounded-xl border border-border p-4">
                     <Checkbox checked={terms.risk} onCheckedChange={(v) => setTerms((t) => ({ ...t, risk: Boolean(v) }))} className="mt-0.5" />
@@ -356,7 +365,7 @@ export default function CheckoutPage() {
                 </div>
               )}
 
-              {step === 3 && (
+              {step === 2 && (
                 <div className="space-y-6">
                   <div className="grid gap-4 sm:grid-cols-2">
                     {paymentMethods.map((m) => (
@@ -415,7 +424,7 @@ export default function CheckoutPage() {
                 </div>
               )}
 
-              {step === 4 && (
+              {step === 3 && (
                 <div className="space-y-6 rounded-2xl border border-border bg-card p-8 text-center">
                   <ShieldCheck className="mx-auto text-brand" size={40} />
                   <h2 className="font-display text-2xl font-bold text-foreground">Review &amp; Confirm</h2>
@@ -457,7 +466,7 @@ export default function CheckoutPage() {
             </motion.div>
           </AnimatePresence>
 
-          {step < 4 && (
+          {step < 3 && (
             <div className="mt-8 flex items-center justify-between">
               <button
                 type="button"
@@ -469,7 +478,7 @@ export default function CheckoutPage() {
               </button>
               <button
                 type="button"
-                onClick={() => setStep((s) => Math.min(4, s + 1))}
+                onClick={() => setStep((s) => Math.min(3, s + 1))}
                 disabled={!canProceed}
                 className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground disabled:opacity-40"
               >

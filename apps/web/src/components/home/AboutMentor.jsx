@@ -4,21 +4,20 @@ import { BookOpenCheck, TrendingUp, Users } from 'lucide-react';
 import SectionHeading, { fadeUp } from './SectionHeading';
 
 // ---------------------------------------------------------------------------
-// SAMPLE CONTENT — the bio paragraph, "Years Trading" and "Students Mentored"
-// figures below are placeholder text written only so this section isn't
-// empty. Swap in the real story and actual figures before this goes live.
-// "Chapters Authored" is left as the one real, verifiable number (5, from
-// the curriculum itself). The name/brand (NLT — Next Level Trader) is real.
+// MENTOR BIO & STATS — confirmed details: trading since 2019, first
+// consistently profitable by the end of 2023, 120+ students mentored so far.
+// "Chapters Authored" (5) is sourced directly from the curriculum itself.
+// The name/brand (NLT — Next Level Trader) is real.
 // ---------------------------------------------------------------------------
 const MENTOR_NAME = 'NLT';
 const MENTOR_FULL_NAME = 'Next Level Trader';
 const MENTOR_CREDENTIAL = 'Independent Trader · Smart Money & ICT Concepts';
 const MENTOR_BIO =
-  "I spent my first two years jumping between indicators and \u2018free signal\u2019 channels, blowing three accounts before anything clicked. Learning to read the market the way institutional desks actually operate changed that \u2014 this mentorship is the structured path I wish had existed when I was starting out.";
+  "I opened my first trading account in 2019 with more confidence than a plan \u2014 jumping between indicators and \u2018free signal\u2019 channels, and blowing through three accounts before anything actually clicked. It took real time to unlearn the bad habits and rebuild my process around how institutional desks actually read the market. That discipline finally paid off by the end of 2023, when it turned into consistent, repeatable profitability \u2014 not a lucky streak, but a system I could trust and repeat. Since then, I\u2019ve mentored 120+ students through that same process. This mentorship is the structured path I wish had existed back in 2019.";
 
 const stats = [
   { icon: TrendingUp, label: 'Years Trading', value: '7+' },
-  { icon: Users, label: 'Students Mentored', value: '500+' },
+  { icon: Users, label: 'Students Mentored', value: '120+' },
   { icon: BookOpenCheck, label: 'Chapters Authored', value: '5' },
 ];
 

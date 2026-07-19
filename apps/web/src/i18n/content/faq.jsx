@@ -54,7 +54,7 @@ export const faqCategories = {
           a: 'Daily Market Insight is a written daily Session Bias Analysis, sent before the London and New York Sessions open. The Setup Templates Add-on gives you the Chart Template and Trading Journal used in the course. The Live Trade Breakdown Archive Add-on gives you the full archive of every previously recorded Live Trade Breakdown, organized by Setup. Full details for each Add-on are on its own Add-on Page.',
         },
         {
-          q: 'How do I join Tier 3 — The Inner Circle?',
+          q: 'How do I join Tier 3 — ICT Inner Circle?',
           a: 'Joining Tier 3 follows the same Checkout Process as any other Tier — no separate Application Form is needed. To genuinely guarantee 1-on-1 support, though, seats are strictly capped at 5 Students per month. Once this month\u2019s seats fill up, the Website will show Tier 3 as "Full" and new Enrollment stays closed until the next Batch opens.',
         },
       ],
@@ -145,7 +145,7 @@ export const faqCategories = {
           a: 'Daily Market Insight হলো প্রতিদিনের একটি লিখিত Session Bias Analysis, যা London ও New York Session শুরুর আগেই পাঠানো হয়। Setup Templates Add-on-এ পাবেন কোর্সে ব্যবহৃত Chart Template এবং Trading Journal। আর Live Trade Breakdown Archive Add-on-এ থাকছে আগের সব রেকর্ড করা Live Trade Breakdown-এর সম্পূর্ণ Archive, যা Setup অনুযায়ী সাজানো। প্রতিটি Add-on-এর সম্পূর্ণ বিস্তারিত বিবরণ সংশ্লিষ্ট Add-on Page-এ পাওয়া যাবে।',
         },
         {
-          q: 'Tier 3 — The Inner Circle-এ কীভাবে যোগ দেব?',
+          q: 'Tier 3 — ICT Inner Circle-এ কীভাবে যোগ দেব?',
           a: 'Tier 3-এ যোগ দিতে অন্যান্য Tier-এর মতোই একই Checkout Process অনুসরণ করতে হয়, আলাদা কোনো Application Form পূরণের প্রয়োজন নেই। তবে সত্যিকার অর্থে 1-on-1 সহায়তা নিশ্চিত করতে প্রতি মাসে সিট সংখ্যা কঠোরভাবে মাত্র ৫ জনে সীমাবদ্ধ রাখা হয়। চলতি মাসের সিট পূর্ণ হয়ে গেলে Website-এ Tier 3 "Full" দেখাবে এবং পরবর্তী Batch শুরু না হওয়া পর্যন্ত নতুন Enrollment বন্ধ থাকবে।',
         },
       ],

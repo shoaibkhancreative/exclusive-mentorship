@@ -63,7 +63,7 @@ export const tiers = [
     id: 'tier1',
     slug: 'the-retailer-escape',
     key: 'T1',
-    name: 'The Retailer Escape',
+    name: 'ICT Foundation',
     shortName: 'Tier 1',
     tagline: 'The complete core system, on your own.',
     longDescription:
@@ -90,7 +90,7 @@ export const tiers = [
     id: 'tier2',
     slug: 'smart-money-arsenal',
     key: 'T2',
-    name: 'Smart Money Arsenal',
+    name: 'ICT Arsenal',
     shortName: 'Tier 2',
     tagline: 'The anchor plan — everything, free, in one bundle.',
     longDescription:
@@ -123,7 +123,7 @@ export const tiers = [
     id: 'tier3',
     slug: 'the-inner-circle',
     key: 'T3',
-    name: 'The Inner Circle',
+    name: 'ICT Inner Circle',
     shortName: 'Tier 3 · VIP',
     tagline: 'Personal, 1-on-1, and strictly limited.',
     longDescription:
@@ -149,7 +149,7 @@ export const tiers = [
     // "fully booked, join the waitlist" state. Flip it back to `true` when
     // next month's seats open back up.
     available: true,
-    ctaLabel: 'Join the Inner Circle',
+    ctaLabel: 'Join the ICT Inner Circle',
   },
 ];
 
