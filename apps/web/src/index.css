@@ -2,7 +2,7 @@
   TEMPLATE STYLES: These styles are used as a base template.
   AI is allowed to modify these styles as needed.
 */
-@import url('https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=Baloo+Da+2:wght@500;600;700;800&family=Hind+Siliguri:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -15,18 +15,6 @@ body {
 
 .font-display {
   font-family: "Sora", sans-serif;
-}
-
-/* Bangla-script type pair for the FAQ/Terms/Privacy/Disclaimer pages, chosen to
-   echo the existing Sora + Inter pairing: Baloo Da 2 (rounded, confident) for
-   Bangla headings, Hind Siliguri (clean, humanist) for Bangla body copy. Both
-   fall back to the Latin faces for any English terminology left inline. */
-.font-bn-display {
-  font-family: "Baloo Da 2", "Sora", sans-serif;
-}
-
-.font-bn {
-  font-family: "Hind Siliguri", "Inter", sans-serif;
 }
 
 .mark-underline {
