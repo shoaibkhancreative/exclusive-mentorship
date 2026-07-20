@@ -61,9 +61,9 @@ export const addons = [
 export const tiers = [
   {
     id: 'tier1',
-    slug: 'the-retailer-escape',
+    slug: 'recorded-class',
     key: 'T1',
-    name: 'ICT Foundation',
+    name: 'Recorded Class',
     shortName: 'Tier 1',
     tagline: 'The complete core system, on your own.',
     longDescription:
@@ -88,9 +88,9 @@ export const tiers = [
   },
   {
     id: 'tier2',
-    slug: 'smart-money-arsenal',
+    slug: 'live-mentorship',
     key: 'T2',
-    name: 'ICT Arsenal',
+    name: 'Live Mentorship',
     shortName: 'Tier 2',
     tagline: 'The anchor plan — everything, free, in one bundle.',
     longDescription:
@@ -121,9 +121,9 @@ export const tiers = [
   },
   {
     id: 'tier3',
-    slug: 'the-inner-circle',
+    slug: 'one-on-one-mentorship',
     key: 'T3',
-    name: 'ICT Inner Circle',
+    name: '1-on-1 Mentorship',
     shortName: 'Tier 3 · VIP',
     tagline: 'Personal, 1-on-1, and strictly limited.',
     longDescription:
@@ -149,7 +149,7 @@ export const tiers = [
     // "fully booked, join the waitlist" state. Flip it back to `true` when
     // next month's seats open back up.
     available: true,
-    ctaLabel: 'Join the ICT Inner Circle',
+    ctaLabel: 'Join 1-on-1 Mentorship',
   },
 ];
 

@@ -11,67 +11,22 @@
 // (the rating card AND the individual star row on each review card), so
 // there's no separate number that can drift out of sync with what's shown.
 //
-// STILL PLACEHOLDER: all 6 reviews below are sample content, not real
-// students — carried over as-is from the original build. None of this
-// should be published as genuine social proof; inventing student names,
-// quotes, or ratings and presenting them as real is misleading to
-// prospective buyers and is against most payment/marketplace platforms'
-// policies on testimonials. Swap in real, verifiable reviews as you collect
-// them (e.g. from the Telegram group used for enrollment) — everything below
-// is a plain array, so the carousel, the star row on each card, the "N
-// students" count, and the score/breakdown all update automatically with
-// however many real entries you add.
-// ---------------------------------------------------------------------------
-
-export const reviews = [
-  {
-    name: 'Rakib Hasan',
-    location: 'Dhaka',
-    stars: 5,
-    quote:
-      'The way market structure and liquidity are explained finally made sense after months of random YouTube videos. Chapter by chapter, it just clicks.',
-  },
-  {
-    name: 'Nusrat Jahan',
-    location: 'Chattogram',
-    stars: 5,
-    quote:
-      "What stood out was how personally the mentor responds in Q&A — it never feels like a pre-recorded course, it feels like actual mentorship.",
-  },
-  {
-    name: 'Shakil Ahmed',
-    location: 'Sylhet',
-    stars: 4,
-    quote:
-      'I started completely at zero. By Chapter 6 I was reading charts I used to just stare at confused. Slow and steady, but it works.',
-  },
-  {
-    name: 'Farhana Akter',
-    location: 'Rajshahi',
-    stars: 5,
-    quote:
-      'The risk management chapter alone was worth it. I stopped revenge trading after one blown demo account and actually started following a plan.',
-  },
-  {
-    name: 'Imran Kabir',
-    location: 'Khulna',
-    stars: 5,
-    quote:
-      'Tier 2 support is the reason I stuck with it. Asking a question and getting a real answer within a day kept me from quitting in week two.',
-  },
-  {
-    name: 'Mahin Rahman',
-    location: 'Barishal',
-    stars: 5,
-    quote:
-      "Passed my first prop firm challenge using exactly what's taught in Chapter 13. Didn't expect that chapter to matter this much until it did.",
-  },
-];
+// STILL PLACEHOLDER, NOW EMPTIED: this used to carry 6 sample reviews that
+// were never real students — invented names, quotes, and ratings presented
+// as genuine social proof. That's misleading to prospective buyers and
+// against most payment/marketplace platforms' policies on testimonials, so
+// the array ships empty rather than live with fabricated content. Add real,
+// verifiable reviews here as you collect them (e.g. from the Telegram group
+// used for enrollment) — the carousel, star rows, "N students" count, and
+// the score/breakdown all pick them up automatically, no other file needs
+// to change. Testimonials.jsx shows an honest "reviews coming soon" state
+// for as long as this stays empty.
+export const reviews = [];
 
 // --- Everything below is DERIVED from `reviews` above. Don't hand-edit. ---
 
 export const rating = {
-  score: (reviews.reduce((sum, r) => sum + r.stars, 0) / reviews.length).toFixed(1),
+  score: reviews.length ? (reviews.reduce((sum, r) => sum + r.stars, 0) / reviews.length).toFixed(1) : null,
   count: reviews.length,
 };
 

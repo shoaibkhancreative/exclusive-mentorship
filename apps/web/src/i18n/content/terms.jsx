@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { BOT_USERNAME } from '@/lib/telegram';
 
 const linkCls = 'font-medium text-brand hover:underline';
 
 export const terms = {
-  updated: { en: 'Last updated: July 16, 2026', bn: 'সর্বশেষ হালনাগাদ: ১৬ জুলাই, ২০২৬' },
+  updated: { en: 'Last updated: July 20, 2026', bn: 'সর্বশেষ হালনাগাদ: ২০ জুলাই, ২০২৬' },
 
   blocks: [
     {
@@ -69,15 +70,15 @@ export const terms = {
     {
       type: 'ul',
       en: [
-        'Tier 1 — ICT Foundation: the core 5-Chapter recorded course plus general Chat Support. No Add-on is included; any Add-on must be purchased separately.',
-        'Tier 2 — ICT Arsenal: the core course plus Priority Support, Bi-Weekly Live Q&A, and all 3 Add-ons completely free. Each Batch admits a maximum of 50 Students.',
-        'Tier 3 — ICT Inner Circle: everything in Tier 2 plus 3 months of Weekly 1-on-1 Consultation and a personal Portfolio/Trade Review. Seats are strictly capped at 5 Students per month; once filled, new applicants are placed on a Waitlist for the following month.',
+        'Tier 1 — Recorded Class: the core 5-Chapter recorded course plus general Chat Support. No Add-on is included; any Add-on must be purchased separately.',
+        'Tier 2 — Live Mentorship: the core course plus Priority Support, Bi-Weekly Live Q&A, and all 3 Add-ons completely free. Each Batch admits a maximum of 50 Students.',
+        'Tier 3 — 1-on-1 Mentorship: everything in Tier 2 plus 3 months of Weekly 1-on-1 Consultation and a personal Portfolio/Trade Review. Seats are strictly capped at 5 Students per month; once filled, new applicants are placed on a Waitlist for the following month.',
         'Standalone Add-ons (Daily Market Insight, Setup Templates, Live Trade Breakdown Archive) can be purchased separately at any time, with no Tier required.',
       ],
       bn: [
-        'Tier 1 — ICT Foundation: মূল ৫-Chapter রেকর্ড করা কোর্স এবং সাধারণ Chat Support। এখানে কোনো Add-on অন্তর্ভুক্ত নেই, প্রয়োজন হলে আলাদাভাবে কিনতে হবে।',
-        'Tier 2 — ICT Arsenal: মূল কোর্সের পাশাপাশি Priority Support, Bi-Weekly Live Q&A, এবং ৩টি Add-on সম্পূর্ণ বিনামূল্যে অন্তর্ভুক্ত। প্রতি Batch-এ সর্বোচ্চ ৫০ জন Student ভর্তি করা হয়।',
-        'Tier 3 — ICT Inner Circle: Tier 2-এর সবকিছুর পাশাপাশি ৩ মাসের Weekly 1-on-1 Consultation এবং ব্যক্তিগত Portfolio/Trade Review। প্রতি মাসে কঠোরভাবে মাত্র ৫ জন Student-এর জন্য সিট খোলা থাকে; সংখ্যা পূর্ণ হয়ে গেলে নতুন আবেদনকারীদের পরবর্তী মাসের জন্য Waitlist-এ রাখা হয়।',
+        'Tier 1 — Recorded Class: মূল ৫-Chapter রেকর্ড করা কোর্স এবং সাধারণ Chat Support। এখানে কোনো Add-on অন্তর্ভুক্ত নেই, প্রয়োজন হলে আলাদাভাবে কিনতে হবে।',
+        'Tier 2 — Live Mentorship: মূল কোর্সের পাশাপাশি Priority Support, Bi-Weekly Live Q&A, এবং ৩টি Add-on সম্পূর্ণ বিনামূল্যে অন্তর্ভুক্ত। প্রতি Batch-এ সর্বোচ্চ ৫০ জন Student ভর্তি করা হয়।',
+        'Tier 3 — 1-on-1 Mentorship: Tier 2-এর সবকিছুর পাশাপাশি ৩ মাসের Weekly 1-on-1 Consultation এবং ব্যক্তিগত Portfolio/Trade Review। প্রতি মাসে কঠোরভাবে মাত্র ৫ জন Student-এর জন্য সিট খোলা থাকে; সংখ্যা পূর্ণ হয়ে গেলে নতুন আবেদনকারীদের পরবর্তী মাসের জন্য Waitlist-এ রাখা হয়।',
         'Standalone Add-on (Daily Market Insight, Setup Templates, Live Trade Breakdown Archive) যেকোনো সময় আলাদাভাবে কেনা যায়, কোনো Tier ছাড়াই।',
       ],
     },
@@ -158,7 +159,7 @@ export const terms = {
         <>
           These Terms are written to be read consistently with the Consumer-Protection and Digital-Commerce laws
           applicable in Bangladesh. For any question about these Terms, reach out to our{' '}
-          <a href="https://t.me/exclusive_mentorship_bot" target="_blank" rel="noreferrer" className={linkCls}>
+          <a href={`https://t.me/${BOT_USERNAME}`} target="_blank" rel="noreferrer" className={linkCls}>
             Telegram Support
           </a>.
         </>
@@ -167,7 +168,7 @@ export const terms = {
         <>
           এই Terms বাংলাদেশে প্রযোজ্য Consumer-Protection ও Digital-Commerce সংক্রান্ত আইনের সাথে সামঞ্জস্য রেখে পড়ার
           উদ্দেশ্যে তৈরি। এই Terms সংক্রান্ত যেকোনো প্রশ্নের জন্য আমাদের{' '}
-          <a href="https://t.me/exclusive_mentorship_bot" target="_blank" rel="noreferrer" className={linkCls}>
+          <a href={`https://t.me/${BOT_USERNAME}`} target="_blank" rel="noreferrer" className={linkCls}>
             Telegram Support
           </a>
           -এ যোগাযোগ করুন।

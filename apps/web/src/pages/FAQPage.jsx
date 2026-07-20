@@ -7,6 +7,7 @@ import Seo from '@/components/site/Seo';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { pick } from '@/i18n/LanguageContext';
 import { faqCategories } from '@/i18n/content/faq';
+import { BOT_USERNAME } from '@/lib/telegram';
 
 const fadeUp = {
   initial: { opacity: 0, y: 20 },
@@ -70,7 +71,7 @@ export default function FAQPage() {
             <p className="mx-auto mt-1.5 max-w-md text-sm text-navy-foreground/60">{pageCopy.moreQuestionsBody}</p>
             <div className="mt-5 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm">
               <a
-                href="https://t.me/exclusive_mentorship_bot"
+                href={`https://t.me/${BOT_USERNAME}`}
                 target="_blank"
                 rel="noreferrer"
                 className="font-semibold text-brand hover:underline"

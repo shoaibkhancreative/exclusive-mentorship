@@ -1,15 +1,16 @@
 import React from 'react';
+import { BOT_USERNAME } from '@/lib/telegram';
 
 const linkCls = 'font-medium text-brand hover:underline';
 
 export const privacy = {
-  updated: { en: 'Last updated: July 16, 2026', bn: 'সর্বশেষ হালনাগাদ: ১৬ জুলাই, ২০২৬' },
+  updated: { en: 'Last updated: July 20, 2026', bn: 'সর্বশেষ হালনাগাদ: ২০ জুলাই, ২০২৬' },
 
   blocks: [
     {
       type: 'p',
-      en: 'This Privacy Policy explains what information Exclusive Mentorship collects when you complete Checkout, enroll in Tier 3 — ICT Inner Circle, or contact us, and how that information is used.',
-      bn: 'এই Privacy Policy ব্যাখ্যা করে যে, আপনি যখন Checkout সম্পন্ন করেন, Tier 3 — ICT Inner Circle-এ Enroll করেন, অথবা আমাদের সাথে যোগাযোগ করেন, তখন Exclusive Mentorship কী কী তথ্য সংগ্রহ করে এবং তা কীভাবে ব্যবহার করা হয়।',
+      en: 'This Privacy Policy explains what information Exclusive Mentorship collects when you complete Checkout, enroll in Tier 3 — 1-on-1 Mentorship, or contact us, and how that information is used.',
+      bn: 'এই Privacy Policy ব্যাখ্যা করে যে, আপনি যখন Checkout সম্পন্ন করেন, Tier 3 — 1-on-1 Mentorship-এ Enroll করেন, অথবা আমাদের সাথে যোগাযোগ করেন, তখন Exclusive Mentorship কী কী তথ্য সংগ্রহ করে এবং তা কীভাবে ব্যবহার করা হয়।',
     },
     { type: 'h2', en: '1. Information We Collect', bn: '১. আমরা যেসব তথ্য সংগ্রহ করি' },
     {
@@ -33,13 +34,13 @@ export const privacy = {
       en: [
         'To manually verify your Payment and grant Access to the correct Tier, Add-on, or Private Channel.',
         'To stay in touch with you about your Order, Enrollment, or Support needs.',
-        'To vet applicants for the limited Tier 3 — ICT Inner Circle seats, and manage the Waitlist when needed.',
+        'To confirm eligibility for the limited Tier 3 — 1-on-1 Mentorship seats, and manage the Waitlist when needed.',
         'To keep records required for our own accounting and fraud-prevention purposes.',
       ],
       bn: [
         'আপনার Payment ম্যানুয়ালি যাচাই করে সঠিক Tier, Add-on বা Private Channel-এর Access প্রদান করতে।',
         'আপনার Order, Enrollment বা Support সংক্রান্ত বিষয়ে আপনার সাথে যোগাযোগ রাখতে।',
-        'সীমিত সংখ্যক Tier 3 — ICT Inner Circle সিটের জন্য আবেদনকারীদের যাচাই করতে, এবং প্রয়োজনে Waitlist পরিচালনা করতে।',
+        'সীমিত সংখ্যক Tier 3 — 1-on-1 Mentorship সিটের জন্য যোগ্যতা নিশ্চিত করতে, এবং প্রয়োজনে Waitlist পরিচালনা করতে।',
         'আমাদের নিজস্ব Accounting ও Fraud-Prevention সংক্রান্ত প্রয়োজনীয় Record সংরক্ষণ করতে।',
       ],
     },
@@ -101,7 +102,7 @@ export const privacy = {
       en: (
         <>
           Any question about this Policy or your information can be sent to our{' '}
-          <a href="https://t.me/exclusive_mentorship_bot" target="_blank" rel="noreferrer" className={linkCls}>
+          <a href={`https://t.me/${BOT_USERNAME}`} target="_blank" rel="noreferrer" className={linkCls}>
             Telegram Support
           </a>.
         </>
@@ -109,7 +110,7 @@ export const privacy = {
       bn: (
         <>
           এই Policy বা আপনার তথ্য সংক্রান্ত যেকোনো প্রশ্ন আমাদের{' '}
-          <a href="https://t.me/exclusive_mentorship_bot" target="_blank" rel="noreferrer" className={linkCls}>
+          <a href={`https://t.me/${BOT_USERNAME}`} target="_blank" rel="noreferrer" className={linkCls}>
             Telegram Support
           </a>
           -এ পাঠাতে পারেন।

@@ -6,7 +6,7 @@ import Header from '@/components/site/Header';
 import Footer from '@/components/site/Footer';
 import Seo from '@/components/site/Seo';
 import { tiers, addons, paymentMethods, formatUSD, ADDONS_VALUE_USD } from '@/data/pricing';
-import { buildTelegramDeepLink } from '@/lib/telegram';
+import { buildTelegramDeepLink, BOT_USERNAME } from '@/lib/telegram';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { useToast } from '@/hooks/use-toast';
@@ -414,7 +414,7 @@ export default function CheckoutPage() {
                   </div>
 
                   <a
-                    href={`https://t.me/exclusive_mentorship_bot`}
+                    href={`https://t.me/${BOT_USERNAME}`}
                     target="_blank"
                     rel="noreferrer"
                     className="flex items-center justify-center gap-2 rounded-xl border border-dashed border-border p-4 text-sm font-semibold text-brand hover:bg-secondary"

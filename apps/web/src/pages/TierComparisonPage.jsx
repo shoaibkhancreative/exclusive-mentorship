@@ -218,7 +218,7 @@ export default function TierComparisonPage() {
               <div>
                 <p className="font-display text-lg font-semibold">Still not sure which one fits?</p>
                 <p className="mt-1 text-sm text-navy-foreground/60">
-                  Most students start with ICT Arsenal — it's the only tier with everything free, all at once.
+                  Most students start with Live Mentorship — it's the only tier with everything free, all at once.
                 </p>
               </div>
               <div className="flex shrink-0 flex-wrap items-center gap-4">

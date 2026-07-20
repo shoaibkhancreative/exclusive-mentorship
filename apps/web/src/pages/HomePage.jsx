@@ -34,11 +34,10 @@ const trustStats = [
   { label: 'Tier 2 Batch Cap', value: '50' },
 ];
 
-// SAMPLE — Replace with the mentor's real intro video once it's recorded.
-// This is the official, freely-licensed Blender Foundation short film
-// "Big Buck Bunny" (Creative Commons), used only so this component isn't
-// empty — swap the id below for your real YouTube video id.
-const SAMPLE_INTRO_VIDEO_ID = 'aqz-KE-bpKQ';
+// No real intro video is wired up yet — VideoEmbed shows an honest "coming
+// soon" state until one is. Once the mentor's intro is recorded, pass its
+// real YouTube video id here (e.g. SAMPLE_INTRO_VIDEO_ID = 'abc123XYZ').
+const SAMPLE_INTRO_VIDEO_ID = null;
 
 export default function HomePage() {
   return (
@@ -103,16 +102,20 @@ export default function HomePage() {
             </p>
             <VideoEmbed title="Mentorship Introduction" videoId={SAMPLE_INTRO_VIDEO_ID} />
             {/* Reads live from src/data/testimonials.js — add real reviews there
-                and this score updates on its own, no edit needed here. */}
-            <div className="absolute -bottom-2 -left-4 hidden items-center gap-3 rounded-2xl border border-border bg-card px-4 py-3 shadow-softLg sm:flex">
-              <span className="flex h-9 w-9 items-center justify-center rounded-full bg-gold/15 text-gold">
-                <Star size={16} className="fill-gold" />
-              </span>
-              <div className="leading-tight">
-                <p className="text-sm font-bold text-foreground">{rating.score} / 5</p>
-                <p className="text-xs text-muted-foreground">Early student rating</p>
+                and this appears on its own, no edit needed here. Hidden
+                entirely while there are zero reviews, instead of showing a
+                hollow "null / 5". */}
+            {rating.score && (
+              <div className="absolute -bottom-2 -left-4 hidden items-center gap-3 rounded-2xl border border-border bg-card px-4 py-3 shadow-softLg sm:flex">
+                <span className="flex h-9 w-9 items-center justify-center rounded-full bg-gold/15 text-gold">
+                  <Star size={16} className="fill-gold" />
+                </span>
+                <div className="leading-tight">
+                  <p className="text-sm font-bold text-foreground">{rating.score} / 5</p>
+                  <p className="text-xs text-muted-foreground">Early student rating</p>
+                </div>
               </div>
-            </div>
+            )}
           </motion.div>
         </div>
       </section>

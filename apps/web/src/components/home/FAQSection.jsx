@@ -24,8 +24,8 @@ const faqs = [
     a: 'Pay $24 to unlock Part 1 of the video modules. Pay the remaining $20 within 30 days to unlock Part 2, all 3 add-ons, and Live Q&A access. Splitting costs $44 total instead of $39 one-time. If the second installment isn\'t paid within 30 days, Part 1 access is paused until it is.',
   },
   {
-    q: 'How do I get into Tier 3 — ICT Inner Circle?',
-    a: 'Tier 3 is by application only, to keep it genuinely 1-on-1 — submit the VIP application form from the pricing section above. Only 5 seats open per month; if the current month is full, you\'re placed on the waitlist for the next one.',
+    q: 'How do I get into Tier 3 — 1-on-1 Mentorship?',
+    a: 'Tier 3 joins through the same checkout as Tier 1 & 2 — there\'s no separate application form. To keep it genuinely 1-on-1, only 5 seats open per month; if the current month is full, checkout switches to a waitlist for the next one.',
   },
   {
     q: 'Is there a refund policy?',

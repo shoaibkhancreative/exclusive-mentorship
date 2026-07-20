@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { TrendingUp } from 'lucide-react';
 import { tiers, addons } from '@/data/pricing';
+import { BOT_USERNAME } from '@/lib/telegram';
 
 // TODO: replace with your real support inbox before this goes live.
 const SUPPORT_EMAIL = 'support@exclusivementorship.com';
@@ -40,7 +41,7 @@ export default function Footer() {
             </div>
             <div className="space-y-2.5">
               <p className="font-semibold text-navy-foreground/90">Support</p>
-              <a href="https://t.me/exclusive_mentorship_bot" target="_blank" rel="noreferrer" className="block text-navy-foreground/60 transition-colors hover:text-navy-foreground">Telegram</a>
+              <a href={`https://t.me/${BOT_USERNAME}`} target="_blank" rel="noreferrer" className="block text-navy-foreground/60 transition-colors hover:text-navy-foreground">Telegram</a>
               <a href={`mailto:${SUPPORT_EMAIL}`} className="block text-navy-foreground/60 transition-colors hover:text-navy-foreground">Email</a>
               <a href="https://www.youtube.com/@WeAreNLT" target="_blank" rel="noreferrer" className="block text-navy-foreground/60 transition-colors hover:text-navy-foreground">YouTube</a>
               <Link to="/faq" className="block text-navy-foreground/60 transition-colors hover:text-navy-foreground">FAQ</Link>
