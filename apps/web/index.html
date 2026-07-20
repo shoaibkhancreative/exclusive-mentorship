@@ -12,18 +12,34 @@
 		<meta name="description" content="Exclusive Mentorship — an institutional trading mentorship covering liquidity, market structure, psychology and risk, built from zero to funded trader." />
 		<title>Exclusive Mentorship — Institutional Trading Mentorship</title>
 
+		<!-- Canonical is intentionally NOT set here as a static tag. This is a
+		     client-side-rendered app (no SSR/prerender), so this same index.html
+		     is served for every route — a hardcoded canonical would wrongly point
+		     every page at the domain root. Each page instead sets its own
+		     canonical at runtime via the shared <Seo> component (see
+		     src/components/site/Seo.jsx), which Google's renderer picks up during
+		     indexing. Non-JS link-unfurl bots (Telegram/WhatsApp/etc.) don't use
+		     canonical anyway, so nothing is lost for them. -->
+
 		<!-- Open Graph / Twitter — keeps link previews on Telegram, WhatsApp, and
-		     Facebook clean when this page is shared. og:url and og:image are left
-		     out on purpose: they need an absolute production domain and a real
-		     preview image, neither of which exist yet. Add both once the site has
-		     a live domain. -->
+		     Facebook clean when this page is shared. Most link-preview bots don't
+		     execute JavaScript, so — unlike title/description, which the <Seo>
+		     component updates per-page at runtime — og:url and og:image live here
+		     as static tags instead: this is the one copy every crawler actually
+		     sees, for every route, since they all serve this same file. -->
 		<meta property="og:type" content="website" />
 		<meta property="og:site_name" content="Exclusive Mentorship" />
+		<meta property="og:url" content="https://exclusivementorship.xyz/" />
 		<meta property="og:title" content="Exclusive Mentorship — Institutional Trading Mentorship" />
 		<meta property="og:description" content="An institutional trading mentorship covering liquidity, market structure, psychology and risk, built from zero to funded trader." />
-		<meta name="twitter:card" content="summary" />
+		<meta property="og:image" content="https://exclusivementorship.xyz/og-image.png" />
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
+		<meta property="og:image:alt" content="Exclusive Mentorship — Institutional Trading Mentorship" />
+		<meta name="twitter:card" content="summary_large_image" />
 		<meta name="twitter:title" content="Exclusive Mentorship — Institutional Trading Mentorship" />
 		<meta name="twitter:description" content="An institutional trading mentorship covering liquidity, market structure, psychology and risk, built from zero to funded trader." />
+		<meta name="twitter:image" content="https://exclusivementorship.xyz/og-image.png" />
 	</head>
 	<body>
 		<div id="root"></div>

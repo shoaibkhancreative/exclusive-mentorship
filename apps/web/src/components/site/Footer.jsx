@@ -4,8 +4,7 @@ import { TrendingUp } from 'lucide-react';
 import { tiers, addons } from '@/data/pricing';
 import { BOT_USERNAME } from '@/lib/telegram';
 
-// TODO: replace with your real support inbox before this goes live.
-const SUPPORT_EMAIL = 'support@exclusivementorship.com';
+const SUPPORT_EMAIL = 'exclusivementorship@gmail.com';
 
 export default function Footer() {
   return (

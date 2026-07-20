@@ -229,8 +229,8 @@ export const comparisonGroups = [
 // Bkash and Nagad have been removed — Binance UID and a direct USDT wallet
 // address are the only accepted payment methods.
 export const paymentMethods = [
-  { id: 'binance', label: 'Binance UID (USDT)', number: '123456789', note: 'Send via Binance Pay / internal transfer to this UID. USDT only.' },
-  { id: 'usdt', label: 'USDT Address (TRC20)', number: 'TXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX', note: 'Send USDT on the TRC20 network only to this address, then attach your screenshot in Telegram.' },
+  { id: 'binance', label: 'Binance UID (USDT)', number: '767376321', note: 'Send via Binance Pay / internal transfer to this UID. USDT only.' },
+  { id: 'usdt', label: 'USDT Address (TRC20)', number: 'TJaRxNsDw7qsdQuC6EvyrTo8t9r832oRM8', note: 'Send USDT on the TRC20 network only to this address, then attach your screenshot in Telegram.' },
 ];
 
 export function getTier(id) {

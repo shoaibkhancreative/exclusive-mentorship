@@ -2,5 +2,4 @@
 User-agent: *
 Allow: /
 
-# Once this site is live on its real domain, add a Sitemap line here, e.g.:
-# Sitemap: https://your-domain.com/sitemap.xml
+Sitemap: https://exclusivementorship.xyz/sitemap.xml
