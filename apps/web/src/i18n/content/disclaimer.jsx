@@ -86,10 +86,5 @@ export const disclaimer = {
       en: 'You alone are responsible for any Trading decision you make during or after this Program, and for independently verifying any information before acting on it.',
       bn: 'এই Program চলাকালীন বা তার পরে আপনি যেকোনো Trading সিদ্ধান্ত নিজে নেন, তার জন্য একমাত্র আপনি নিজেই দায়ী। পাশাপাশি, কোনো তথ্যের ভিত্তিতে পদক্ষেপ নেওয়ার আগে তা স্বাধীনভাবে যাচাই করে নেওয়ার দায়িত্বও আপনার নিজের।',
     },
-    {
-      type: 'note',
-      en: 'This page is a general template and is not a substitute for legal advice. Before relying on it, we recommend having it reviewed by a lawyer experienced in Bangladesh\u2019s consumer-protection and financial-services law.',
-      bn: 'এই Page-টি একটি সাধারণ Template এবং আইনি পরামর্শের বিকল্প নয়। নির্ভরযোগ্যভাবে ব্যবহারের আগে বাংলাদেশের Consumer-Protection ও Financial-Services সংক্রান্ত আইনে অভিজ্ঞ কোনো আইনজীবীর মাধ্যমে এটি যাচাই করিয়ে নেওয়ার পরামর্শ দেওয়া হচ্ছে।',
-    },
   ],
 };

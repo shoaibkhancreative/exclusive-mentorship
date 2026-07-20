@@ -19,7 +19,7 @@ export default function Curriculum() {
         <SectionHeading
           eyebrow="The Curriculum"
           title={`${chapters.length} chapters. ${totalClasses}+ classes. One complete trading education.`}
-          subtitle="Every chapter builds on the last, from market basics to your own written trading plan. Tap a chapter to preview what's inside."
+          subtitle="Each chapter builds on the last — from market basics to your own written trading plan. Tap a chapter to preview what's inside."
         />
 
         <div className="mt-14 space-y-3.5">

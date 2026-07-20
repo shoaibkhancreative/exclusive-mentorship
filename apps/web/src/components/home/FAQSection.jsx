@@ -13,11 +13,11 @@ import {
 const faqs = [
   {
     q: 'Do I need any trading experience to start?',
-    a: 'None at all. Chapter 1 is built for complete beginners and takes you step by step to an institutional-level vocabulary before anything advanced begins.',
+    a: 'None at all. Chapter 1 is built for complete beginners and takes you step by step up to an institutional-level vocabulary before anything advanced begins.',
   },
   {
     q: "What's the actual difference between Tier 1 and Tier 2?",
-    a: 'Both include the full recorded ICT course. Tier 2 adds Priority Support, Bi-Weekly Live Q&A, and all 3 add-ons completely free — which is why most students choose it over paying for Tier 1 plus add-ons separately.',
+    a: 'Both include the full recorded ICT course. Tier 2 also adds Priority Support, Bi-Weekly Live Q&A, and all 3 add-ons completely free — which is why most students choose it over paying for Tier 1 plus add-ons separately.',
   },
   {
     q: 'How does the Tier 2 split payment work?',

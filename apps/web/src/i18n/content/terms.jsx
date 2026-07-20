@@ -175,10 +175,5 @@ export const terms = {
         </>
       ),
     },
-    {
-      type: 'note',
-      en: 'This page is a general template and is not a substitute for legal advice. Before relying on it, we recommend having it reviewed by a lawyer experienced in Bangladesh\u2019s e-commerce and digital-service law.',
-      bn: 'এই Page-টি একটি সাধারণ Template, এবং এটি আইনি পরামর্শের বিকল্প নয়। নির্ভরযোগ্যভাবে ব্যবহারের আগে বাংলাদেশের E-commerce ও Digital-Service সংক্রান্ত আইনে অভিজ্ঞ কোনো আইনজীবীর মাধ্যমে এটি যাচাই করিয়ে নেওয়ার পরামর্শ দেওয়া হচ্ছে।',
-    },
   ],
 };

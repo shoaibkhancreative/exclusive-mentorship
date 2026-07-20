@@ -13,7 +13,7 @@ const MENTOR_NAME = 'NLT';
 const MENTOR_FULL_NAME = 'Next Level Trader';
 const MENTOR_CREDENTIAL = 'Independent Trader · Smart Money & ICT Concepts';
 const MENTOR_BIO =
-  "I opened my first trading account in 2019 with more confidence than a plan \u2014 jumping between indicators and \u2018free signal\u2019 channels, and blowing through three accounts before anything actually clicked. It took real time to unlearn the bad habits and rebuild my process around how institutional desks actually read the market. That discipline finally paid off by the end of 2023, when it turned into consistent, repeatable profitability \u2014 not a lucky streak, but a system I could trust and repeat. Since then, I\u2019ve mentored 120+ students through that same process. This mentorship is the structured path I wish had existed back in 2019.";
+  "I opened my first trading account in 2019 with more confidence than a plan. I jumped between indicators and \u2018free signal\u2019 channels and blew through three accounts before anything actually clicked. It took real time to unlearn the bad habits and rebuild my process around how institutional desks actually read the market. By the end of 2023, that discipline turned into consistent, repeatable profitability \u2014 not a lucky streak, but a system I trust and repeat. Since then, I\u2019ve mentored 120+ students through that same process. This mentorship is the structured path I wish had existed back in 2019.";
 
 const stats = [
   { icon: TrendingUp, label: 'Years Trading', value: '7+' },

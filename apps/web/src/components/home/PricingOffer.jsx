@@ -118,7 +118,7 @@ export default function PricingOffer() {
         <SectionHeading
           eyebrow="The Offer, Add-ons & Pricing"
           title="Three ways in. One clear best value."
-          subtitle="Every tier includes the full recorded course. What changes is the support around it — and how much of it is free."
+          subtitle="Every tier includes the full recorded course. What changes is the support around it — and how much is free."
         />
 
         <div className="mt-14 grid gap-6 lg:grid-cols-3 lg:items-stretch">
@@ -141,7 +141,7 @@ export default function PricingOffer() {
             </p>
           </div>
           <p className="mt-1 text-sm text-muted-foreground">
-            On Tier 1 or on their own, each add-on can be purchased individually.
+            Each add-on can also be bought on its own, or added to Tier 1.
           </p>
           <div className="mt-5 grid gap-4 sm:grid-cols-3">
             {addons.map((a) => (

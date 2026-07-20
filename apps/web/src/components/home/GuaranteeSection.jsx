@@ -28,7 +28,7 @@ export default function GuaranteeSection() {
         <SectionHeading
           eyebrow="Guarantee"
           title="The ICT Mastery Accountability Protocol"
-          subtitle="This isn't a hands-off, money-back guarantee — it's a personal commitment. If you do the documented work and still aren't improving, the mentor gets personally involved."
+          subtitle="This isn't a money-back guarantee. It's a personal commitment — do the documented work, and if you're still not improving, the mentor gets personally involved."
         />
 
         <div className="mt-14 grid gap-4 sm:grid-cols-3">
@@ -56,7 +56,7 @@ export default function GuaranteeSection() {
             <p className="font-display text-lg font-semibold">Meet all three, and still not seeing it click?</p>
             <p className="mt-1.5 text-sm leading-relaxed text-navy-foreground/65">
               The Mentorship Team personally monitors your live trading for a full week and runs a free 1-on-1 Live
-              Breakdown Session to diagnose exactly what's going wrong — not a refund form, a real intervention.
+              Breakdown Session to find exactly what's going wrong — not a refund form, a real intervention.
             </p>
           </div>
         </motion.div>

@@ -26,8 +26,8 @@ export default function YouTubeSection() {
                 Not ready to enroll? Start free on YouTube.
               </h2>
               <p className="mt-3 leading-relaxed text-navy-foreground/65">
-                Real breakdowns and trading lessons from NLT, posted regularly, no sign-up required — see how the
-                teaching actually works before you commit to a tier.
+                Real trading lessons from NLT, posted regularly — no sign-up required. See how the teaching actually
+                works before you commit to a tier.
               </p>
             </div>
 

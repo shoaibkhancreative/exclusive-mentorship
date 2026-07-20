@@ -29,9 +29,9 @@ const fadeUp = {
 
 const trustStats = [
   { label: 'Chapters', value: `${chapters.length}` },
-  { label: 'On-Demand Classes', value: `${totalClasses}+` },
+  { label: 'Classes', value: `${totalClasses}+` },
   { label: 'Lifetime Access', value: '100%' },
-  { label: 'Tier 2 Batch Cap', value: '50' },
+  { label: 'Batch Cap', value: '50' },
 ];
 
 // No real intro video is wired up yet — VideoEmbed shows an honest "coming
@@ -71,11 +71,11 @@ export default function HomePage() {
             <h1 className="mt-6 font-display text-4xl font-bold leading-[1.08] tracking-tight text-foreground sm:text-5xl lg:text-[3.4rem]">
               Trade like the institutions
               <br />
-              <span className="mark-underline">actually</span> hunting your stop-loss.
+              <span className="mark-underline">hunting</span> your stop-loss.
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
-              {chapters.length} chapters. {totalClasses}+ classes. One complete system for reading liquidity, market structure,
-              psychology, and risk the way professional desks do — built from zero to funded trader.
+              {chapters.length} chapters. {totalClasses}+ classes. One system to read liquidity, structure, psychology,
+              and risk like a professional desk — from zero to funded trader.
             </p>
             <div className="mt-9 flex flex-col gap-3.5 sm:flex-row sm:items-center">
               <CtaButton to="/checkout" size="lg">
@@ -98,7 +98,7 @@ export default function HomePage() {
 
           <motion.div {...fadeUp} transition={{ duration: 0.5, ease: 'easeOut', delay: 0.1 }} className="relative">
             <p className="mb-3 text-center text-sm text-muted-foreground">
-              Watch the 2-minute program overview before you enroll.
+              Watch a quick 2-minute overview before you enroll.
             </p>
             <VideoEmbed title="Mentorship Introduction" videoId={SAMPLE_INTRO_VIDEO_ID} />
             {/* Reads live from src/data/testimonials.js — add real reviews there

@@ -85,11 +85,11 @@ export default function Testimonials() {
       <div className="mx-auto max-w-[72rem] px-6">
         <SectionHeading
           eyebrow="Student Reviews"
-          title={hasReviews ? 'What students say after going through it.' : 'Reviews are just getting started.'}
+          title={hasReviews ? 'What students say after finishing the course.' : 'Reviews are just getting started.'}
           subtitle={
             hasReviews
-              ? 'Every review here will be a real, verifiable student — checked the same way every enrollment is: personally, by the mentor.'
-              : "We only publish real, verified students — checked personally by the mentor — so this section is honest about not having any yet, instead of opening with invented ones."
+              ? 'Every review here is a real, verified student — checked the same way every enrollment is: personally, by the mentor.'
+              : "We only publish real, verified students — checked personally by the mentor. So instead of faking reviews, we're just saying: none yet."
           }
         />
 
@@ -103,8 +103,8 @@ export default function Testimonials() {
             </span>
             <p className="font-display text-lg font-semibold text-foreground">First reviews are on their way.</p>
             <p className="max-w-sm text-sm leading-relaxed text-muted-foreground">
-              Enroll now and yours could be one of the first shown here — every review is verified personally by the
-              mentor before it's published.
+              Enroll now, and yours could be one of the first featured here — every review is personally verified by
+              the mentor before it's published.
             </p>
           </motion.div>
         ) : (

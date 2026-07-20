@@ -7,27 +7,27 @@ const reasons = [
   {
     icon: Building2,
     title: 'An Institutional Framework, Not Indicators',
-    desc: 'Liquidity, market structure and order flow — the way desks actually read price — instead of a repainted indicator sold as a "signal".',
+    desc: 'You learn liquidity, market structure, and order flow — how real desks read price. Not a repainted indicator sold as a "signal".',
   },
   {
     icon: Users2,
     title: 'Small Batches, Real Access',
-    desc: 'Tier 2 is capped at 50 students a batch. Tier 3 is capped at 5 a month. You get a mentor who knows your name, not a 10,000-member group chat.',
+    desc: 'Tier 2 caps at 50 students a batch. Tier 3 caps at 5 a month. You get a mentor who knows your name, not a 10,000-member group chat.',
   },
   {
     icon: GraduationCap,
     title: 'Genuinely Built From Zero',
-    desc: "Chapter 1 assumes nothing. Chapter 13 ends with your own written trading plan. Nothing in between skips a step.",
+    desc: 'Chapter 1 assumes nothing. Chapter 13 ends with your own written trading plan. No step skipped in between.',
   },
   {
     icon: ShieldCheck,
     title: 'Manually Verified, Human-Run',
-    desc: 'Every single enrollment is checked by the mentor personally — not an automated funnel approving payments in the dark.',
+    desc: 'Every enrollment is checked by the mentor personally — not an automated funnel approving payments in the dark.',
   },
   {
     icon: HeartHandshake,
     title: 'Accountability, Not Abandonment',
-    desc: "Put in the documented work and still not improving? The mentor steps back in personally. Details in the Guarantee section below.",
+    desc: 'Do the documented work and still not improving? The mentor steps back in personally. Details in the Guarantee section below.',
   },
 ];
 
@@ -40,7 +40,7 @@ export default function WhyChooseUs() {
       <div className="mx-auto max-w-[64rem] px-6">
         <SectionHeading
           eyebrow="Why Choose Us"
-          title="Everything here exists for one reason: to be different from the last course you tried."
+          title="One goal: be nothing like the last course you tried."
         />
         <div className="mt-14 border-y border-border/70 divide-y divide-border/70">
           {reasons.map(({ icon: Icon, title, desc }, i) => (

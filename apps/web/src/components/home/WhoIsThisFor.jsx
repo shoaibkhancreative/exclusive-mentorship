@@ -7,22 +7,22 @@ const personas = [
   {
     icon: Compass,
     title: 'The Chart-Overwhelmed Beginner',
-    desc: "You've watched a hundred random videos and taken notes from none of them. You need one ordered path from zero, not another isolated tip.",
+    desc: "You've watched a hundred random videos and remembered none of it. You need one clear path from zero — not another isolated tip.",
   },
   {
     icon: RefreshCcw,
     title: 'The Indicator-Hopping Trader',
-    desc: "You've tried five strategies and three indicator packs this year. Nothing sticks because nothing was ever a complete system.",
+    desc: "You've tried five strategies and three indicator packs this year. Nothing stuck, because none of it was ever a complete system.",
   },
   {
     icon: AlertTriangle,
     title: 'The Undisciplined Risk-Taker',
-    desc: 'You know a few ICT terms already, but no real risk plan sits behind your entries — so one bad week erases three good ones.',
+    desc: 'You know a few ICT terms already, but you trade without a real risk plan — so one bad week wipes out three good ones.',
   },
   {
     icon: Target,
     title: 'The Funded-Account Hopeful',
-    desc: 'You want to pass a prop firm challenge and actually keep the account — which takes a repeatable process, not a lucky streak.',
+    desc: 'You want to pass a prop firm challenge and keep the account — that takes a repeatable process, not a lucky streak.',
   },
 ];
 
@@ -32,8 +32,8 @@ export default function WhoIsThisFor() {
       <div className="mx-auto max-w-[72rem] px-6">
         <SectionHeading
           eyebrow="Who Is This For"
-          title="Built for four kinds of traders. Maybe you recognize yourself."
-          subtitle="If any of this sounds familiar, the curriculum below was built with exactly your starting point in mind."
+          title="Built for four kinds of traders. Sound like you?"
+          subtitle="Recognize yourself below? The curriculum was built for exactly your starting point."
         />
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {personas.map(({ icon: Icon, title, desc }, i) => (
